@@ -8,7 +8,20 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    let listOfDiary = ["Diary 1", "Diary 2", "Diary 3"]
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return(listOfDiary.count)
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "firstDiary")
+        cell.textLabel?.text = listOfDiary[indexPath.row]
+        return(cell)
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
