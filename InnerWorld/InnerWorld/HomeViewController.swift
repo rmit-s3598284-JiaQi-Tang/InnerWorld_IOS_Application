@@ -8,20 +8,27 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let listOfDiary = ["Diary 1", "Diary 2", "Diary 3"]
-
+    let listOfTittle = ["A happy day in St Kilda beach", "Lost 100$ in China Town", "Learning Swift is fun!"]
+    let listOfLocation = ["St Kilda, Melbourne", "China Town, Melbourne", "RMIT, Melbourne"]
+    let listOfWeatherIcon = ["sunny", "heavy rain", "cloud"]
+    let listOfDate = ["8-Aug-2018", "6-Aug-2018", "1-Aug-2018"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(listOfDiary.count)
+        return(listOfTittle.count)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "firstDiary")
-        cell.textLabel?.text = listOfDiary[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeViewControllerTableViewCell
+        cell.locationLabel.text = listOfLocation[indexPath.row]
+        cell.weatherIcon.image = UIImage(named: (listOfWeatherIcon[indexPath.row] + ".png"))
+        cell.tittleLabel.text = listOfTittle[indexPath.row]
+        cell.dateLabel.text = listOfDate[indexPath.row]
         return(cell)
     }
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(140)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

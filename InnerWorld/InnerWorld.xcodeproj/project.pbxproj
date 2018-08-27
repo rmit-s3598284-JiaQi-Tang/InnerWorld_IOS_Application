@@ -12,7 +12,9 @@
 		CD4C5A8921326FBD006840B1 /* Create_Theme_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */; };
 		CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8A21327625006840B1 /* FilterViewController.swift */; };
 		CD4C5A8D21327C41006840B1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */; };
-		CD4C5A8F21328FA7006840B1 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8E21328FA7006840B1 /* ReadViewController.swift */; };
+		CD4C5A8F21328FA7006840B1 /* PreViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8E21328FA7006840B1 /* PreViewViewController.swift */; };
+		CD4C5A912133B6A4006840B1 /* HomeViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */; };
+		CD4C5A932133D73F006840B1 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A922133D73F006840B1 /* ReadViewController.swift */; };
 		CDB81B51212E9CF90020F9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B50212E9CF90020F9A7 /* AppDelegate.swift */; };
 		CDB81B53212E9CFA0020F9A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */; };
 		CDB81B55212E9CFA0020F9A7 /* Create_Date_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */; };
@@ -28,7 +30,9 @@
 		CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Theme_ViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8A21327625006840B1 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		CD4C5A8E21328FA7006840B1 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		CD4C5A8E21328FA7006840B1 /* PreViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreViewViewController.swift; sourceTree = "<group>"; };
+		CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		CD4C5A922133D73F006840B1 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		CDB81B4D212E9CF90020F9A7 /* InnerWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnerWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB81B50212E9CF90020F9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -74,13 +78,15 @@
 				CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */,
 				CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */,
 				CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */,
-				CD4C5A8E21328FA7006840B1 /* ReadViewController.swift */,
+				CD4C5A8E21328FA7006840B1 /* PreViewViewController.swift */,
 				CD4C5A8421326F85006840B1 /* Create_Mood_ViewController.swift */,
 				CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */,
 				CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */,
 				CD4C5A8A21327625006840B1 /* FilterViewController.swift */,
 				CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */,
 				CDB81B56212E9CFA0020F9A7 /* Main.storyboard */,
+				CD4C5A922133D73F006840B1 /* ReadViewController.swift */,
+				CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */,
 				CDB81B59212E9CFA0020F9A7 /* Assets.xcassets */,
 				CDB81B5B212E9CFA0020F9A7 /* LaunchScreen.storyboard */,
 				CDB81B5E212E9CFA0020F9A7 /* Info.plist */,
@@ -161,13 +167,15 @@
 			files = (
 				CDB81B55212E9CFA0020F9A7 /* Create_Date_ViewController.swift in Sources */,
 				CDB81B51212E9CF90020F9A7 /* AppDelegate.swift in Sources */,
+				CD4C5A912133B6A4006840B1 /* HomeViewControllerTableViewCell.swift in Sources */,
 				CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */,
 				CD4C5A8921326FBD006840B1 /* Create_Theme_ViewController.swift in Sources */,
-				CD4C5A8F21328FA7006840B1 /* ReadViewController.swift in Sources */,
+				CD4C5A8F21328FA7006840B1 /* PreViewViewController.swift in Sources */,
 				CD4C5A8721326FA7006840B1 /* Create_Content_ViewController.swift in Sources */,
 				CDB81B53212E9CFA0020F9A7 /* HomeViewController.swift in Sources */,
 				CDB81B65212E9FC50020F9A7 /* SettingsViewController.swift in Sources */,
 				CD4C5A8521326F85006840B1 /* Create_Mood_ViewController.swift in Sources */,
+				CD4C5A932133D73F006840B1 /* ReadViewController.swift in Sources */,
 				CD4C5A8D21327C41006840B1 /* PasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
