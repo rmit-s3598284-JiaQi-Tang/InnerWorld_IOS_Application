@@ -24,6 +24,14 @@ class ReadViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func deleteButton(_ sender: Any) {
+        let alert = UIAlertController(title: "are you sure to delete this diary? ", message: " ", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: {Void in})
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {Void in})
+        alert.addAction(yesAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

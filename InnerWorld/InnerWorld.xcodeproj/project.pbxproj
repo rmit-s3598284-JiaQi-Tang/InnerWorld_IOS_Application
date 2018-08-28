@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD4C5A8521326F85006840B1 /* Create_Mood_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8421326F85006840B1 /* Create_Mood_ViewController.swift */; };
+		CD45FDEE2135C7700025F4DA /* Create_Mood_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */; };
 		CD4C5A8721326FA7006840B1 /* Create_Content_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */; };
 		CD4C5A8921326FBD006840B1 /* Create_Theme_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */; };
 		CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8A21327625006840B1 /* FilterViewController.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD4C5A8421326F85006840B1 /* Create_Mood_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Mood_ViewController.swift; sourceTree = "<group>"; };
+		CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Mood_ViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Content_ViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Theme_ViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8A21327625006840B1 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -74,12 +74,12 @@
 		CDB81B4F212E9CF90020F9A7 /* InnerWorld */ = {
 			isa = PBXGroup;
 			children = (
+				CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */,
 				CDB81B50212E9CF90020F9A7 /* AppDelegate.swift */,
 				CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */,
 				CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */,
 				CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */,
 				CD4C5A8E21328FA7006840B1 /* PreViewViewController.swift */,
-				CD4C5A8421326F85006840B1 /* Create_Mood_ViewController.swift */,
 				CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */,
 				CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */,
 				CD4C5A8A21327625006840B1 /* FilterViewController.swift */,
@@ -171,10 +171,10 @@
 				CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */,
 				CD4C5A8921326FBD006840B1 /* Create_Theme_ViewController.swift in Sources */,
 				CD4C5A8F21328FA7006840B1 /* PreViewViewController.swift in Sources */,
+				CD45FDEE2135C7700025F4DA /* Create_Mood_ViewController.swift in Sources */,
 				CD4C5A8721326FA7006840B1 /* Create_Content_ViewController.swift in Sources */,
 				CDB81B53212E9CFA0020F9A7 /* HomeViewController.swift in Sources */,
 				CDB81B65212E9FC50020F9A7 /* SettingsViewController.swift in Sources */,
-				CD4C5A8521326F85006840B1 /* Create_Mood_ViewController.swift in Sources */,
 				CD4C5A932133D73F006840B1 /* ReadViewController.swift in Sources */,
 				CD4C5A8D21327C41006840B1 /* PasswordViewController.swift in Sources */,
 			);
@@ -320,7 +320,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = InnerWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,6 +330,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,7 +340,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = InnerWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -345,6 +350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
