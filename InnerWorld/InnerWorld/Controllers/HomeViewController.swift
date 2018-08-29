@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     let listOfTittle = ["A happy day in St Kilda beach", "Lost 100$ in China Town", "Learning Swift is fun!"]
     let listOfLocation = ["St Kilda, Melbourne", "China Town, Melbourne", "RMIT, Melbourne"]
     let listOfWeatherIcon = ["sunny", "heavy rain", "cloud"]

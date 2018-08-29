@@ -42,6 +42,13 @@ class PasswordViewController: UIViewController {
     @IBAction func button0(_ sender: Any) {
         passwordTextField.insertText("0")
     }
+    
+    @IBOutlet weak var hintLabel: UILabel!
+
+    @IBAction func hintButton(_ sender: Any) {
+        hintLabel.isHidden = !hintLabel.isHidden
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -52,16 +59,4 @@ class PasswordViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
