@@ -199,7 +199,7 @@
                                                         <constraint firstAttribute="height" constant="35" id="0dd-z0-a5y"/>
                                                         <constraint firstAttribute="width" constant="170" id="9wy-Sw-5P8"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -213,16 +213,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8-Aug-2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMa-sw-6XJ">
-                                                    <rect key="frame" x="66" y="48" width="79" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="USa-6a-QF8"/>
-                                                        <constraint firstAttribute="width" constant="79" id="UdH-0S-TCB"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="AKg-23-waH">
                                                     <rect key="frame" x="160" y="38" width="37" height="36"/>
                                                     <constraints>
@@ -230,17 +220,27 @@
                                                         <constraint firstAttribute="width" constant="37" id="yOg-QV-yYS"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8-Aug-2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMa-sw-6XJ">
+                                                    <rect key="frame" x="57" y="48" width="103" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="kMj-0H-kHx"/>
+                                                        <constraint firstAttribute="width" constant="103" id="uZ1-M2-kqN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="EXo-av-gyx" firstAttribute="centerX" secondItem="1Xz-Hn-ni4" secondAttribute="centerX" constant="-154" id="8im-3c-yKg"/>
-                                                <constraint firstItem="tMa-sw-6XJ" firstAttribute="centerY" secondItem="1Xz-Hn-ni4" secondAttribute="centerY" constant="10.25" id="CNB-1Q-wKK"/>
-                                                <constraint firstItem="tMa-sw-6XJ" firstAttribute="centerX" secondItem="1Xz-Hn-ni4" secondAttribute="centerX" constant="-82" id="NDr-z1-zSh"/>
+                                                <constraint firstItem="tMa-sw-6XJ" firstAttribute="centerX" secondItem="1Xz-Hn-ni4" secondAttribute="centerX" constant="-79" id="Q4O-A3-8Ea"/>
                                                 <constraint firstItem="UE2-ur-5O9" firstAttribute="centerY" secondItem="1Xz-Hn-ni4" secondAttribute="centerY" constant="-26.25" id="R21-IN-mtq"/>
                                                 <constraint firstItem="EXo-av-gyx" firstAttribute="centerY" secondItem="1Xz-Hn-ni4" secondAttribute="centerY" constant="10.25" id="ceQ-nx-Vn9"/>
                                                 <constraint firstItem="23n-ll-2w0" firstAttribute="centerY" secondItem="1Xz-Hn-ni4" secondAttribute="centerY" constant="10.25" id="eNb-be-OWh"/>
                                                 <constraint firstItem="UE2-ur-5O9" firstAttribute="centerX" secondItem="1Xz-Hn-ni4" secondAttribute="centerX" constant="-18.5" id="fDH-7j-eVE"/>
                                                 <constraint firstItem="AKg-23-waH" firstAttribute="centerX" secondItem="1Xz-Hn-ni4" secondAttribute="centerX" constant="-9" id="kRx-MO-4Hu"/>
                                                 <constraint firstItem="AKg-23-waH" firstAttribute="centerY" secondItem="1Xz-Hn-ni4" secondAttribute="centerY" constant="9.75" id="mRI-GQ-exf"/>
+                                                <constraint firstItem="tMa-sw-6XJ" firstAttribute="centerY" secondItem="1Xz-Hn-ni4" secondAttribute="centerY" constant="10.25" id="p9j-Ui-0Q3"/>
                                                 <constraint firstItem="23n-ll-2w0" firstAttribute="centerX" secondItem="1Xz-Hn-ni4" secondAttribute="centerX" constant="102.5" id="qyD-br-TD9"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -251,7 +251,6 @@
                                             <outlet property="locationLabel" destination="23n-ll-2w0" id="bdO-jz-k7c"/>
                                             <outlet property="tittleLabel" destination="UE2-ur-5O9" id="v6i-y0-ULf"/>
                                             <outlet property="weatherIcon" destination="EXo-av-gyx" id="KJu-Km-Qpk"/>
-                                            <segue destination="TUY-FY-OQa" kind="show" id="kIK-Ze-wO3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -277,6 +276,9 @@
                     <tabBarItem key="tabBarItem" title="" image="create" id="acW-dT-cKf">
                         <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="diaryTableView" destination="3mq-r9-NBf" id="8HG-eS-Mkh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -696,7 +698,7 @@
         <!--Read View Controller-->
         <scene sceneID="f1g-ZC-H8h">
             <objects>
-                <viewController id="TUY-FY-OQa" customClass="ReadViewController" customModule="InnerWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReadViewController" id="TUY-FY-OQa" customClass="ReadViewController" customModule="InnerWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pQa-kZ-GlO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -844,6 +846,12 @@
                         <viewLayoutGuide key="safeArea" id="k9L-1X-Wi2"/>
                     </view>
                     <connections>
+                        <outlet property="contentOfReadScreen" destination="mja-WL-SuE" id="FQn-BR-yeA"/>
+                        <outlet property="locationOfReadScreen" destination="Nd9-se-rZq" id="ddv-ll-Ffe"/>
+                        <outlet property="moodOfReadScreen" destination="Hmv-qY-gLc" id="zG2-V0-2Kp"/>
+                        <outlet property="photoOfReadScreen" destination="PHD-OE-o1s" id="Vvh-h7-UFs"/>
+                        <outlet property="tittleOfReadScreen" destination="pPn-8f-faM" id="MJ4-R9-ed8"/>
+                        <outlet property="weatherOfReadScreen" destination="vGj-YU-b7e" id="GVN-HR-zvV"/>
                         <outletCollection property="operatingButtons" destination="hxv-b7-Miv" collectionClass="NSMutableArray" id="zkZ-eB-CdX"/>
                         <outletCollection property="operatingButtons" destination="LNT-YK-BKD" collectionClass="NSMutableArray" id="uol-Gh-MFa"/>
                     </connections>
@@ -1350,7 +1358,7 @@
         <image name="write" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qEh-In-jkV"/>
+        <segue reference="69d-iA-dui"/>
         <segue reference="c80-Uc-Dg9"/>
         <segue reference="ykd-0q-g0O"/>
         <segue reference="Tgf-nr-X3o"/>
