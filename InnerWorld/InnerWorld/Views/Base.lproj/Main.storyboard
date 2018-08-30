@@ -1115,11 +1115,15 @@
                                 <rect key="frame" x="155" y="491" width="64" height="64"/>
                                 <state key="normal" image="tick"/>
                                 <connections>
+                                    <action selector="confirmPasswordButton:" destination="cLm-bQ-Zrc" eventType="touchUpInside" id="Gu8-YN-FgA"/>
                                     <segue destination="49e-Tb-3d3" kind="show" id="qEh-In-jkV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGH-wh-kFj">
                                 <rect key="frame" x="81" y="158" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="WPG-Ry-dRF"/>
                                     <constraint firstAttribute="height" constant="60" id="iFU-zz-sDI"/>
@@ -1131,6 +1135,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-4k-2Pe">
                                 <rect key="frame" x="158" y="158" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="ZA9-Tl-xzH"/>
                                     <constraint firstAttribute="height" constant="60" id="bZG-5v-Fg2"/>
@@ -1142,6 +1149,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlE-hr-oQr">
                                 <rect key="frame" x="233" y="158" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="598-3D-XfT"/>
                                     <constraint firstAttribute="width" constant="60" id="boS-Kc-Bkl"/>
@@ -1153,6 +1163,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpF-uu-tDL">
                                 <rect key="frame" x="81" y="243" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9Ud-EJ-NBy"/>
                                     <constraint firstAttribute="width" constant="60" id="ceQ-hm-7L0"/>
@@ -1164,6 +1177,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IT-k8-AUk">
                                 <rect key="frame" x="158" y="243" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6Gu-bo-ybL"/>
                                     <constraint firstAttribute="width" constant="60" id="BDT-P6-hl2"/>
@@ -1175,6 +1191,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-wm-hiK">
                                 <rect key="frame" x="233" y="243" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="N6n-s4-RFz"/>
                                     <constraint firstAttribute="width" constant="60" id="tks-DN-Olq"/>
@@ -1186,6 +1205,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubM-es-eYQ">
                                 <rect key="frame" x="81" y="329" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8xp-Bx-Mbc"/>
                                     <constraint firstAttribute="width" constant="60" id="BHS-4D-q08"/>
@@ -1197,6 +1219,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkh-3I-huI">
                                 <rect key="frame" x="158" y="329" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Bdb-FS-7sr"/>
                                     <constraint firstAttribute="width" constant="60" id="jqi-Xm-3Ik"/>
@@ -1208,6 +1233,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-y5-qEb">
                                 <rect key="frame" x="233" y="329" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="OQJ-yH-4IR"/>
                                     <constraint firstAttribute="width" constant="60" id="p9L-pi-K7O"/>
@@ -1236,7 +1264,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwq-jl-dPZ">
                                 <rect key="frame" x="109" y="73" width="157" height="21"/>
@@ -1265,6 +1293,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gq-oa-uXt">
+                                <rect key="frame" x="231" y="403" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="q4A-qF-uoz"/>
+                                    <constraint firstAttribute="height" constant="64" id="u4j-bB-fjo"/>
+                                </constraints>
+                                <state key="normal" image="clear"/>
+                                <connections>
+                                    <action selector="clearButton:" destination="cLm-bQ-Zrc" eventType="touchUpInside" id="Ev0-KY-CeQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82646217034494396" blue="0.84094647963996594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1280,10 +1319,12 @@
                             <constraint firstItem="IlE-hr-oQr" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-145.5" id="KZq-gA-HpL"/>
                             <constraint firstItem="IlE-hr-oQr" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="75.5" id="L4S-Ig-o6c"/>
                             <constraint firstItem="4IT-k8-AUk" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" id="LbB-pS-dn0"/>
+                            <constraint firstItem="4Gq-oa-uXt" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="101.5" id="Mog-vV-xuI"/>
                             <constraint firstItem="Bwq-jl-dPZ" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" id="PO7-BQ-jqt"/>
                             <constraint firstItem="4IT-k8-AUk" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-60.5" id="POP-9M-7um"/>
                             <constraint firstItem="bpF-uu-tDL" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-60.5" id="QGw-YC-aYj"/>
                             <constraint firstItem="HCF-4k-2Pe" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-145.5" id="Qu8-6Y-yrw"/>
+                            <constraint firstItem="4Gq-oa-uXt" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="75.5" id="Rd5-Ff-01u"/>
                             <constraint firstItem="ubM-es-eYQ" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="-76.5" id="T1p-T4-HA0"/>
                             <constraint firstItem="QfH-y5-qEb" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="25.5" id="Vfd-as-l4u"/>
                             <constraint firstItem="QfH-y5-qEb" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="75.5" id="d3a-kL-Hvi"/>
@@ -1345,6 +1386,7 @@
         <image name="arrowBack" width="64" height="64"/>
         <image name="arrowTowads" width="64" height="64"/>
         <image name="camera" width="166" height="166"/>
+        <image name="clear" width="64" height="64"/>
         <image name="cloud" width="100" height="100"/>
         <image name="create" width="50" height="50"/>
         <image name="delete" width="100" height="100"/>
@@ -1364,10 +1406,10 @@
         <image name="write" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b2i-yR-Ve8"/>
+        <segue reference="qEh-In-jkV"/>
         <segue reference="c80-Uc-Dg9"/>
         <segue reference="ykd-0q-g0O"/>
         <segue reference="Tgf-nr-X3o"/>
-        <segue reference="h8J-oO-V7m"/>
+        <segue reference="lzU-1b-eKA"/>
     </inferredMetricsTieBreakers>
 </document>

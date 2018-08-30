@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct AppEngine {
+class AppEngine {
     var diaryList: [Diary]
     var user: User
     init() {
         diaryList = []
         user = User(nickName: "", birthDay: "", password: "", hint: "")
     }
-    mutating func addDiary(diary: Diary) {
+    func addDiary(diary: Diary) {
         if diaryList.isEmpty {
             diaryList = [diary]
         } else {
             diaryList.append(diary)
         }
     }
-    mutating func removeDiary(tittleOfToBeDeletedDiary: String) {
+    func removeDiary(tittleOfToBeDeletedDiary: String) {
         var loopIndex = 0
         for loopDiary in diaryList {
             if loopDiary.tittle == tittleOfToBeDeletedDiary {

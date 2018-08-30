@@ -42,13 +42,25 @@ class PasswordViewController: UIViewController {
     @IBAction func button0(_ sender: Any) {
         passwordTextField.insertText("0")
     }
-    
+
+    @IBAction func clearButton(_ sender: Any) {
+        passwordTextField.text = ""
+    }
     @IBOutlet weak var hintLabel: UILabel!
 
     @IBAction func hintButton(_ sender: Any) {
         hintLabel.isHidden = !hintLabel.isHidden
     }
 
+    @IBAction func confirmPasswordButton(_ sender: Any) {
+        if passwordTextField.text != "0000" {
+            let alert = UIAlertController(title: "wrong password", message: " ", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            passwordTextField.text = ""
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

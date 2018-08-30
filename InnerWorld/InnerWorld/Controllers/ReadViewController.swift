@@ -9,8 +9,10 @@
 import UIKit
 
 class ReadViewController: UIViewController {
+    var appEngine = AppEngine()
     var diary = Diary()
-//settings of the stack buttons
+
+    //settings of the stack buttons
     @IBOutlet var operatingButtons: [UIButton]!
     @IBAction func handelSelection(_ sender: UIButton) {
         operatingButtons.forEach { (button) in
@@ -27,6 +29,7 @@ class ReadViewController: UIViewController {
         alert.addAction(yesAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
+        appEngine.removeDiary(tittleOfToBeDeletedDiary: diary.tittle)
     }
 //settings of the items on Reading Screen
 

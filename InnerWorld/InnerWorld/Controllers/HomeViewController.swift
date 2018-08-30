@@ -45,7 +45,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
         viewController?.diary = appEngine.diaryList[indexPath.row]
-//        self.tabBarController?.pushViewController(viewController!, animated: true)
+        viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
     }
 }
