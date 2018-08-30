@@ -11,7 +11,6 @@ import UIKit
 class ReadViewController: UIViewController {
     var appEngine = AppEngine()
     var diary = Diary()
-
     //settings of the stack buttons
     @IBOutlet var operatingButtons: [UIButton]!
     @IBAction func handelSelection(_ sender: UIButton) {

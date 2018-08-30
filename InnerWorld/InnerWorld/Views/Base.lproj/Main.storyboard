@@ -1293,17 +1293,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gq-oa-uXt">
-                                <rect key="frame" x="231" y="403" width="64" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="q4A-qF-uoz"/>
-                                    <constraint firstAttribute="height" constant="64" id="u4j-bB-fjo"/>
-                                </constraints>
-                                <state key="normal" image="clear"/>
-                                <connections>
-                                    <action selector="clearButton:" destination="cLm-bQ-Zrc" eventType="touchUpInside" id="Ev0-KY-CeQ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82646217034494396" blue="0.84094647963996594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1319,12 +1308,10 @@
                             <constraint firstItem="IlE-hr-oQr" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-145.5" id="KZq-gA-HpL"/>
                             <constraint firstItem="IlE-hr-oQr" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="75.5" id="L4S-Ig-o6c"/>
                             <constraint firstItem="4IT-k8-AUk" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" id="LbB-pS-dn0"/>
-                            <constraint firstItem="4Gq-oa-uXt" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="101.5" id="Mog-vV-xuI"/>
                             <constraint firstItem="Bwq-jl-dPZ" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" id="PO7-BQ-jqt"/>
                             <constraint firstItem="4IT-k8-AUk" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-60.5" id="POP-9M-7um"/>
                             <constraint firstItem="bpF-uu-tDL" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-60.5" id="QGw-YC-aYj"/>
                             <constraint firstItem="HCF-4k-2Pe" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="-145.5" id="Qu8-6Y-yrw"/>
-                            <constraint firstItem="4Gq-oa-uXt" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="75.5" id="Rd5-Ff-01u"/>
                             <constraint firstItem="ubM-es-eYQ" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="-76.5" id="T1p-T4-HA0"/>
                             <constraint firstItem="QfH-y5-qEb" firstAttribute="centerY" secondItem="gT0-b7-NPk" secondAttribute="centerY" constant="25.5" id="Vfd-as-l4u"/>
                             <constraint firstItem="QfH-y5-qEb" firstAttribute="centerX" secondItem="gT0-b7-NPk" secondAttribute="centerX" constant="75.5" id="d3a-kL-Hvi"/>
@@ -1351,10 +1338,10 @@
             </objects>
             <point key="canvasLocation" x="-1470" y="-4"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MyTabBarViewController" customModule="InnerWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1386,7 +1373,6 @@
         <image name="arrowBack" width="64" height="64"/>
         <image name="arrowTowads" width="64" height="64"/>
         <image name="camera" width="166" height="166"/>
-        <image name="clear" width="64" height="64"/>
         <image name="cloud" width="100" height="100"/>
         <image name="create" width="50" height="50"/>
         <image name="delete" width="100" height="100"/>

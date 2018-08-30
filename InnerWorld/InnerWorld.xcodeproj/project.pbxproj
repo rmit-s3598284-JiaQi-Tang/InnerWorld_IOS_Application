@@ -25,6 +25,7 @@
 		CDB81B5A212E9CFA0020F9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB81B59212E9CFA0020F9A7 /* Assets.xcassets */; };
 		CDB81B5D212E9CFA0020F9A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB81B5B212E9CFA0020F9A7 /* LaunchScreen.storyboard */; };
 		CDB81B65212E9FC50020F9A7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */; };
+		CDBF704721387D9E00528E1C /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF704621387D9E00528E1C /* MyTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CDB81B5C212E9CFA0020F9A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDB81B5E212E9CFA0020F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CDBF704621387D9E00528E1C /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		CD0A37B62136CCA1007455A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CDBF704621387D9E00528E1C /* MyTabBarViewController.swift */,
 				CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */,
 				CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */,
 				CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */,
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBF704721387D9E00528E1C /* MyTabBarViewController.swift in Sources */,
 				CDB81B55212E9CFA0020F9A7 /* Create_Date_ViewController.swift in Sources */,
 				CDB81B51212E9CF90020F9A7 /* AppDelegate.swift in Sources */,
 				CD4C5A912133B6A4006840B1 /* HomeViewControllerTableViewCell.swift in Sources */,

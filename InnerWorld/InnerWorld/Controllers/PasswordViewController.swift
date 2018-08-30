@@ -43,9 +43,6 @@ class PasswordViewController: UIViewController {
         passwordTextField.insertText("0")
     }
 
-    @IBAction func clearButton(_ sender: Any) {
-        passwordTextField.text = ""
-    }
     @IBOutlet weak var hintLabel: UILabel!
 
     @IBAction func hintButton(_ sender: Any) {
