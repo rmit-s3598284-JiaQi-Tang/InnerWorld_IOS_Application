@@ -580,6 +580,9 @@
                                     <constraint firstAttribute="width" constant="305" id="Ej4-Lv-LAq"/>
                                     <constraint firstAttribute="height" constant="29" id="zJD-be-CFd"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="moodSlider:" destination="jMV-Jd-ktu" eventType="valueChanged" id="Iqr-YA-It6"/>
+                                </connections>
                             </slider>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="o6h-Yy-po0">
                                 <rect key="frame" x="87.5" y="233" width="200" height="200"/>
@@ -608,6 +611,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NO4-C5-o37"/>
                     </view>
+                    <connections>
+                        <outlet property="moodImage" destination="o6h-Yy-po0" id="S7I-yp-Bek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvd-MA-QJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1358,7 +1364,7 @@
         <image name="write" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="69d-iA-dui"/>
+        <segue reference="b2i-yR-Ve8"/>
         <segue reference="c80-Uc-Dg9"/>
         <segue reference="ykd-0q-g0O"/>
         <segue reference="Tgf-nr-X3o"/>
