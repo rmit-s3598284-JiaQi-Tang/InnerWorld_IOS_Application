@@ -11,25 +11,7 @@ import UIKit
 class ReadViewController: UIViewController {
     var appEngine = AppEngine()
     var diary = Diary()
-    //settings of the stack buttons
-    @IBOutlet var operatingButtons: [UIButton]!
-    @IBAction func handelSelection(_ sender: UIButton) {
-        operatingButtons.forEach { (button) in
-            button.isHidden = !button.isHidden
-        }
-    }
-    @IBAction func operatingTapped(_ sender: UIButton) {
-    }
 
-    @IBAction func deleteButton(_ sender: Any) {
-        let alert = UIAlertController(title: "are you sure to delete this diary? ", message: " ", preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: {Void in})
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {Void in})
-        alert.addAction(yesAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-        appEngine.removeDiary(tittleOfToBeDeletedDiary: diary.tittle)
-    }
 //settings of the items on Reading Screen
 
     @IBOutlet weak var tittleOfReadScreen: UILabel!

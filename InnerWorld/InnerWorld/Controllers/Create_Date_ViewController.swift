@@ -9,15 +9,16 @@
 import UIKit
 
 class Create_Date_ViewController: UIViewController {
-
+    var appEngine = AppEngine()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let vc = self.tabBarController as! MyTabBarViewController
+        appEngine = vc.appEngine
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillDisappear(_ animated: Bool) {
+        let vc = self.tabBarController as! MyTabBarViewController
+        vc.appEngine = appEngine
     }
 
 

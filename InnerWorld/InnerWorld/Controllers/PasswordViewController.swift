@@ -9,7 +9,7 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
-
+    var appEngine = AppEngine()
     @IBOutlet weak var passwordTextField: UITextField!
 
     @IBAction func button1(_ sender: Any) {
@@ -68,4 +68,10 @@ class PasswordViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is MyTabBarViewController {
+//            let vc = segue.destination as? MyTabBarViewController
+//            vc?.appEngine = appEngine
+//        }
+//    }
 }

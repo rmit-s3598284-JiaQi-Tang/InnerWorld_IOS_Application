@@ -15,6 +15,10 @@ class AppEngine {
         diaryList = []
         user = User(nickName: "", birthDay: "", password: "", hint: "")
     }
+    init(diaryList: [Diary], user: User) {
+        self.diaryList = diaryList
+        self.user = user
+    }
     func addDiary(diary: Diary) {
         if diaryList.isEmpty {
             diaryList = [diary]
