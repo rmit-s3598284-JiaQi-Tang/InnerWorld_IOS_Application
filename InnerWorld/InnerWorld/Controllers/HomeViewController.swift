@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             completion(true)
         }
-//        let deleteImage = UIImage(named: "delete.png")
+
         action.image = #imageLiteral(resourceName: "trashBin")
         action.backgroundColor = .red
         return action
