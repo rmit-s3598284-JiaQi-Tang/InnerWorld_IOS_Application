@@ -9,18 +9,18 @@
 import UIKit
 
 class Create_Date_ViewController: UIViewController {
+
     var appEngine = AppEngine()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = self.tabBarController as! MyTabBarViewController
-        appEngine = vc.appEngine
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        let vc = self.tabBarController as! MyTabBarViewController
-        vc.appEngine = appEngine
     }
 
 
+    @IBAction func writeButtonTapped(_ sender: Any) {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "Create_Mood_View_Controller") as? Create_Mood_ViewController
+        viewController?.appEngine = appEngine
+        present(viewController!, animated: true, completion: nil)
+    }
 }
 

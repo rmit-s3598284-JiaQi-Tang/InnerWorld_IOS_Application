@@ -13,17 +13,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = self.tabBarController as! MyTabBarViewController
-        appEngine = vc.appEngine
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        let vc = self.tabBarController as! MyTabBarViewController
-//        appEngine = vc.appEngine
-//    }
-//    override func viewDidDisappear(_ animated: Bool) {
-//        let vc = self.tabBarController as! MyTabBarViewController
-//        vc.appEngine = appEngine
-//    }
 
     @IBOutlet weak var diaryTableView: UITableView!
 
@@ -62,11 +52,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.diaryTableView.deleteRows(at: [indexPath], with: .automatic)
             
             completion(true)
+
+            let alert = UIAlertController(title: "The diary has been deleted", message: "", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})
+            alert.addAction(okAction)
+            alert.setValue(NSAttributedString(string: alert.title!, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium), NSAttributedStringKey.foregroundColor : UIColor.red]), forKey: "attributedTitle")
+            self.present(alert, animated: true, completion: nil)
         }
 
         action.image = #imageLiteral(resourceName: "trashBin")
         action.backgroundColor = .red
         return action
+    }
+
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as? FilterViewController
+        viewController?.appEngine = appEngine
+        present(viewController!, animated: true, completion: nil)
     }
 }
 

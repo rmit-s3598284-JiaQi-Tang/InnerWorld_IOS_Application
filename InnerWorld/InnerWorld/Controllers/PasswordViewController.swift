@@ -9,7 +9,9 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
-    var appEngine = AppEngine()
+    //initial the app with solid data
+    var appEngine = AppEngine(diaryList: [Diary(tittle: "A happy day in St Kilda", date: "08-Aug-2018", mood: "smile", weather: "sunny", location: "St Kilda, Melbourne", photo: "prototype-diaryPicture", content: "Today, I went to St kilda beach with my Indian brother Manana. We took a lot of awesome pictures there! what a happy day!"),Diary(tittle: "Lost 100$ in China Town", date: "6-Aug-2018", mood: "cry", weather: "rainning", location: "China Town, Melbourne", photo: "prototype-diaryPicture2", content: "Today, I went to China Town alone for some Chinese food. I lost my precious 100$! what a bad day!"),Diary(tittle: "Learning Swift is fun!", date: "1-Aug-2018", mood: "happy", weather: "cloud", location: "RMIT, Melbourne", photo: "prototype-diaryPicture3", content: "Today, I went to RMIT with my friend Linh, we learned a lot IOS stuff from Fardin. what a good day!")], user: User(nickName: "God Father", birthDay: "3-Dec-1993", password: "0000", hint: "the initial password is '0000'"))
+
     @IBOutlet weak var passwordTextField: UITextField!
 
     @IBAction func button1(_ sender: Any) {
@@ -46,16 +48,34 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var hintLabel: UILabel!
 
     @IBAction func hintButton(_ sender: Any) {
+        hintLabel.text = appEngine.user.hint
         hintLabel.isHidden = !hintLabel.isHidden
     }
 
     @IBAction func confirmPasswordButton(_ sender: Any) {
-        if passwordTextField.text != "0000" {
+        if passwordTextField.text != appEngine.user.password {
             let alert = UIAlertController(title: "wrong password", message: " ", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})
             alert.addAction(okAction)
+            alert.setValue(NSAttributedString(string: alert.title!, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.medium), NSAttributedStringKey.foregroundColor : UIColor.red]), forKey: "attributedTitle")
             present(alert, animated: true, completion: nil)
             passwordTextField.text = ""
+        } else {
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
+                return
+            }
+            myTabBarViewController.appEngine = self.appEngine
+            if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
+                vc.appEngine = appEngine
+            }
+            if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
+                vc.appEngine = appEngine
+            }
+            if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
+                vc.appEngine = appEngine
+            }
+            present(myTabBarViewController, animated: true, completion: nil)
         }
     }
     override func viewDidLoad() {
@@ -63,15 +83,4 @@ class PasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
         passwordTextField.isSecureTextEntry = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is MyTabBarViewController {
-//            let vc = segue.destination as? MyTabBarViewController
-//            vc?.appEngine = appEngine
-//        }
-//    }
 }

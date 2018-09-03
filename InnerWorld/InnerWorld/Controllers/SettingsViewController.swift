@@ -9,23 +9,15 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    var appEngine = AppEngine()
 
-    @IBOutlet weak var doneButton: UIButton!
-    @IBAction func doneButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Changes updated", message: " ", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidDisappear(_ animated: Bool) {
+        //update the changes of appEngine
     }
-
 }

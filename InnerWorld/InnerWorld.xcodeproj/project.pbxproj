@@ -10,12 +10,11 @@
 		CD0A37BA2136CD93007455A4 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A37B92136CD93007455A4 /* Diary.swift */; };
 		CD0A37BC2136DE7F007455A4 /* AppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A37BB2136DE7F007455A4 /* AppEngine.swift */; };
 		CD0A37BE2136DE8D007455A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A37BD2136DE8D007455A4 /* User.swift */; };
+		CD3A901B213DD7D3008C2A01 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A901A213DD7D3008C2A01 /* EditViewController.swift */; };
 		CD45FDEE2135C7700025F4DA /* Create_Mood_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */; };
 		CD4C5A8721326FA7006840B1 /* Create_Content_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */; };
-		CD4C5A8921326FBD006840B1 /* Create_Theme_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */; };
 		CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8A21327625006840B1 /* FilterViewController.swift */; };
 		CD4C5A8D21327C41006840B1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */; };
-		CD4C5A8F21328FA7006840B1 /* PreViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8E21328FA7006840B1 /* PreViewViewController.swift */; };
 		CD4C5A912133B6A4006840B1 /* HomeViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */; };
 		CD4C5A932133D73F006840B1 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A922133D73F006840B1 /* ReadViewController.swift */; };
 		CDB81B51212E9CF90020F9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B50212E9CF90020F9A7 /* AppDelegate.swift */; };
@@ -32,12 +31,11 @@
 		CD0A37B92136CD93007455A4 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		CD0A37BB2136DE7F007455A4 /* AppEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEngine.swift; sourceTree = "<group>"; };
 		CD0A37BD2136DE8D007455A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CD3A901A213DD7D3008C2A01 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Mood_ViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Content_ViewController.swift; sourceTree = "<group>"; };
-		CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Theme_ViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8A21327625006840B1 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		CD4C5A8E21328FA7006840B1 /* PreViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreViewViewController.swift; sourceTree = "<group>"; };
 		CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		CD4C5A922133D73F006840B1 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		CDB81B4D212E9CF90020F9A7 /* InnerWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnerWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,16 +64,15 @@
 		CD0A37B62136CCA1007455A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */,
 				CDBF704621387D9E00528E1C /* MyTabBarViewController.swift */,
-				CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */,
 				CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */,
 				CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */,
 				CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */,
-				CD4C5A8E21328FA7006840B1 /* PreViewViewController.swift */,
+				CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */,
 				CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */,
-				CD4C5A8821326FBD006840B1 /* Create_Theme_ViewController.swift */,
+				CD3A901A213DD7D3008C2A01 /* EditViewController.swift */,
 				CD4C5A8A21327625006840B1 /* FilterViewController.swift */,
-				CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */,
 				CD4C5A922133D73F006840B1 /* ReadViewController.swift */,
 				CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */,
 			);
@@ -206,8 +203,7 @@
 				CDB81B51212E9CF90020F9A7 /* AppDelegate.swift in Sources */,
 				CD4C5A912133B6A4006840B1 /* HomeViewControllerTableViewCell.swift in Sources */,
 				CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */,
-				CD4C5A8921326FBD006840B1 /* Create_Theme_ViewController.swift in Sources */,
-				CD4C5A8F21328FA7006840B1 /* PreViewViewController.swift in Sources */,
+				CD3A901B213DD7D3008C2A01 /* EditViewController.swift in Sources */,
 				CD45FDEE2135C7700025F4DA /* Create_Mood_ViewController.swift in Sources */,
 				CD4C5A8721326FA7006840B1 /* Create_Content_ViewController.swift in Sources */,
 				CD0A37BE2136DE8D007455A4 /* User.swift in Sources */,

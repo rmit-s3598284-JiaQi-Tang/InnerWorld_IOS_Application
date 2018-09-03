@@ -31,8 +31,30 @@ class ReadViewController: UIViewController {
         photoOfReadScreen.image = UIImage(named: (diary.photo + ".jpg"))
         contentOfReadScreen.text = diary.content
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func backButtonTapped(_ sender: Any) {
+
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
+            return
+        }
+        myTabBarViewController.appEngine = self.appEngine
+        if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
+            vc.appEngine = appEngine
+        }
+        if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
+            vc.appEngine = appEngine
+        }
+        if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
+            vc.appEngine = appEngine
+        }
+        present(myTabBarViewController, animated: true, completion: nil)
     }
+    @IBAction func editButtonTapped(_ sender: Any) {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController
+        viewController?.appEngine = appEngine
+        viewController?.diary = diary
+        present(viewController!, animated: true, completion: nil)
+    }
+    
 }
