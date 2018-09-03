@@ -3,9 +3,11 @@ This is a Diary Application by Swift
 
 prototype:
 
-![image](https://github.com/rmit-s3598284-JiaQi-Tang/InnerWorld_IOS_Application/blob/master/Prototype_GIF/Aug-31-2018%2006-11-52.gif)
+![image](https://github.com/rmit-s3598284-JiaQi-Tang/InnerWorld_IOS_Application/blob/master/Prototype_GIF/Sep-04-2018%07-23-04.gif)
 
-![image](https://github.com/rmit-s3598284-JiaQi-Tang/InnerWorld_IOS_Application/blob/master/Prototype_GIF/Aug-31-2018%2006-12-26.gif)
+![image](https://github.com/rmit-s3598284-JiaQi-Tang/InnerWorld_IOS_Application/blob/master/Prototype_GIF/Sep-04-2018%07-25-55.gif)
+
+![image](https://github.com/rmit-s3598284-JiaQi-Tang/InnerWorld_IOS_Application/blob/master/Prototype_GIF/Sep-04-2018%07-30-07.gif)
 
 The picture below is the workflow diagram of the screens for visual explaining the flow between the screens:
 ![workflow](https://github.com/rmit-s3598284-JiaQi-Tang/InnerWorld_IOS_Application/blob/master/Prototype_GIF/Blank%20Diagram.jpeg)
