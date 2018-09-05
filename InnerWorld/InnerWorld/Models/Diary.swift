@@ -9,6 +9,7 @@
 import Foundation
 
 struct Diary: Codable {
+
     typealias T = Diary
 
     var tittle: String
@@ -18,7 +19,9 @@ struct Diary: Codable {
     var location: String
     var photo: String
     var content: String
+
     init(tittle: String, date: String, mood: String, weather: String, location: String, photo: String, content: String) {
+
         self.tittle = tittle
         self.date = date
         self.mood = mood
@@ -26,8 +29,11 @@ struct Diary: Codable {
         self.location = location
         self.photo = photo
         self.content = content
+
     }
+
     init() {
+
         self.tittle = ""
         self.date = ""
         self.mood = ""

@@ -9,6 +9,7 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
+
     //initial the app with solid data
     var appEngine = AppEngine(diaryList: [Diary(tittle: "A happy day in St Kilda", date: "08-Aug-2018", mood: "smile", weather: "sunny", location: "St Kilda, Melbourne", photo: "prototype-diaryPicture", content: "Today, I went to St kilda beach with my Indian brother Manana. We took a lot of awesome pictures there! what a happy day!"),Diary(tittle: "Lost 100$ in China Town", date: "6-Aug-2018", mood: "cry", weather: "rainning", location: "China Town, Melbourne", photo: "prototype-diaryPicture2", content: "Today, I went to China Town alone for some Chinese food. I lost my precious 100$! what a bad day!"),Diary(tittle: "Learning Swift is fun!", date: "1-Aug-2018", mood: "happy", weather: "cloud", location: "RMIT, Melbourne", photo: "prototype-diaryPicture3", content: "Today, I went to RMIT with my friend Linh, we learned a lot IOS stuff from Fardin. what a good day!")], user: User(nickName: "God Father", birthDay: "3-Dec-1993", password: "0000", hint: "the initial password is '0000'"))
 
@@ -53,6 +54,7 @@ class PasswordViewController: UIViewController {
     }
 
     @IBAction func confirmPasswordButton(_ sender: Any) {
+
         if passwordTextField.text != appEngine.user.password {
             let alert = UIAlertController(title: "wrong password", message: " ", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})
@@ -77,10 +79,14 @@ class PasswordViewController: UIViewController {
             }
             present(myTabBarViewController, animated: true, completion: nil)
         }
+
     }
+
     override func viewDidLoad() {
+
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         passwordTextField.isSecureTextEntry = true
+        
     }
+
 }

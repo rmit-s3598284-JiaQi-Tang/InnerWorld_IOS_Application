@@ -9,14 +9,18 @@
 import Foundation
 
 struct User {
+
     var nickName: String
     var birthDay: String
     var password: String
     var hint: String
+
     init(nickName: String, birthDay: String, password: String, hint: String) {
+
         self.nickName = nickName
         self.birthDay = birthDay
         self.password = password
         self.hint = hint
+        
     }
 }
