@@ -7,51 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD0A37BA2136CD93007455A4 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A37B92136CD93007455A4 /* Diary.swift */; };
-		CD0A37BC2136DE7F007455A4 /* AppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A37BB2136DE7F007455A4 /* AppEngine.swift */; };
-		CD0A37BE2136DE8D007455A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A37BD2136DE8D007455A4 /* User.swift */; };
-		CD3A901B213DD7D3008C2A01 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A901A213DD7D3008C2A01 /* EditViewController.swift */; };
-		CD45FDEE2135C7700025F4DA /* Create_Mood_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */; };
-		CD4C5A8721326FA7006840B1 /* Create_Content_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */; };
-		CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8A21327625006840B1 /* FilterViewController.swift */; };
-		CD4C5A8D21327C41006840B1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */; };
-		CD4C5A912133B6A4006840B1 /* HomeViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */; };
-		CD4C5A932133D73F006840B1 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4C5A922133D73F006840B1 /* ReadViewController.swift */; };
-		CDB81B51212E9CF90020F9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B50212E9CF90020F9A7 /* AppDelegate.swift */; };
-		CDB81B53212E9CFA0020F9A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */; };
-		CDB81B55212E9CFA0020F9A7 /* Create_Date_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */; };
-		CDB81B58212E9CFA0020F9A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB81B56212E9CFA0020F9A7 /* Main.storyboard */; };
-		CDB81B5A212E9CFA0020F9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB81B59212E9CFA0020F9A7 /* Assets.xcassets */; };
-		CDB81B5D212E9CFA0020F9A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB81B5B212E9CFA0020F9A7 /* LaunchScreen.storyboard */; };
-		CDB81B65212E9FC50020F9A7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */; };
-		CDBF704721387D9E00528E1C /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF704621387D9E00528E1C /* MyTabBarViewController.swift */; };
+		C1FC7C11213FCA54006C9A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C10213FCA54006C9A7D /* AppDelegate.swift */; };
+		C1FC7C30213FCB42006C9A7D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C25213FCB42006C9A7D /* SettingsViewController.swift */; };
+		C1FC7C31213FCB42006C9A7D /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C26213FCB42006C9A7D /* PasswordViewController.swift */; };
+		C1FC7C32213FCB42006C9A7D /* HomeViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C27213FCB42006C9A7D /* HomeViewControllerTableViewCell.swift */; };
+		C1FC7C33213FCB42006C9A7D /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C28213FCB42006C9A7D /* ReadViewController.swift */; };
+		C1FC7C34213FCB42006C9A7D /* Create_Mood_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C29213FCB42006C9A7D /* Create_Mood_ViewController.swift */; };
+		C1FC7C35213FCB42006C9A7D /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2A213FCB42006C9A7D /* MyTabBarViewController.swift */; };
+		C1FC7C36213FCB42006C9A7D /* Create_Content_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2B213FCB42006C9A7D /* Create_Content_ViewController.swift */; };
+		C1FC7C37213FCB42006C9A7D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2C213FCB42006C9A7D /* FilterViewController.swift */; };
+		C1FC7C38213FCB42006C9A7D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2D213FCB42006C9A7D /* EditViewController.swift */; };
+		C1FC7C39213FCB42006C9A7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2E213FCB42006C9A7D /* HomeViewController.swift */; };
+		C1FC7C3A213FCB42006C9A7D /* Create_Date_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2F213FCB42006C9A7D /* Create_Date_ViewController.swift */; };
+		C1FC7C3E213FCB4F006C9A7D /* AppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */; };
+		C1FC7C3F213FCB4F006C9A7D /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C3C213FCB4F006C9A7D /* Diary.swift */; };
+		C1FC7C40213FCB4F006C9A7D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C3D213FCB4F006C9A7D /* User.swift */; };
+		C1FC7C45213FCB5B006C9A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C41213FCB5B006C9A7D /* Main.storyboard */; };
+		C1FC7C46213FCB5B006C9A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C43213FCB5B006C9A7D /* LaunchScreen.storyboard */; };
+		C1FC7C49213FCB6B006C9A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C48213FCB6B006C9A7D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD0A37B92136CD93007455A4 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
-		CD0A37BB2136DE7F007455A4 /* AppEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEngine.swift; sourceTree = "<group>"; };
-		CD0A37BD2136DE8D007455A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CD3A901A213DD7D3008C2A01 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Mood_ViewController.swift; sourceTree = "<group>"; };
-		CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Content_ViewController.swift; sourceTree = "<group>"; };
-		CD4C5A8A21327625006840B1 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableViewCell.swift; sourceTree = "<group>"; };
-		CD4C5A922133D73F006840B1 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
-		CDB81B4D212E9CF90020F9A7 /* InnerWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnerWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDB81B50212E9CF90020F9A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create_Date_ViewController.swift; sourceTree = "<group>"; };
-		CDB81B57212E9CFA0020F9A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CDB81B59212E9CFA0020F9A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CDB81B5C212E9CFA0020F9A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CDB81B5E212E9CFA0020F9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		CDBF704621387D9E00528E1C /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
+		C1FC7C0D213FCA54006C9A7D /* InnerWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnerWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FC7C10213FCA54006C9A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C1FC7C1C213FCA54006C9A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FC7C25213FCB42006C9A7D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C1FC7C26213FCB42006C9A7D /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		C1FC7C27213FCB42006C9A7D /* HomeViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		C1FC7C28213FCB42006C9A7D /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		C1FC7C29213FCB42006C9A7D /* Create_Mood_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Create_Mood_ViewController.swift; sourceTree = "<group>"; };
+		C1FC7C2A213FCB42006C9A7D /* MyTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
+		C1FC7C2B213FCB42006C9A7D /* Create_Content_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Create_Content_ViewController.swift; sourceTree = "<group>"; };
+		C1FC7C2C213FCB42006C9A7D /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		C1FC7C2D213FCB42006C9A7D /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		C1FC7C2E213FCB42006C9A7D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C1FC7C2F213FCB42006C9A7D /* Create_Date_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Create_Date_ViewController.swift; sourceTree = "<group>"; };
+		C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEngine.swift; sourceTree = "<group>"; };
+		C1FC7C3C213FCB4F006C9A7D /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		C1FC7C3D213FCB4F006C9A7D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C1FC7C42213FCB5B006C9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1FC7C44213FCB5B006C9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1FC7C48213FCB6B006C9A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = InnerWorld/Views/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CDB81B4A212E9CF90020F9A7 /* Frameworks */ = {
+		C1FC7C0A213FCA54006C9A7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,82 +61,90 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD0A37B62136CCA1007455A4 /* Controllers */ = {
+		C1FC7C04213FCA54006C9A7D = {
 			isa = PBXGroup;
 			children = (
-				CD4C5A8C21327C41006840B1 /* PasswordViewController.swift */,
-				CDBF704621387D9E00528E1C /* MyTabBarViewController.swift */,
-				CDB81B52212E9CFA0020F9A7 /* HomeViewController.swift */,
-				CDB81B54212E9CFA0020F9A7 /* Create_Date_ViewController.swift */,
-				CDB81B64212E9FC50020F9A7 /* SettingsViewController.swift */,
-				CD45FDED2135C7700025F4DA /* Create_Mood_ViewController.swift */,
-				CD4C5A8621326FA7006840B1 /* Create_Content_ViewController.swift */,
-				CD3A901A213DD7D3008C2A01 /* EditViewController.swift */,
-				CD4C5A8A21327625006840B1 /* FilterViewController.swift */,
-				CD4C5A922133D73F006840B1 /* ReadViewController.swift */,
-				CD4C5A902133B6A4006840B1 /* HomeViewControllerTableViewCell.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CD0A37B72136CCB0007455A4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CDB81B56212E9CFA0020F9A7 /* Main.storyboard */,
-				CDB81B59212E9CFA0020F9A7 /* Assets.xcassets */,
-				CDB81B5B212E9CFA0020F9A7 /* LaunchScreen.storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CD0A37B82136CCBB007455A4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CD0A37B92136CD93007455A4 /* Diary.swift */,
-				CD0A37BB2136DE7F007455A4 /* AppEngine.swift */,
-				CD0A37BD2136DE8D007455A4 /* User.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CDB81B44212E9CF90020F9A7 = {
-			isa = PBXGroup;
-			children = (
-				CDB81B4F212E9CF90020F9A7 /* InnerWorld */,
-				CDB81B4E212E9CF90020F9A7 /* Products */,
+				C1FC7C0F213FCA54006C9A7D /* InnerWorld */,
+				C1FC7C0E213FCA54006C9A7D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CDB81B4E212E9CF90020F9A7 /* Products */ = {
+		C1FC7C0E213FCA54006C9A7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDB81B4D212E9CF90020F9A7 /* InnerWorld.app */,
+				C1FC7C0D213FCA54006C9A7D /* InnerWorld.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDB81B4F212E9CF90020F9A7 /* InnerWorld */ = {
+		C1FC7C0F213FCA54006C9A7D /* InnerWorld */ = {
 			isa = PBXGroup;
 			children = (
-				CDB81B50212E9CF90020F9A7 /* AppDelegate.swift */,
-				CDB81B5E212E9CFA0020F9A7 /* Info.plist */,
-				CD0A37B82136CCBB007455A4 /* Models */,
-				CD0A37B72136CCB0007455A4 /* Views */,
-				CD0A37B62136CCA1007455A4 /* Controllers */,
+				C1FC7C47213FCB63006C9A7D /* Art */,
+				C1FC7C24213FCB2B006C9A7D /* Views */,
+				C1FC7C23213FCB26006C9A7D /* Models */,
+				C1FC7C22213FCB20006C9A7D /* Controllers */,
+				C1FC7C10213FCA54006C9A7D /* AppDelegate.swift */,
+				C1FC7C1C213FCA54006C9A7D /* Info.plist */,
 			);
 			path = InnerWorld;
+			sourceTree = "<group>";
+		};
+		C1FC7C22213FCB20006C9A7D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C1FC7C2B213FCB42006C9A7D /* Create_Content_ViewController.swift */,
+				C1FC7C2F213FCB42006C9A7D /* Create_Date_ViewController.swift */,
+				C1FC7C29213FCB42006C9A7D /* Create_Mood_ViewController.swift */,
+				C1FC7C2D213FCB42006C9A7D /* EditViewController.swift */,
+				C1FC7C2C213FCB42006C9A7D /* FilterViewController.swift */,
+				C1FC7C2E213FCB42006C9A7D /* HomeViewController.swift */,
+				C1FC7C27213FCB42006C9A7D /* HomeViewControllerTableViewCell.swift */,
+				C1FC7C2A213FCB42006C9A7D /* MyTabBarViewController.swift */,
+				C1FC7C26213FCB42006C9A7D /* PasswordViewController.swift */,
+				C1FC7C28213FCB42006C9A7D /* ReadViewController.swift */,
+				C1FC7C25213FCB42006C9A7D /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C1FC7C23213FCB26006C9A7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */,
+				C1FC7C3C213FCB4F006C9A7D /* Diary.swift */,
+				C1FC7C3D213FCB4F006C9A7D /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C1FC7C24213FCB2B006C9A7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1FC7C43213FCB5B006C9A7D /* LaunchScreen.storyboard */,
+				C1FC7C41213FCB5B006C9A7D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1FC7C47213FCB63006C9A7D /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				C1FC7C48213FCB6B006C9A7D /* Assets.xcassets */,
+			);
+			path = Art;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CDB81B4C212E9CF90020F9A7 /* InnerWorld */ = {
+		C1FC7C0C213FCA54006C9A7D /* InnerWorld */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDB81B61212E9CFA0020F9A7 /* Build configuration list for PBXNativeTarget "InnerWorld" */;
+			buildConfigurationList = C1FC7C1F213FCA54006C9A7D /* Build configuration list for PBXNativeTarget "InnerWorld" */;
 			buildPhases = (
-				CDB81B49212E9CF90020F9A7 /* Sources */,
-				CDB81B4A212E9CF90020F9A7 /* Frameworks */,
-				CDB81B4B212E9CF90020F9A7 /* Resources */,
+				C1FC7C09213FCA54006C9A7D /* Sources */,
+				C1FC7C0A213FCA54006C9A7D /* Frameworks */,
+				C1FC7C0B213FCA54006C9A7D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -144,26 +152,26 @@
 			);
 			name = InnerWorld;
 			productName = InnerWorld;
-			productReference = CDB81B4D212E9CF90020F9A7 /* InnerWorld.app */;
+			productReference = C1FC7C0D213FCA54006C9A7D /* InnerWorld.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CDB81B45212E9CF90020F9A7 /* Project object */ = {
+		C1FC7C05213FCA54006C9A7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Jacky Tang";
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Linh Nguyen";
 				TargetAttributes = {
-					CDB81B4C212E9CF90020F9A7 = {
-						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Manual;
+					C1FC7C0C213FCA54006C9A7D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = CDB81B48212E9CF90020F9A7 /* Build configuration list for PBXProject "InnerWorld" */;
+			buildConfigurationList = C1FC7C08213FCA54006C9A7D /* Build configuration list for PBXProject "InnerWorld" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -171,67 +179,67 @@
 				en,
 				Base,
 			);
-			mainGroup = CDB81B44212E9CF90020F9A7;
-			productRefGroup = CDB81B4E212E9CF90020F9A7 /* Products */;
+			mainGroup = C1FC7C04213FCA54006C9A7D;
+			productRefGroup = C1FC7C0E213FCA54006C9A7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDB81B4C212E9CF90020F9A7 /* InnerWorld */,
+				C1FC7C0C213FCA54006C9A7D /* InnerWorld */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CDB81B4B212E9CF90020F9A7 /* Resources */ = {
+		C1FC7C0B213FCA54006C9A7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB81B5D212E9CFA0020F9A7 /* LaunchScreen.storyboard in Resources */,
-				CDB81B5A212E9CFA0020F9A7 /* Assets.xcassets in Resources */,
-				CDB81B58212E9CFA0020F9A7 /* Main.storyboard in Resources */,
+				C1FC7C45213FCB5B006C9A7D /* Main.storyboard in Resources */,
+				C1FC7C49213FCB6B006C9A7D /* Assets.xcassets in Resources */,
+				C1FC7C46213FCB5B006C9A7D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CDB81B49212E9CF90020F9A7 /* Sources */ = {
+		C1FC7C09213FCA54006C9A7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDBF704721387D9E00528E1C /* MyTabBarViewController.swift in Sources */,
-				CDB81B55212E9CFA0020F9A7 /* Create_Date_ViewController.swift in Sources */,
-				CDB81B51212E9CF90020F9A7 /* AppDelegate.swift in Sources */,
-				CD4C5A912133B6A4006840B1 /* HomeViewControllerTableViewCell.swift in Sources */,
-				CD4C5A8B21327625006840B1 /* FilterViewController.swift in Sources */,
-				CD3A901B213DD7D3008C2A01 /* EditViewController.swift in Sources */,
-				CD45FDEE2135C7700025F4DA /* Create_Mood_ViewController.swift in Sources */,
-				CD4C5A8721326FA7006840B1 /* Create_Content_ViewController.swift in Sources */,
-				CD0A37BE2136DE8D007455A4 /* User.swift in Sources */,
-				CDB81B53212E9CFA0020F9A7 /* HomeViewController.swift in Sources */,
-				CDB81B65212E9FC50020F9A7 /* SettingsViewController.swift in Sources */,
-				CD0A37BA2136CD93007455A4 /* Diary.swift in Sources */,
-				CD0A37BC2136DE7F007455A4 /* AppEngine.swift in Sources */,
-				CD4C5A932133D73F006840B1 /* ReadViewController.swift in Sources */,
-				CD4C5A8D21327C41006840B1 /* PasswordViewController.swift in Sources */,
+				C1FC7C38213FCB42006C9A7D /* EditViewController.swift in Sources */,
+				C1FC7C34213FCB42006C9A7D /* Create_Mood_ViewController.swift in Sources */,
+				C1FC7C11213FCA54006C9A7D /* AppDelegate.swift in Sources */,
+				C1FC7C36213FCB42006C9A7D /* Create_Content_ViewController.swift in Sources */,
+				C1FC7C3A213FCB42006C9A7D /* Create_Date_ViewController.swift in Sources */,
+				C1FC7C3E213FCB4F006C9A7D /* AppEngine.swift in Sources */,
+				C1FC7C37213FCB42006C9A7D /* FilterViewController.swift in Sources */,
+				C1FC7C3F213FCB4F006C9A7D /* Diary.swift in Sources */,
+				C1FC7C40213FCB4F006C9A7D /* User.swift in Sources */,
+				C1FC7C30213FCB42006C9A7D /* SettingsViewController.swift in Sources */,
+				C1FC7C31213FCB42006C9A7D /* PasswordViewController.swift in Sources */,
+				C1FC7C39213FCB42006C9A7D /* HomeViewController.swift in Sources */,
+				C1FC7C35213FCB42006C9A7D /* MyTabBarViewController.swift in Sources */,
+				C1FC7C32213FCB42006C9A7D /* HomeViewControllerTableViewCell.swift in Sources */,
+				C1FC7C33213FCB42006C9A7D /* ReadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CDB81B56212E9CFA0020F9A7 /* Main.storyboard */ = {
+		C1FC7C41213FCB5B006C9A7D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CDB81B57212E9CFA0020F9A7 /* Base */,
+				C1FC7C42213FCB5B006C9A7D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		CDB81B5B212E9CFA0020F9A7 /* LaunchScreen.storyboard */ = {
+		C1FC7C43213FCB5B006C9A7D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CDB81B5C212E9CFA0020F9A7 /* Base */,
+				C1FC7C44213FCB5B006C9A7D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -239,7 +247,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		CDB81B5F212E9CFA0020F9A7 /* Debug */ = {
+		C1FC7C1D213FCA54006C9A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -249,12 +257,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -262,7 +268,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -290,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -299,7 +304,7 @@
 			};
 			name = Debug;
 		};
-		CDB81B60212E9CFA0020F9A7 /* Release */ = {
+		C1FC7C1E213FCA54006C9A7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -309,12 +314,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -322,7 +325,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -344,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -352,35 +354,29 @@
 			};
 			name = Release;
 		};
-		CDB81B62212E9CFA0020F9A7 /* Debug */ = {
+		C1FC7C20213FCA54006C9A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = InnerWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = RMIT.InnerWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		CDB81B63212E9CFA0020F9A7 /* Release */ = {
+		C1FC7C21213FCA54006C9A7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = InnerWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = RMIT.InnerWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -389,25 +385,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CDB81B48212E9CF90020F9A7 /* Build configuration list for PBXProject "InnerWorld" */ = {
+		C1FC7C08213FCA54006C9A7D /* Build configuration list for PBXProject "InnerWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDB81B5F212E9CFA0020F9A7 /* Debug */,
-				CDB81B60212E9CFA0020F9A7 /* Release */,
+				C1FC7C1D213FCA54006C9A7D /* Debug */,
+				C1FC7C1E213FCA54006C9A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDB81B61212E9CFA0020F9A7 /* Build configuration list for PBXNativeTarget "InnerWorld" */ = {
+		C1FC7C1F213FCA54006C9A7D /* Build configuration list for PBXNativeTarget "InnerWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDB81B62212E9CFA0020F9A7 /* Debug */,
-				CDB81B63212E9CFA0020F9A7 /* Release */,
+				C1FC7C20213FCA54006C9A7D /* Debug */,
+				C1FC7C21213FCA54006C9A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CDB81B45212E9CF90020F9A7 /* Project object */;
+	rootObject = C1FC7C05213FCA54006C9A7D /* Project object */;
 }
