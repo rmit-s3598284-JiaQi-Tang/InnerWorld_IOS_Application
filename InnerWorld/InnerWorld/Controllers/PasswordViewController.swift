@@ -66,16 +66,6 @@ class PasswordViewController: UIViewController {
             guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
                 return
             }
-//            myTabBarViewController.appEngine = self.appEngine
-//            if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
-//                vc.appEngine = appEngine
-//            }
-//            if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
-//                vc.appEngine = appEngine
-//            }
-//            if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
-//                vc.appEngine = appEngine
-//            }
             present(myTabBarViewController, animated: true, completion: nil)
         }
 

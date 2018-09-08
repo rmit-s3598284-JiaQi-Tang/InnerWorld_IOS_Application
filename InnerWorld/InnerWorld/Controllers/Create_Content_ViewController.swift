@@ -9,8 +9,10 @@
 import UIKit
 
 class Create_Content_ViewController: UIViewController {
+
     var appEngine = AppEngine.shared()
-    
+    var edittingDiray = Diary()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,11 +21,17 @@ class Create_Content_ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBOutlet weak var tittleTextField: UITextField!
+    @IBOutlet weak var contentUITextView: UITextView!
+
     @IBAction func tickButtonTapped(_ sender: Any) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
             return
         }
+        edittingDiray.tittle = tittleTextField.text!
+        edittingDiray.content = contentUITextView.text
+        appEngine.diaryList.append(edittingDiray)
         present(myTabBarViewController, animated: true, completion: nil)
     }
     

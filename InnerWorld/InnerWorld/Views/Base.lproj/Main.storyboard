@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -524,6 +524,11 @@
                     <tabBarItem key="tabBarItem" title="" image="write" id="cPa-gy-q4n">
                         <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="cityTextField" destination="l4f-6P-BuP" id="VMP-yu-WUV"/>
+                        <outlet property="datePicker" destination="8TT-fB-rU3" id="A2T-cF-iOs"/>
+                        <outlet property="weatherImageView" destination="Oee-5E-Qfx" id="5n0-o2-x9y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -620,6 +625,7 @@
                     </view>
                     <connections>
                         <outlet property="moodImage" destination="o6h-Yy-po0" id="S7I-yp-Bek"/>
+                        <outlet property="moodUISlider" destination="yvp-GJ-mRw" id="trr-OL-kag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvd-MA-QJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -703,6 +709,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fzD-TK-Gbn"/>
                     </view>
+                    <connections>
+                        <outlet property="contentUITextView" destination="Y8h-Ou-9XL" id="TMV-hz-3Lo"/>
+                        <outlet property="tittleTextField" destination="9xO-M6-Isl" id="4id-JJ-yVP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMT-Zg-u9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
