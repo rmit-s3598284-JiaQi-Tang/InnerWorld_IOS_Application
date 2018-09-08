@@ -31,7 +31,7 @@ class Create_Content_ViewController: UIViewController {
         }
         edittingDiray.tittle = tittleTextField.text!
         edittingDiray.content = contentUITextView.text
-        appEngine.diaryList.append(edittingDiray)
+        appEngine.diaryList.insert(edittingDiray, at: 0)
         present(myTabBarViewController, animated: true, completion: nil)
     }
     

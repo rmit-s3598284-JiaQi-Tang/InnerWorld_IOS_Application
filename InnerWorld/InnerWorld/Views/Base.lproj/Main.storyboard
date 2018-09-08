@@ -200,22 +200,22 @@
                                     <constraint firstAttribute="width" constant="375" id="uoN-0b-1BM"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="93" id="MmA-w2-oDZ" customClass="HomeViewControllerTableViewCell" customModule="InnerWorld" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="93"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="150" id="MmA-w2-oDZ" customClass="HomeViewControllerTableViewCell" customModule="InnerWorld" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MmA-w2-oDZ" id="1Xz-Hn-ni4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="EXo-av-gyx">
-                                                    <rect key="frame" x="15" y="36" width="37" height="41"/>
+                                                    <rect key="frame" x="15" y="64.5" width="37" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="iZz-N0-U0s"/>
                                                         <constraint firstAttribute="width" constant="37" id="qrF-nj-iXO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melbourne, Australia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23n-ll-2w0">
-                                                    <rect key="frame" x="205" y="39" width="170" height="35"/>
+                                                    <rect key="frame" x="205" y="67.5" width="170" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="7tF-yO-jtW"/>
                                                         <constraint firstAttribute="width" constant="170" id="ORR-rL-AlL"/>
@@ -225,7 +225,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A happy day in St Kilda beach" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UE2-ur-5O9">
-                                                    <rect key="frame" x="15" y="0.0" width="308" height="40"/>
+                                                    <rect key="frame" x="15" y="28.5" width="308" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="AmT-W5-Lj2"/>
                                                         <constraint firstAttribute="width" constant="308" id="dDm-Oq-aCq"/>
@@ -235,14 +235,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="AKg-23-waH">
-                                                    <rect key="frame" x="160" y="38" width="37" height="36"/>
+                                                    <rect key="frame" x="160" y="66.5" width="37" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="1dk-ef-FPS"/>
                                                         <constraint firstAttribute="width" constant="37" id="5fl-BV-Rew"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8-Aug-2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMa-sw-6XJ">
-                                                    <rect key="frame" x="57" y="48" width="103" height="17"/>
+                                                    <rect key="frame" x="57" y="76.5" width="103" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="ACS-Uc-bGz"/>
                                                         <constraint firstAttribute="width" constant="103" id="OkG-j4-FEL"/>
@@ -305,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="-912"/>
+            <point key="canvasLocation" x="-82.400000000000006" y="-912.5937031484259"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Ja3-FX-7KH">
