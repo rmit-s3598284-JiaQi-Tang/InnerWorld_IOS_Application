@@ -9,10 +9,10 @@
 import UIKit
 
 class ReadViewController: UIViewController {
-    var appEngine = AppEngine()
+    var appEngine = AppEngine.shared()
     var diary = Diary()
 
-//settings of the items on Reading Screen
+    //settings of the items on Reading Screen
 
     @IBOutlet weak var tittleOfReadScreen: UILabel!
     @IBOutlet weak var locationOfReadScreen: UILabel!
@@ -38,21 +38,10 @@ class ReadViewController: UIViewController {
         guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
             return
         }
-        myTabBarViewController.appEngine = self.appEngine
-        if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
-            vc.appEngine = appEngine
-        }
         present(myTabBarViewController, animated: true, completion: nil)
     }
     @IBAction func editButtonTapped(_ sender: Any) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController
-        viewController?.appEngine = appEngine
         viewController?.diary = diary
         present(viewController!, animated: true, completion: nil)
     }

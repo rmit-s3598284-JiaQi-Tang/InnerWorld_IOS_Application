@@ -10,7 +10,7 @@ import UIKit
 
 class FilterViewController: UIViewController {
 
-    var appEngine = AppEngine()
+    var appEngine = AppEngine.shared()
     let happyData = UIImagePNGRepresentation(#imageLiteral(resourceName: "happy"))
     let sadData = UIImagePNGRepresentation(#imageLiteral(resourceName: "sad"))
     let smileData = UIImagePNGRepresentation(#imageLiteral(resourceName: "smile"))
@@ -92,16 +92,6 @@ class FilterViewController: UIViewController {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
             return
-        }
-        myTabBarViewController.appEngine = self.appEngine
-        if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
-            vc.appEngine = appEngine
         }
         present(myTabBarViewController, animated: true, completion: nil)
     }

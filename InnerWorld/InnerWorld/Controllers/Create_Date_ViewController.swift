@@ -10,7 +10,7 @@ import UIKit
 
 class Create_Date_ViewController: UIViewController {
 
-    var appEngine = AppEngine()
+    var appEngine = AppEngine.shared()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +18,7 @@ class Create_Date_ViewController: UIViewController {
 
 
     @IBAction func writeButtonTapped(_ sender: Any) {
-
         let viewController = storyboard?.instantiateViewController(withIdentifier: "Create_Mood_View_Controller") as? Create_Mood_ViewController
-        viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
         
     }

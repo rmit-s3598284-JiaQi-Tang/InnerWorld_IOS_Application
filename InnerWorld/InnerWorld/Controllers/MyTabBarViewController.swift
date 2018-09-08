@@ -10,8 +10,6 @@ import UIKit
 
 class MyTabBarViewController: UITabBarController {
 
-    var appEngine = AppEngine()
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
