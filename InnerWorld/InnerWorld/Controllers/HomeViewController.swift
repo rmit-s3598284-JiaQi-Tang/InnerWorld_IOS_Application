@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var appEngine = AppEngine()
+    var appEngine = AppEngine.shared()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +67,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBAction func filterButtonTapped(_ sender: Any) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as? FilterViewController
-        viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
     }
 }

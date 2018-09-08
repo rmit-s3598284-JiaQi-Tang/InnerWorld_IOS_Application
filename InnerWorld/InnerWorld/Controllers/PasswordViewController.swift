@@ -9,9 +9,8 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
-
     //initial the app with solid data
-    var appEngine = AppEngine(diaryList: [Diary(tittle: "A happy day in St Kilda", date: "08-Aug-2018", mood: "smile", weather: "sunny", location: "St Kilda, Melbourne", photo: "prototype-diaryPicture", content: "Today, I went to St kilda beach with my Indian brother Manana. We took a lot of awesome pictures there! what a happy day!"),Diary(tittle: "Lost 100$ in China Town", date: "6-Aug-2018", mood: "cry", weather: "rainning", location: "China Town, Melbourne", photo: "prototype-diaryPicture2", content: "Today, I went to China Town alone for some Chinese food. I lost my precious 100$! what a bad day!"),Diary(tittle: "Learning Swift is fun!", date: "1-Aug-2018", mood: "happy", weather: "cloud", location: "RMIT, Melbourne", photo: "prototype-diaryPicture3", content: "Today, I went to RMIT with my friend Linh, we learned a lot IOS stuff from Fardin. what a good day!")], user: User(nickName: "God Father", birthDay: "3-Dec-1993", password: "0000", hint: "the initial password is '0000'"))
+    var appEngine = AppEngine.shared()
 
     @IBOutlet weak var passwordTextField: UITextField!
 
@@ -67,26 +66,24 @@ class PasswordViewController: UIViewController {
             guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
                 return
             }
-            myTabBarViewController.appEngine = self.appEngine
-            if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
-                vc.appEngine = appEngine
-            }
-            if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
-                vc.appEngine = appEngine
-            }
-            if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
-                vc.appEngine = appEngine
-            }
+//            myTabBarViewController.appEngine = self.appEngine
+//            if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
+//                vc.appEngine = appEngine
+//            }
+//            if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
+//                vc.appEngine = appEngine
+//            }
+//            if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
+//                vc.appEngine = appEngine
+//            }
             present(myTabBarViewController, animated: true, completion: nil)
         }
 
     }
 
     override func viewDidLoad() {
-
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
-        
     }
 
 }

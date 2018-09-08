@@ -10,7 +10,7 @@ import UIKit
 
 class Create_Mood_ViewController: UIViewController {
 
-    var appEngine = AppEngine()
+    var appEngine = AppEngine.shared()
 
     @IBOutlet weak var moodImage: UIImageView!
     @IBAction func moodSlider(_ sender: UISlider) {
@@ -45,22 +45,11 @@ class Create_Mood_ViewController: UIViewController {
         guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
             return
         }
-        myTabBarViewController.appEngine = self.appEngine
-        if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
-            vc.appEngine = appEngine
-        }
         present(myTabBarViewController, animated: true, completion: nil)
     }
 
     @IBAction func forwardButtonTapped(_ sender: Any) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "Create_Content_View_Controller") as? Create_Content_ViewController
-        viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class EditViewController: UIViewController {
-    var appEngine = AppEngine()
+    var appEngine = AppEngine.shared()
     var diary = Diary()
 
     @IBOutlet weak var tittleOfEditScreen: UITextField!
@@ -18,6 +18,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var moodOfEditScreen: UIButton!
     @IBOutlet weak var photoOfEditScreen: UIImageView!
     @IBOutlet weak var contentOfEditScreen: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,16 +39,6 @@ class EditViewController: UIViewController {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
             return
-        }
-        myTabBarViewController.appEngine = self.appEngine
-        if let vc = myTabBarViewController.childViewControllers[0] as? HomeViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[1] as? Create_Date_ViewController {
-            vc.appEngine = appEngine
-        }
-        if let vc = myTabBarViewController.childViewControllers[2] as? SettingsViewController {
-            vc.appEngine = appEngine
         }
         present(myTabBarViewController, animated: true, completion: nil)
     }
