@@ -13,7 +13,7 @@ struct Diary: Codable {
     typealias T = Diary
 
     var id: Int
-    var tittle: String
+    var title: String
     var date: String
     var mood: String
     var weather: String
@@ -21,9 +21,9 @@ struct Diary: Codable {
     var photo: String
     var content: String
 
-    init(tittle: String, date: String, mood: String, weather: String, location: String, photo: String, content: String) {
-        self.id = 1;
-        self.tittle = tittle
+    init(id: Int, title: String, date: String, mood: String, weather: String, location: String, photo: String, content: String) {
+        self.id = id;
+        self.title = title
         self.date = date
         self.mood = mood
         self.weather = weather
@@ -34,8 +34,8 @@ struct Diary: Codable {
     }
 
     init() {
-        self.id = 0;
-        self.tittle = ""
+        self.id = -1;
+        self.title = ""
         self.date = ""
         self.mood = ""
         self.weather = ""

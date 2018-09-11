@@ -23,7 +23,7 @@ class EditViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tittleOfEditScreen.text = diary.tittle
+        tittleOfEditScreen.text = diary.title
         locationOfEditScreen.text = diary.location
         weatherOfEditScreen.setImage(UIImage(named: (diary.weather + ".png")), for: .normal)
         moodOfEditScreen.setImage(UIImage(named: (diary.mood + ".png")), for: .normal)
@@ -32,9 +32,9 @@ class EditViewController: UIViewController {
     }
 
     @IBAction func tickButtonTapped(_ sender: Any) {
-        //
-        // will do some editing to the local diary and replace it in appEngine here
-        //
-
+        diary.title = tittleOfEditScreen.text!
+        diary.location = locationOfEditScreen.text!
+        diary.content = contentOfEditScreen.text!
+        appEngine.saveDiary(diary: diary)
     }
 }

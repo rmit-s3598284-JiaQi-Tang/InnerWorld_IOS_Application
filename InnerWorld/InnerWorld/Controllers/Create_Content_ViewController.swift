@@ -25,7 +25,7 @@ class Create_Content_ViewController: UIViewController {
     @IBOutlet weak var contentUITextView: UITextView!
 
     @IBAction func tickButtonTapped(_ sender: Any) {
-        edittingDiray.tittle = tittleTextField.text!
+        edittingDiray.title = tittleTextField.text!
         edittingDiray.content = contentUITextView.text
         appEngine.diaryList.insert(edittingDiray, at: 0)
     }

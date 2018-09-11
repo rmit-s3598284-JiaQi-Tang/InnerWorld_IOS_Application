@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeViewControllerTableViewCell
         cell.locationLabel.text = appEngine.diaryList[indexPath.row].location
         cell.weatherIcon.image = UIImage(named: (appEngine.diaryList[indexPath.row].weather + ".png"))
-        cell.tittleLabel.text = appEngine.diaryList[indexPath.row].tittle
+        cell.tittleLabel.text = appEngine.diaryList[indexPath.row].title
         cell.dateLabel.text = appEngine.diaryList[indexPath.row].date
         return(cell)
     }

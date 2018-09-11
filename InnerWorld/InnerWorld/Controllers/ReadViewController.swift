@@ -24,7 +24,7 @@ class ReadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tittleOfReadScreen.text = diary.tittle
+        tittleOfReadScreen.text = diary.title
         locationOfReadScreen.text = diary.location
         weatherOfReadScreen.image = UIImage(named: (diary.weather + ".png"))
         moodOfReadScreen.image = UIImage(named: (diary.mood + ".png"))
