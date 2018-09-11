@@ -36,10 +36,5 @@ class EditViewController: UIViewController {
         // will do some editing to the local diary and replace it in appEngine here
         //
 
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-            return
-        }
-        present(myTabBarViewController, animated: true, completion: nil)
     }
 }

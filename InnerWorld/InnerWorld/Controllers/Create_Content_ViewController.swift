@@ -25,14 +25,9 @@ class Create_Content_ViewController: UIViewController {
     @IBOutlet weak var contentUITextView: UITextView!
 
     @IBAction func tickButtonTapped(_ sender: Any) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-            return
-        }
         edittingDiray.tittle = tittleTextField.text!
         edittingDiray.content = contentUITextView.text
         appEngine.diaryList.insert(edittingDiray, at: 0)
-        present(myTabBarViewController, animated: true, completion: nil)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

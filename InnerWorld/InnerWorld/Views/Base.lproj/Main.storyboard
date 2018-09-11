@@ -652,6 +652,7 @@
                                 <state key="normal" image="tick"/>
                                 <connections>
                                     <action selector="tickButtonTapped:" destination="rIL-cI-CB4" eventType="touchUpInside" id="n6j-QT-0up"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="sendNewDiarySegue" id="mlt-oG-e0t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-ze-HNL">
@@ -862,6 +863,7 @@
                                 <state key="normal" image="tick"/>
                                 <connections>
                                     <action selector="tickButtonTapped:" destination="D6v-Ri-VcA" eventType="touchUpInside" id="I7q-8u-yQU"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="B85-Zf-7Re"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LsL-4e-Fnw">
@@ -1249,4 +1251,7 @@
         <image name="tick" width="64" height="64"/>
         <image name="write" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="B85-Zf-7Re"/>
+    </inferredMetricsTieBreakers>
 </document>
