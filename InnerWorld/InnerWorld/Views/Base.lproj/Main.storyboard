@@ -296,9 +296,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="create" id="acW-dT-cKf">
-                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" tag="6" title="" image="diaryBook" landscapeImage="diaryBook" largeContentSizeImage="diaryBook" selectedImage="diaryBook" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="diaryTableView" destination="3mq-r9-NBf" id="8HG-eS-Mkh"/>
                     </connections>
@@ -417,8 +415,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SZq-hl-cf8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="setting" id="LxZ-9C-kcF">
-                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
+                    <tabBarItem key="tabBarItem" title="" image="gear" landscapeImage="gear" largeContentSizeImage="gear" selectedImage="gear" id="LxZ-9C-kcF">
+                        <inset key="imageInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrX-sy-u63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -521,9 +519,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="write" id="cPa-gy-q4n">
-                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="ink" landscapeImage="ink" largeContentSizeImage="ink" selectedImage="ink" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="cityTextField" destination="l4f-6P-BuP" id="VMP-yu-WUV"/>
                         <outlet property="datePicker" destination="8TT-fB-rU3" id="A2T-cF-iOs"/>
@@ -1236,20 +1232,20 @@
         <image name="arrowTowads" width="64" height="64"/>
         <image name="camera" width="166" height="166"/>
         <image name="cloud" width="100" height="100"/>
-        <image name="create" width="50" height="50"/>
         <image name="cry" width="166" height="166"/>
+        <image name="diaryBook" width="32" height="32"/>
         <image name="edit" width="100" height="100"/>
         <image name="filter" width="50" height="50"/>
+        <image name="gear" width="32" height="32"/>
         <image name="happy" width="166" height="166"/>
+        <image name="ink" width="32" height="32"/>
         <image name="letsDoit" width="100" height="100"/>
         <image name="location" width="96" height="96"/>
         <image name="prototype-diaryPicture" width="1174" height="784"/>
         <image name="rainning" width="100" height="100"/>
         <image name="sad" width="166" height="166"/>
-        <image name="setting" width="50" height="50"/>
         <image name="smile" width="166" height="166"/>
         <image name="tick" width="64" height="64"/>
-        <image name="write" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="B85-Zf-7Re"/>
