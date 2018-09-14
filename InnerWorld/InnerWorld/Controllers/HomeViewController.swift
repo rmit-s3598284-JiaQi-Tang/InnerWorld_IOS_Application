@@ -8,25 +8,36 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var appEngine = AppEngine.shared()
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.refreshDiaryData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
     }
 
+    func refreshDiaryData(){
+        appEngine.filterHomePageDiaryList(search: searchBar.text!)
+        self.diaryTableView.reloadData()
+    }
+    
     @IBOutlet weak var diaryTableView: UITableView!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(appEngine.diaryList.count)
+        return(appEngine.filteredDiaryList.count)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeViewControllerTableViewCell
-        cell.locationLabel.text = appEngine.diaryList[indexPath.row].location
-        cell.weatherIcon.image = UIImage(named: (appEngine.diaryList[indexPath.row].weather + ".png"))
-        cell.tittleLabel.text = appEngine.diaryList[indexPath.row].title
-        cell.dateLabel.text = appEngine.diaryList[indexPath.row].date
+        cell.locationLabel.text = appEngine.filteredDiaryList[indexPath.row].location
+        cell.weatherIcon.image = UIImage(named: (appEngine.filteredDiaryList[indexPath.row].weather + ".png"))
+        cell.tittleLabel.text = appEngine.filteredDiaryList[indexPath.row].title
+        cell.dateLabel.text = appEngine.filteredDiaryList[indexPath.row].date
         return(cell)
     }
 
@@ -36,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
-        viewController?.diary = appEngine.diaryList[indexPath.row]
+        viewController?.diary = appEngine.filteredDiaryList[indexPath.row]
         viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
     }
