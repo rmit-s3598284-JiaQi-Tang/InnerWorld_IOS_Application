@@ -363,7 +363,7 @@
                                     <!--2018-08-26 09:48:56 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="********" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4C7-U3-h1g">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4C7-U3-h1g">
                                 <rect key="frame" x="46" y="407" width="113" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bcj-li-siL"/>
@@ -371,9 +371,9 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My cat's birth day" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzN-6V-bbC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzN-6V-bbC">
                                 <rect key="frame" x="46" y="551" width="194" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5V0-c5-igp"/>
@@ -383,7 +383,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="God Father" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AwZ-NR-OWb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AwZ-NR-OWb">
                                 <rect key="frame" x="46" y="120" width="113" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="113" id="1WA-uh-INS"/>
@@ -393,9 +393,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckv-IV-J3I">
+                                <rect key="frame" x="307" y="15" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Aws-QQ-cvw"/>
+                                    <constraint firstAttribute="width" constant="80" id="whV-cj-Qc9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="btnSaveClicked:" destination="Rdg-dw-oUn" eventType="touchUpInside" id="tQV-i9-1m5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81559935116854398" green="1" blue="0.80090549629455965" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="ckv-IV-J3I" firstAttribute="centerX" secondItem="w1d-BN-WJ2" secondAttribute="centerX" constant="159.5" id="2hz-vD-Bv8"/>
                             <constraint firstItem="QzN-6V-bbC" firstAttribute="centerY" secondItem="w1d-BN-WJ2" secondAttribute="centerY" constant="232.5" id="AQf-ox-zHF"/>
                             <constraint firstItem="4C7-U3-h1g" firstAttribute="centerY" secondItem="w1d-BN-WJ2" secondAttribute="centerY" constant="88.5" id="KnB-2c-Kcz"/>
                             <constraint firstItem="H5b-Rt-9Oy" firstAttribute="centerX" secondItem="w1d-BN-WJ2" secondAttribute="centerX" constant="-68.5" id="MvF-6s-9v5"/>
@@ -407,6 +420,7 @@
                             <constraint firstItem="bTz-6Z-Pce" firstAttribute="centerX" secondItem="w1d-BN-WJ2" secondAttribute="centerX" constant="-85" id="dUX-JU-W0x"/>
                             <constraint firstItem="cJf-Yf-ugg" firstAttribute="centerY" secondItem="w1d-BN-WJ2" secondAttribute="centerY" constant="-253" id="hIU-pc-Blu"/>
                             <constraint firstItem="AwZ-NR-OWb" firstAttribute="centerX" secondItem="w1d-BN-WJ2" secondAttribute="centerX" constant="-85" id="ihA-3m-IQB"/>
+                            <constraint firstItem="ckv-IV-J3I" firstAttribute="centerY" secondItem="w1d-BN-WJ2" secondAttribute="centerY" constant="-298.5" id="iik-kR-Anj"/>
                             <constraint firstItem="UTZ-II-c0L" firstAttribute="centerX" secondItem="w1d-BN-WJ2" secondAttribute="centerX" id="p9Z-u0-DoO"/>
                             <constraint firstItem="bTz-6Z-Pce" firstAttribute="centerY" secondItem="w1d-BN-WJ2" secondAttribute="centerY" constant="23" id="rPA-dV-FUw"/>
                             <constraint firstItem="H5b-Rt-9Oy" firstAttribute="centerY" secondItem="w1d-BN-WJ2" secondAttribute="centerY" constant="165" id="wvP-d5-qQJ"/>
@@ -418,6 +432,12 @@
                     <tabBarItem key="tabBarItem" title="" image="gear" landscapeImage="gear" largeContentSizeImage="gear" selectedImage="gear" id="LxZ-9C-kcF">
                         <inset key="imageInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="datePickerBirthday" destination="UTZ-II-c0L" id="Rsq-oD-SI3"/>
+                        <outlet property="textFieldHint" destination="QzN-6V-bbC" id="NQ8-Ck-d9u"/>
+                        <outlet property="textFieldPassword" destination="4C7-U3-h1g" id="Lgl-uf-QTk"/>
+                        <outlet property="textFieldUserName" destination="AwZ-NR-OWb" id="d9a-1t-vdy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrX-sy-u63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
