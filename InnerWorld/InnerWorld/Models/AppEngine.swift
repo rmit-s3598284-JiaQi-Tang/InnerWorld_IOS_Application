@@ -11,6 +11,7 @@ import Foundation
 class AppEngine {
 
     var diaryList: [Diary]
+    var filteredDiaryList: [Diary]
     var user: User
     
     // Shared Properties
@@ -27,6 +28,7 @@ class AppEngine {
             Diary(id: 3, title: "Learning Swift is fun!", date: "1-Aug-2018", mood: "happy", weather: "cloud", location: "RMIT, Melbourne", photo: "prototype-diaryPicture3", content: "Today, I went to RMIT with my friend Linh, we learned a lot IOS stuff from Fardin. what a good day!")
         ]
         user = User(nickName: "Another Dude", birthDay: "3-Dec-1993", password: "0000", hint: "the initial password is '0000'")
+        filteredDiaryList = diaryList
     }
     
     // Accessors
@@ -63,6 +65,16 @@ class AppEngine {
         self.user.birthDay = user.birthDay
         self.user.password = user.password
         self.user.hint = user.hint
+    }
+    //RIGHT NOW FILTER FOR SEARCH BAR ONLY. Will add filter for location/mood later. TBD
+    func filterHomePageDiaryList(search: String){
+        if (search.isEmpty) {
+            filteredDiaryList = diaryList
+        }
+        else {
+            //RIGHT NOW FILTER BY TITLE. Can add filter by content and locale later.
+            filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search) }
+        }
     }
 }
 

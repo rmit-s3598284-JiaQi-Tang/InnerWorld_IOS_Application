@@ -299,6 +299,7 @@
                     <tabBarItem key="tabBarItem" tag="6" title="" image="diaryBook" landscapeImage="diaryBook" largeContentSizeImage="diaryBook" selectedImage="diaryBook" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="diaryTableView" destination="3mq-r9-NBf" id="8HG-eS-Mkh"/>
+                        <outlet property="searchBar" destination="jPa-LZ-zc0" id="7m9-HY-f7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
