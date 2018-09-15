@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +26,7 @@
                                 </constraints>
                                 <state key="normal" image="arrowBack"/>
                                 <connections>
-                                    <action selector="backButtonTapped:" destination="AvV-3h-Td9" eventType="touchUpInside" id="akq-5w-Ad7"/>
+                                    <action selector="backButtonTapped:" destination="AvV-3h-Td9" eventType="touchUpInside" id="FdE-8f-ul8"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lm2-1t-oSh">
@@ -114,6 +114,17 @@
                                     <constraint firstAttribute="width" constant="65" id="XlS-Eo-MWl"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr0-XQ-akt">
+                                <rect key="frame" x="291" y="20" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Avi-ll-D1j"/>
+                                    <constraint firstAttribute="width" constant="64" id="sQq-Ks-42w"/>
+                                </constraints>
+                                <state key="normal" image="arrowTowads"/>
+                                <connections>
+                                    <action selector="filterButtonTapped:" destination="AvV-3h-Td9" eventType="touchUpInside" id="aWL-lU-Zel"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.59091653894184515" green="0.73188250682242972" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -147,6 +158,7 @@
                     <connections>
                         <outlet property="backFaceImage" destination="CRl-BW-zo5" id="POk-Yy-GLM"/>
                         <outlet property="leftFaceImage" destination="xmW-e7-5i5" id="kkX-Cq-oan"/>
+                        <outlet property="locationPicker" destination="Lm2-1t-oSh" id="y2x-lV-Tdd"/>
                         <outlet property="midFaceImage" destination="XwK-75-Cz0" id="fJc-8g-uKI"/>
                         <outlet property="rightFaceImage" destination="Lfd-WU-Af5" id="Ls8-vW-7hD"/>
                     </connections>
@@ -182,16 +194,6 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Current Location &amp; weather condition" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juE-JP-W0A">
-                                <rect key="frame" x="21" y="112" width="301" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="301" id="IbQ-ZK-JNH"/>
-                                    <constraint firstAttribute="height" constant="30" id="KXq-qN-g3Q"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3mq-r9-NBf">
                                 <rect key="frame" x="0.0" y="160" width="375" height="458"/>
                                 <color key="backgroundColor" red="0.80392156862745101" green="0.88627450980392153" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -280,16 +282,35 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="sJ8-Yi-26Y"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0k-cQ-XHd">
+                                <rect key="frame" x="21" y="116" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AB-j2-kZX">
+                                <rect key="frame" x="137" y="116" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-0P-juS">
+                                <rect key="frame" x="262" y="107" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Filter"/>
+                                <connections>
+                                    <action selector="clearFilterButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="BIe-gk-Wus"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77738563867764077" green="0.8581365167803876" blue="0.98860508419689119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="3mq-r9-NBf" firstAttribute="top" secondItem="juE-JP-W0A" secondAttribute="bottom" constant="18" id="18q-Ka-AVG"/>
                             <constraint firstItem="4TM-Ph-U7A" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-282" id="1mL-1X-Aiw"/>
-                            <constraint firstItem="juE-JP-W0A" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-206.5" id="FHL-f1-uyb"/>
                             <constraint firstItem="4TM-Ph-U7A" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="147" id="N6v-t7-seb"/>
                             <constraint firstItem="jPa-LZ-zc0" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-276.5" id="R4Q-Hs-U1n"/>
                             <constraint firstItem="3mq-r9-NBf" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="avV-Ic-A5Y"/>
-                            <constraint firstItem="juE-JP-W0A" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-16" id="ct9-1h-NE8"/>
                             <constraint firstItem="3mq-r9-NBf" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="dbv-zj-g87"/>
                             <constraint firstAttribute="trailing" secondItem="3mq-r9-NBf" secondAttribute="trailing" id="tKZ-kl-cpV"/>
                             <constraint firstItem="jPa-LZ-zc0" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-29" id="uFS-4k-aWL"/>
@@ -298,6 +319,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="6" title="" image="diaryBook" landscapeImage="diaryBook" largeContentSizeImage="diaryBook" selectedImage="diaryBook" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="currentLocation" destination="d0k-cQ-XHd" id="mFs-Fz-oeO"/>
+                        <outlet property="currentWeather" destination="1AB-j2-kZX" id="SkQ-cO-ObZ"/>
                         <outlet property="diaryTableView" destination="3mq-r9-NBf" id="8HG-eS-Mkh"/>
                         <outlet property="searchBar" destination="jPa-LZ-zc0" id="7m9-HY-f7L"/>
                     </connections>

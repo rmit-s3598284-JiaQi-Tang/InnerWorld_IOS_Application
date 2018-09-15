@@ -12,23 +12,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var appEngine = AppEngine.shared()
 
     @IBOutlet weak var searchBar: UISearchBar!
-
+    @IBOutlet weak var currentLocation: UILabel!
+    @IBOutlet weak var currentWeather: UILabel!
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.refreshDiaryData()
     }
 
     func refreshDiaryData(){
-        appEngine.filterHomePageDiaryList(search: searchBar.text!)
+        appEngine.filterHomePageDiaryList(search: searchBar.text!, location: "", mood: "")
         self.diaryTableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        currentLocation.text = appEngine.currentLocation
+        currentWeather.text = appEngine.currentWeather
     }
 
     @IBOutlet weak var diaryTableView: UITableView!
 
+    @IBAction func clearFilterButtonTapped(_ sender: Any) {
+        appEngine.filterHomePageDiaryList(search: "", location: "", mood: "")
+        self.diaryTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(appEngine.filteredDiaryList.count)
     }
