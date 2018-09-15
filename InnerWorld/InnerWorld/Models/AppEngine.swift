@@ -13,6 +13,9 @@ class AppEngine {
     var diaryList: [Diary]
     var filteredDiaryList: [Diary]
     var user: User
+    var diaryLocations: [String]
+    var currentLocation: String = "Melbourne"
+    var currentWeather: String = "rainning"
     
     // Shared Properties
     private static var sharedInstance: AppEngine = {
@@ -24,11 +27,12 @@ class AppEngine {
     private init() {
         diaryList = [
             Diary(id: 1, title: "A happy day in St Kilda", date: "08-Aug-2018", mood: "smile", weather: "sunny", location: "St Kilda, Melbourne", photo: "prototype-diaryPicture", content: "Today, I went to St kilda beach with my Indian brother Manana. We took a lot of awesome pictures there! what a happy day!"),
-            Diary(id: 2, title: "Lost 100$ in China Town", date: "6-Aug-2018", mood: "cry", weather: "rainning", location: "China Town, Melbourne", photo: "prototype-diaryPicture2", content: "Today, I went to China Town alone for some Chinese food. I lost my precious 100$! what a bad day!"),
+            Diary(id: 2, title: "Lost 100$ in China Town", date: "6-Aug-2018", mood: "sad", weather: "rainning", location: "China Town, Melbourne", photo: "prototype-diaryPicture2", content: "Today, I went to China Town alone for some Chinese food. I lost my precious 100$! what a bad day!"),
             Diary(id: 3, title: "Learning Swift is fun!", date: "1-Aug-2018", mood: "happy", weather: "cloud", location: "RMIT, Melbourne", photo: "prototype-diaryPicture3", content: "Today, I went to RMIT with my friend Linh, we learned a lot IOS stuff from Fardin. what a good day!")
         ]
         user = User(nickName: "Another Dude", birthDay: "3-Dec-1993", password: "0000", hint: "the initial password is '0000'")
         filteredDiaryList = diaryList
+        diaryLocations = ["Melbourne"]
     }
     
     // Accessors
@@ -45,13 +49,9 @@ class AppEngine {
     }
 
     func removeDiary(tittleOfToBeDeletedDiary: String) {
-
-        var loopIndex = 0
-        for loopDiary in diaryList {
-            if loopDiary.title == tittleOfToBeDeletedDiary {
-                diaryList.remove(at: loopIndex)
-            }
-            loopIndex += 1
+        let index = diaryList.index(where: {$0.title == tittleOfToBeDeletedDiary})
+        if (index != nil) {
+            diaryList.remove(at: index!)
         }
     }
     
@@ -66,14 +66,20 @@ class AppEngine {
         self.user.password = user.password
         self.user.hint = user.hint
     }
-    //RIGHT NOW FILTER FOR SEARCH BAR ONLY. Will add filter for location/mood later. TBD
-    func filterHomePageDiaryList(search: String){
-        if (search.isEmpty) {
+    
+    func filterHomePageDiaryList(search: String, location: String, mood: String){
+        if (search.isEmpty && location.isEmpty && mood.isEmpty) {
             filteredDiaryList = diaryList
         }
+        else if (search.isEmpty) {
+            filteredDiaryList = diaryList.filter{ $0.location.localizedCaseInsensitiveContains(location) && $0.mood.localizedCaseInsensitiveContains(mood) }
+        }
         else {
-            //RIGHT NOW FILTER BY TITLE. Can add filter by content and locale later.
-            filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search) }
+            if (location.isEmpty && mood.isEmpty) {
+                filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search)}
+            } else {
+                filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search) && $0.location.localizedCaseInsensitiveContains(location) && $0.mood.localizedCaseInsensitiveContains(mood) }
+            }
         }
     }
 }

@@ -12,23 +12,39 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var appEngine = AppEngine.shared()
 
     @IBOutlet weak var searchBar: UISearchBar!
-
+    @IBOutlet weak var currentLocation: UILabel!
+    @IBOutlet weak var currentWeather: UIImageView!
+    @IBOutlet weak var clearFilterButton: UIButton!
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.refreshDiaryData()
     }
 
     func refreshDiaryData(){
-        appEngine.filterHomePageDiaryList(search: searchBar.text!)
+        appEngine.filterHomePageDiaryList(search: searchBar.text!, location: "", mood: "")
         self.diaryTableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        self.diaryTableView.reloadData()
+        currentLocation.text = appEngine.currentLocation
+        currentWeather.image = UIImage(named: appEngine.currentWeather + ".png")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.diaryTableView.reloadData()
     }
 
     @IBOutlet weak var diaryTableView: UITableView!
 
+    @IBAction func clearFilterButtonTapped(_ sender: Any) {
+        appEngine.filterHomePageDiaryList(search: "", location: "", mood: "")
+        self.diaryTableView.reloadData()
+        clearFilterButton.isHidden = true
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(appEngine.filteredDiaryList.count)
     }
@@ -48,7 +64,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
-        viewController?.diary = appEngine.diaryList[indexPath.row]
+        viewController?.diary = appEngine.filteredDiaryList[indexPath.row]
         viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
     }
@@ -78,8 +94,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func filterButtonTapped(_ sender: Any) {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as? FilterViewController
-        present(viewController!, animated: true, completion: nil)
+        clearFilterButton.isHidden = false
     }
 }
 

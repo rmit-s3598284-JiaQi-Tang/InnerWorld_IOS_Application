@@ -37,4 +37,8 @@ class SettingsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
 
     }
+
+    @IBAction func showButtonTapped(_ sender: Any) {
+        textFieldPassword.isSecureTextEntry = !textFieldPassword.isSecureTextEntry
+    }
 }

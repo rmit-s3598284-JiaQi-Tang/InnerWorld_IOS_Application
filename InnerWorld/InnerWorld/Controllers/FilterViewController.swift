@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterViewController: UIViewController {
+class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var appEngine = AppEngine.shared()
     let happyData = UIImagePNGRepresentation(#imageLiteral(resourceName: "happy"))
@@ -16,21 +16,43 @@ class FilterViewController: UIViewController {
     let smileData = UIImagePNGRepresentation(#imageLiteral(resourceName: "smile"))
     let cryData = UIImagePNGRepresentation(#imageLiteral(resourceName: "cry"))
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        rightFaceImage.image = #imageLiteral(resourceName: "sad")
-        leftFaceImage.image = #imageLiteral(resourceName: "smile")
-        midFaceImage.image = #imageLiteral(resourceName: "happy")
-        backFaceImage.image = #imageLiteral(resourceName: "cry")
-
-    }
-
     @IBOutlet weak var backFaceImage: UIImageView!
     @IBOutlet weak var leftFaceImage: UIImageView!
     @IBOutlet weak var rightFaceImage: UIImageView!
     @IBOutlet weak var midFaceImage: UIImageView!
+    @IBOutlet weak var locationPicker: UIPickerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        rightFaceImage.image = #imageLiteral(resourceName: "sad")
+        leftFaceImage.image = #imageLiteral(resourceName: "smile")
+        midFaceImage.image = #imageLiteral(resourceName: "happy")
+        backFaceImage.image = #imageLiteral(resourceName: "cry")
+        
+        self.locationPicker.delegate = self
+        self.locationPicker.dataSource = self
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // The number of columns of data
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return appEngine.diaryLocations.count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return appEngine.diaryLocations[row]
+    }
+    
     @IBAction func leftButton(_ sender: Any) {
         let midImageData = UIImagePNGRepresentation(midFaceImage.image!)
         if midImageData == happyData {
@@ -88,11 +110,25 @@ class FilterViewController: UIViewController {
         }
     }
 
-    @IBAction func backButtonTapped(_ sender: Any) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-            return
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        var mood = "happy"
+        switch midFaceImage.image! {
+        case #imageLiteral(resourceName: "happy"):
+            mood = "happy"
+        case #imageLiteral(resourceName: "smile"):
+            mood = "awesome"
+        case #imageLiteral(resourceName: "sad"):
+            mood = "sad"
+        case #imageLiteral(resourceName: "cry"):
+            mood = "cry"
+        default:
+            break;
         }
-        present(myTabBarViewController, animated: true, completion: nil)
+        let location = appEngine.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
+        appEngine.filterHomePageDiaryList(search: "", location: location, mood: mood)
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func backButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
