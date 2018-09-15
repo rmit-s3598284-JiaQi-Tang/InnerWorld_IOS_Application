@@ -49,13 +49,9 @@ class AppEngine {
     }
 
     func removeDiary(tittleOfToBeDeletedDiary: String) {
-
-        var loopIndex = 0
-        for loopDiary in diaryList {
-            if loopDiary.title == tittleOfToBeDeletedDiary {
-                diaryList.remove(at: loopIndex)
-            }
-            loopIndex += 1
+        let index = diaryList.index(where: {$0.title == tittleOfToBeDeletedDiary})
+        if (index != nil) {
+            diaryList.remove(at: index!)
         }
     }
     

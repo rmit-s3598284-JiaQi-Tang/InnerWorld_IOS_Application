@@ -28,8 +28,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        self.diaryTableView.reloadData()
         currentLocation.text = appEngine.currentLocation
         currentWeather.image = UIImage(named: appEngine.currentWeather + ".png")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.diaryTableView.reloadData()
     }
 
     @IBOutlet weak var diaryTableView: UITableView!

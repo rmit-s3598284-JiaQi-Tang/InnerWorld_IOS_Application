@@ -25,7 +25,26 @@
 		C1FC7C45213FCB5B006C9A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C41213FCB5B006C9A7D /* Main.storyboard */; };
 		C1FC7C46213FCB5B006C9A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C43213FCB5B006C9A7D /* LaunchScreen.storyboard */; };
 		C1FC7C49213FCB6B006C9A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C48213FCB6B006C9A7D /* Assets.xcassets */; };
+		CD4209DE214D449A003A7AF0 /* InnerWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4209DD214D449A003A7AF0 /* InnerWorldTests.swift */; };
+		CD4209EC214D47FB003A7AF0 /* InnerWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4209EB214D47FB003A7AF0 /* InnerWorldUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD4209E0214D449A003A7AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1FC7C05213FCA54006C9A7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1FC7C0C213FCA54006C9A7D;
+			remoteInfo = InnerWorld;
+		};
+		CD4209EE214D47FB003A7AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1FC7C05213FCA54006C9A7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1FC7C0C213FCA54006C9A7D;
+			remoteInfo = InnerWorld;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C1FC7C0D213FCA54006C9A7D /* InnerWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnerWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,10 +67,32 @@
 		C1FC7C42213FCB5B006C9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1FC7C44213FCB5B006C9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1FC7C48213FCB6B006C9A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = InnerWorld/Views/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		CD4209CF214D3F3B003A7AF0 /* InnerWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerWorldUITests.swift; sourceTree = "<group>"; };
+		CD4209D1214D3F3B003A7AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD4209DB214D449A003A7AF0 /* InnerWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InnerWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4209DD214D449A003A7AF0 /* InnerWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerWorldTests.swift; sourceTree = "<group>"; };
+		CD4209DF214D449A003A7AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD4209E9214D47FB003A7AF0 /* InnerWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InnerWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4209EB214D47FB003A7AF0 /* InnerWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerWorldUITests.swift; sourceTree = "<group>"; };
+		CD4209ED214D47FB003A7AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C1FC7C0A213FCA54006C9A7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4209D8214D449A003A7AF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4209E6214D47FB003A7AF0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,6 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				C1FC7C0F213FCA54006C9A7D /* InnerWorld */,
+				CD4209CE214D3F3B003A7AF0 /* InnerWorldUITests */,
+				CD4209DC214D449A003A7AF0 /* InnerWorldTests */,
+				CD4209EA214D47FB003A7AF0 /* InnerWorldUITests */,
 				C1FC7C0E213FCA54006C9A7D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				C1FC7C0D213FCA54006C9A7D /* InnerWorld.app */,
+				CD4209DB214D449A003A7AF0 /* InnerWorldTests.xctest */,
+				CD4209E9214D47FB003A7AF0 /* InnerWorldUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +181,33 @@
 			path = Art;
 			sourceTree = "<group>";
 		};
+		CD4209CE214D3F3B003A7AF0 /* InnerWorldUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD4209CF214D3F3B003A7AF0 /* InnerWorldUITests.swift */,
+				CD4209D1214D3F3B003A7AF0 /* Info.plist */,
+			);
+			path = InnerWorldUITests;
+			sourceTree = "<group>";
+		};
+		CD4209DC214D449A003A7AF0 /* InnerWorldTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD4209DD214D449A003A7AF0 /* InnerWorldTests.swift */,
+				CD4209DF214D449A003A7AF0 /* Info.plist */,
+			);
+			path = InnerWorldTests;
+			sourceTree = "<group>";
+		};
+		CD4209EA214D47FB003A7AF0 /* InnerWorldUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD4209EB214D47FB003A7AF0 /* InnerWorldUITests.swift */,
+				CD4209ED214D47FB003A7AF0 /* Info.plist */,
+			);
+			path = InnerWorldUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,19 +228,65 @@
 			productReference = C1FC7C0D213FCA54006C9A7D /* InnerWorld.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CD4209DA214D449A003A7AF0 /* InnerWorldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD4209E2214D449A003A7AF0 /* Build configuration list for PBXNativeTarget "InnerWorldTests" */;
+			buildPhases = (
+				CD4209D7214D449A003A7AF0 /* Sources */,
+				CD4209D8214D449A003A7AF0 /* Frameworks */,
+				CD4209D9214D449A003A7AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD4209E1214D449A003A7AF0 /* PBXTargetDependency */,
+			);
+			name = InnerWorldTests;
+			productName = InnerWorldTests;
+			productReference = CD4209DB214D449A003A7AF0 /* InnerWorldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD4209E8214D47FB003A7AF0 /* InnerWorldUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD4209F0214D47FB003A7AF0 /* Build configuration list for PBXNativeTarget "InnerWorldUITests" */;
+			buildPhases = (
+				CD4209E5214D47FB003A7AF0 /* Sources */,
+				CD4209E6214D47FB003A7AF0 /* Frameworks */,
+				CD4209E7214D47FB003A7AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD4209EF214D47FB003A7AF0 /* PBXTargetDependency */,
+			);
+			name = InnerWorldUITests;
+			productName = InnerWorldUITests;
+			productReference = CD4209E9214D47FB003A7AF0 /* InnerWorldUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C1FC7C05213FCA54006C9A7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Linh Nguyen";
 				TargetAttributes = {
 					C1FC7C0C213FCA54006C9A7D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					CD4209DA214D449A003A7AF0 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C1FC7C0C213FCA54006C9A7D;
+					};
+					CD4209E8214D47FB003A7AF0 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C1FC7C0C213FCA54006C9A7D;
 					};
 				};
 			};
@@ -185,6 +304,8 @@
 			projectRoot = "";
 			targets = (
 				C1FC7C0C213FCA54006C9A7D /* InnerWorld */,
+				CD4209DA214D449A003A7AF0 /* InnerWorldTests */,
+				CD4209E8214D47FB003A7AF0 /* InnerWorldUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -197,6 +318,20 @@
 				C1FC7C45213FCB5B006C9A7D /* Main.storyboard in Resources */,
 				C1FC7C49213FCB6B006C9A7D /* Assets.xcassets in Resources */,
 				C1FC7C46213FCB5B006C9A7D /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4209D9214D449A003A7AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4209E7214D47FB003A7AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +360,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD4209D7214D449A003A7AF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4209DE214D449A003A7AF0 /* InnerWorldTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4209E5214D47FB003A7AF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4209EC214D47FB003A7AF0 /* InnerWorldUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD4209E1214D449A003A7AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1FC7C0C213FCA54006C9A7D /* InnerWorld */;
+			targetProxy = CD4209E0214D449A003A7AF0 /* PBXContainerItemProxy */;
+		};
+		CD4209EF214D47FB003A7AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1FC7C0C213FCA54006C9A7D /* InnerWorld */;
+			targetProxy = CD4209EE214D47FB003A7AF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C1FC7C41213FCB5B006C9A7D /* Main.storyboard */ = {
@@ -382,6 +546,80 @@
 			};
 			name = Release;
 		};
+		CD4209E3214D449A003A7AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InnerWorldTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InnerWorld.app/InnerWorld";
+			};
+			name = Debug;
+		};
+		CD4209E4214D449A003A7AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InnerWorldTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InnerWorld.app/InnerWorld";
+			};
+			name = Release;
+		};
+		CD4209F1214D47FB003A7AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InnerWorldUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InnerWorld;
+			};
+			name = Debug;
+		};
+		CD4209F2214D47FB003A7AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InnerWorldUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jacky.InnerWorldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InnerWorld;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,6 +637,24 @@
 			buildConfigurations = (
 				C1FC7C20213FCA54006C9A7D /* Debug */,
 				C1FC7C21213FCA54006C9A7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD4209E2214D449A003A7AF0 /* Build configuration list for PBXNativeTarget "InnerWorldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD4209E3214D449A003A7AF0 /* Debug */,
+				CD4209E4214D449A003A7AF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD4209F0214D47FB003A7AF0 /* Build configuration list for PBXNativeTarget "InnerWorldUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD4209F1214D47FB003A7AF0 /* Debug */,
+				CD4209F2214D47FB003A7AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
