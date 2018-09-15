@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -114,13 +114,13 @@
                                     <constraint firstAttribute="width" constant="65" id="XlS-Eo-MWl"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr0-XQ-akt">
-                                <rect key="frame" x="291" y="20" width="64" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr0-XQ-akt">
+                                <rect key="frame" x="295" y="20" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Avi-ll-D1j"/>
                                     <constraint firstAttribute="width" constant="64" id="sQq-Ks-42w"/>
                                 </constraints>
-                                <state key="normal" image="arrowTowads"/>
+                                <state key="normal" image="tick"/>
                                 <connections>
                                     <action selector="filterButtonTapped:" destination="AvV-3h-Td9" eventType="touchUpInside" id="aWL-lU-Zel"/>
                                 </connections>
@@ -137,8 +137,10 @@
                             <constraint firstItem="Vew-LU-4uW" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="-138.5" id="8sy-sL-1NB"/>
                             <constraint firstItem="HgF-Oz-a9w" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-78.25" id="ANk-FL-enm"/>
                             <constraint firstItem="Vew-LU-4uW" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-231" id="BWY-MH-73e"/>
+                            <constraint firstItem="Jr0-XQ-akt" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-281.5" id="Cf4-x1-ejc"/>
                             <constraint firstItem="Oem-d4-rWa" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="80" id="DC9-pp-KZe"/>
                             <constraint firstItem="cCD-qX-aPu" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="145.5" id="Har-Xd-PvO"/>
+                            <constraint firstItem="Jr0-XQ-akt" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="139.5" id="LQq-fW-G15"/>
                             <constraint firstItem="XwK-75-Cz0" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="228.5" id="Uay-ae-gF5"/>
                             <constraint firstItem="Lm2-1t-oSh" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-154.5" id="VdF-kH-akG"/>
                             <constraint firstItem="As0-6o-jhw" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-281.5" id="X1K-aj-7AU"/>
@@ -184,6 +186,7 @@
                                 <state key="normal" image="filter"/>
                                 <connections>
                                     <action selector="filterButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="fSK-av-gQv"/>
+                                    <segue destination="AvV-3h-Td9" kind="show" id="fVa-o4-erq"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jPa-LZ-zc0">
@@ -282,45 +285,59 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="sJ8-Yi-26Y"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0k-cQ-XHd">
-                                <rect key="frame" x="21" y="116" width="95" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0k-cQ-XHd">
+                                <rect key="frame" x="35" y="116" width="95" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="XRT-Pd-Bqx"/>
+                                    <constraint firstAttribute="height" constant="21" id="gvx-sc-69z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AB-j2-kZX">
-                                <rect key="frame" x="137" y="116" width="102" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-0P-juS">
-                                <rect key="frame" x="262" y="107" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-0P-juS">
+                                <rect key="frame" x="278" y="111" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7pk-We-BvL"/>
+                                    <constraint firstAttribute="width" constant="97" id="lYU-NI-WhA"/>
+                                </constraints>
                                 <state key="normal" title="Clear Filter"/>
                                 <connections>
                                     <action selector="clearFilterButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="BIe-gk-Wus"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rainning" translatesAutoresizingMaskIntoConstraints="NO" id="zRg-bt-myd">
+                                <rect key="frame" x="168.5" y="108.5" width="37" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Zph-xM-eOT"/>
+                                    <constraint firstAttribute="height" constant="32" id="ysS-mi-LBd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.77738563867764077" green="0.8581365167803876" blue="0.98860508419689119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="zRg-bt-myd" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="0aY-7q-vK2"/>
                             <constraint firstItem="4TM-Ph-U7A" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-282" id="1mL-1X-Aiw"/>
+                            <constraint firstItem="9cd-0P-juS" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-207.5" id="2zQ-7y-Og2"/>
+                            <constraint firstItem="d0k-cQ-XHd" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-105" id="Hsz-Lz-a6U"/>
                             <constraint firstItem="4TM-Ph-U7A" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="147" id="N6v-t7-seb"/>
+                            <constraint firstItem="d0k-cQ-XHd" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-207" id="Naa-rS-6JA"/>
                             <constraint firstItem="jPa-LZ-zc0" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-276.5" id="R4Q-Hs-U1n"/>
                             <constraint firstItem="3mq-r9-NBf" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="avV-Ic-A5Y"/>
                             <constraint firstItem="3mq-r9-NBf" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="dbv-zj-g87"/>
+                            <constraint firstItem="3mq-r9-NBf" firstAttribute="top" secondItem="9cd-0P-juS" secondAttribute="bottom" constant="19" id="ig6-Qy-XFt"/>
+                            <constraint firstItem="9cd-0P-juS" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="139" id="lJt-RV-cCE"/>
                             <constraint firstAttribute="trailing" secondItem="3mq-r9-NBf" secondAttribute="trailing" id="tKZ-kl-cpV"/>
+                            <constraint firstItem="zRg-bt-myd" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-209" id="tNu-7n-ldP"/>
                             <constraint firstItem="jPa-LZ-zc0" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-29" id="uFS-4k-aWL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="6" title="" image="diaryBook" landscapeImage="diaryBook" largeContentSizeImage="diaryBook" selectedImage="diaryBook" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="clearFilterButton" destination="9cd-0P-juS" id="tVL-d5-gk0"/>
                         <outlet property="currentLocation" destination="d0k-cQ-XHd" id="mFs-Fz-oeO"/>
-                        <outlet property="currentWeather" destination="1AB-j2-kZX" id="SkQ-cO-ObZ"/>
+                        <outlet property="currentWeather" destination="zRg-bt-myd" id="O1o-qv-Ce3"/>
                         <outlet property="diaryTableView" destination="3mq-r9-NBf" id="8HG-eS-Mkh"/>
                         <outlet property="searchBar" destination="jPa-LZ-zc0" id="7m9-HY-f7L"/>
                     </connections>

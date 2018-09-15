@@ -13,7 +13,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var currentLocation: UILabel!
-    @IBOutlet weak var currentWeather: UILabel!
+    @IBOutlet weak var currentWeather: UIImageView!
+    @IBOutlet weak var clearFilterButton: UIButton!
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.refreshDiaryData()
@@ -28,7 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         searchBar.delegate = self
         currentLocation.text = appEngine.currentLocation
-        currentWeather.text = appEngine.currentWeather
+        currentWeather.image = UIImage(named: appEngine.currentWeather + ".png")
     }
 
     @IBOutlet weak var diaryTableView: UITableView!
@@ -36,6 +37,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func clearFilterButtonTapped(_ sender: Any) {
         appEngine.filterHomePageDiaryList(search: "", location: "", mood: "")
         self.diaryTableView.reloadData()
+        clearFilterButton.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,7 +59,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
-        viewController?.diary = appEngine.diaryList[indexPath.row]
+        viewController?.diary = appEngine.filteredDiaryList[indexPath.row]
         viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
     }
@@ -87,8 +89,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func filterButtonTapped(_ sender: Any) {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as? FilterViewController
-        present(viewController!, animated: true, completion: nil)
+        clearFilterButton.isHidden = false
     }
 }
 

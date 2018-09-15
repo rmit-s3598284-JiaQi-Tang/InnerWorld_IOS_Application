@@ -111,10 +111,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
 
     @IBAction func filterButtonTapped(_ sender: Any) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-            return
-        }
         var mood = "happy"
         switch midFaceImage.image! {
         case #imageLiteral(resourceName: "happy"):
@@ -130,13 +126,9 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
         let location = appEngine.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
         appEngine.filterHomePageDiaryList(search: "", location: location, mood: mood)
-        present(myTabBarViewController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func backButtonTapped(_ sender: Any) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-            return
-        }
-        present(myTabBarViewController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
