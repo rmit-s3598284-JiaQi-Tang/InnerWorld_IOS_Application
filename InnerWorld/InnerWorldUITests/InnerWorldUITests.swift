@@ -27,61 +27,35 @@ class InnerWorldUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    func testPassWordScreen() {
 
+    func testFilterScreen() {
+        //test whether the filter function works
+        
         let app = XCUIApplication()
-        let button = app.buttons["0"]
-        button.tap()
-        button.tap()
-        app.buttons["8"].tap()
-        app.buttons["5"].tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .button).element(boundBy: 0).tap()
         app.buttons["tick"].tap()
-        app.alerts["wrong password"].buttons["OK"].tap()
+        app.buttons["Clear Filter"].tap()
+        
 
     }
     func testHomeScreen() {
+        //test whether the stack view items are showing, and also their accessibility
         let app = XCUIApplication()
-        let button = app.buttons["0"]
-        button.tap()
-        button.tap()
-        button.tap()
-        button.tap()
-        XCUIApplication().otherElements.containing(.staticText, identifier:"Enter your password").children(matching: .button).element(boundBy: 10).tap()
-
-//      test whether the stack of diarys accessible
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["A happy day in St Kilda"]/*[[".cells.staticTexts[\"A happy day in St Kilda\"]",".staticTexts[\"A happy day in St Kilda\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["St Kilda, Melbourne"]/*[[".cells.staticTexts[\"St Kilda, Melbourne\"]",".staticTexts[\"St Kilda, Melbourne\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.buttons["arrowBack"].tap()
 
     }
     func testCreateMoodScreen() {
+        //test the mood control slider
         let app = XCUIApplication()
-        let button = app.buttons["0"]
-        button.tap()
-        button.tap()
-        button.tap()
-        button.tap()
-        XCUIApplication().otherElements.containing(.staticText, identifier:"Enter your password").children(matching: .button).element(boundBy: 10).tap()
         app.tabBars.children(matching: .button).element(boundBy: 1).tap()
         app.buttons["letsDoit"].tap()
-        
-//      test the mood control slider
         app.sliders["50%"].swipeRight()
+
     }
     func testSettingScreen() {
+        //test the items show or not and whether accessible
         let app = XCUIApplication()
-        let button = app.buttons["0"]
-        button.tap()
-        button.tap()
-        button.tap()
-        button.tap()
-        XCUIApplication().otherElements.containing(.staticText, identifier:"Enter your password").children(matching: .button).element(boundBy: 10).tap()
-
-//      test the elements on setting screen work or not
         app.tabBars.children(matching: .button).element(boundBy: 2).tap()
         app.datePickers.pickerWheels["Today"].swipeUp()
         app.buttons["Save"].tap()

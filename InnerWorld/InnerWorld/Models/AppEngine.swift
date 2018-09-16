@@ -61,7 +61,9 @@ class AppEngine {
         diaryList[index!] = diary
         
         let filterDiaryIndex = filteredDiaryList.index(where: {$0.id == diary.id})
-        filteredDiaryList[filterDiaryIndex!] = diary
+        if filterDiaryIndex != nil {
+            filteredDiaryList[filterDiaryIndex!] = diary
+        }
     }
     
     func saveUser(user: User){
