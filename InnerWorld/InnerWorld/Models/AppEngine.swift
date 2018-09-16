@@ -58,6 +58,10 @@ class AppEngine {
     func saveDiary(diary: Diary){
         let index = diaryList.index(where: {$0.id == diary.id})
         diaryList[index!] = diary
+        
+        let filterDiaryIndex = filteredDiaryList.index(where: {$0.id == diary.id})
+        filteredDiaryList[filterDiaryIndex!] = diary
+        print(filteredDiaryList[filterDiaryIndex!].title)
     }
     
     func saveUser(user: User){

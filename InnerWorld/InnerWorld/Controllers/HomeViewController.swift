@@ -65,7 +65,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
         viewController?.diary = appEngine.filteredDiaryList[indexPath.row]
-        viewController?.appEngine = appEngine
         present(viewController!, animated: true, completion: nil)
     }
 
@@ -76,7 +75,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            self.appEngine.diaryList.remove(at: indexPath.row)
+            self.appEngine.removeDiary(tittleOfToBeDeletedDiary: self.appEngine.diaryList[indexPath.row].title)
+            self.appEngine.filteredDiaryList.remove(at: indexPath.row)
             self.diaryTableView.deleteRows(at: [indexPath], with: .automatic)
             
             completion(true)
