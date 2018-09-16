@@ -116,7 +116,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case #imageLiteral(resourceName: "happy"):
             mood = "happy"
         case #imageLiteral(resourceName: "smile"):
-            mood = "awesome"
+            mood = "smile"
         case #imageLiteral(resourceName: "sad"):
             mood = "sad"
         case #imageLiteral(resourceName: "cry"):
