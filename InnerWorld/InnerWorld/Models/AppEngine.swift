@@ -44,8 +44,9 @@ class AppEngine {
         if diaryList.isEmpty {
             diaryList = [diary]
         } else {
-            diaryList.append(diary)
+            diaryList.insert(diary, at: 0)
         }
+        filteredDiaryList = diaryList
     }
 
     func removeDiary(tittleOfToBeDeletedDiary: String) {
@@ -61,7 +62,6 @@ class AppEngine {
         
         let filterDiaryIndex = filteredDiaryList.index(where: {$0.id == diary.id})
         filteredDiaryList[filterDiaryIndex!] = diary
-        print(filteredDiaryList[filterDiaryIndex!].title)
     }
     
     func saveUser(user: User){
