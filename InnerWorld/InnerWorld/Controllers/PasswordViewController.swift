@@ -53,7 +53,6 @@ class PasswordViewController: UIViewController {
     }
 
     @IBAction func confirmPasswordButton(_ sender: Any) {
-
         if passwordTextField.text != appEngine.user.password {
             let alert = UIAlertController(title: "wrong password", message: " ", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})
@@ -76,4 +75,13 @@ class PasswordViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if (self.appEngine.user.password.isEmpty) {
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
+                return
+            }
+            present(myTabBarViewController, animated: true, completion: nil)
+        }
+    }
 }

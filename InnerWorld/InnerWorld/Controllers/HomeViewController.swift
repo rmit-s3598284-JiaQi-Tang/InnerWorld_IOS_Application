@@ -14,7 +14,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var currentLocation: UILabel!
     @IBOutlet weak var currentWeather: UIImageView!
-    @IBOutlet weak var clearFilterButton: UIButton!
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.refreshDiaryData()
@@ -42,7 +41,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func clearFilterButtonTapped(_ sender: Any) {
         appEngine.filterHomePageDiaryList(search: "", location: "", mood: "")
         self.diaryTableView.reloadData()
-        clearFilterButton.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,10 +89,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         action.image = #imageLiteral(resourceName: "trashBin")
         action.backgroundColor = .red
         return action
-    }
-
-    @IBAction func filterButtonTapped(_ sender: Any) {
-        clearFilterButton.isHidden = false
     }
 }
 

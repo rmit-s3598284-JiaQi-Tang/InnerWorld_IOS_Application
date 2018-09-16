@@ -27,7 +27,7 @@ class Create_Content_ViewController: UIViewController {
     @IBAction func tickButtonTapped(_ sender: Any) {
         edittingDiray.title = tittleTextField.text!
         edittingDiray.content = contentUITextView.text
-        appEngine.diaryList.insert(edittingDiray, at: 0)
+        appEngine.addDiary(diary: edittingDiray)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

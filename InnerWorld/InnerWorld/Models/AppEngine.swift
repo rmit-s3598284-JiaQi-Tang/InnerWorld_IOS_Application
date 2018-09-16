@@ -30,7 +30,7 @@ class AppEngine {
             Diary(id: 2, title: "Lost 100$ in China Town", date: "6-Aug-2018", mood: "sad", weather: "rainning", location: "China Town, Melbourne", photo: "prototype-diaryPicture2", content: "Today, I went to China Town alone for some Chinese food. I lost my precious 100$! what a bad day!"),
             Diary(id: 3, title: "Learning Swift is fun!", date: "1-Aug-2018", mood: "happy", weather: "cloud", location: "RMIT, Melbourne", photo: "prototype-diaryPicture3", content: "Today, I went to RMIT with my friend Linh, we learned a lot IOS stuff from Fardin. what a good day!")
         ]
-        user = User(nickName: "Another Dude", birthDay: "3-Dec-1993", password: "0000", hint: "the initial password is '0000'")
+        user = User(nickName: "Another Dude", birthDay: "3-Dec-1993", password: "", hint: "There's no password")
         filteredDiaryList = diaryList
         diaryLocations = ["Melbourne"]
     }
@@ -44,8 +44,9 @@ class AppEngine {
         if diaryList.isEmpty {
             diaryList = [diary]
         } else {
-            diaryList.append(diary)
+            diaryList.insert(diary, at: 0)
         }
+        filteredDiaryList = diaryList
     }
 
     func removeDiary(tittleOfToBeDeletedDiary: String) {
@@ -60,8 +61,9 @@ class AppEngine {
         diaryList[index!] = diary
         
         let filterDiaryIndex = filteredDiaryList.index(where: {$0.id == diary.id})
-        filteredDiaryList[filterDiaryIndex!] = diary
-        print(filteredDiaryList[filterDiaryIndex!].title)
+        if filterDiaryIndex != nil {
+            filteredDiaryList[filterDiaryIndex!] = diary
+        }
     }
     
     func saveUser(user: User){
