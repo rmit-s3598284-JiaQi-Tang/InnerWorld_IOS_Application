@@ -79,9 +79,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
-        viewController?.diary = appEngine.filteredDiaryList[indexPath.row]
-        present(viewController!, animated: true, completion: nil)
+//        let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
+//        viewController?.diary = appEngine.filteredDiaryList[indexPath.row]
+//        present(viewController!, animated: true, completion: nil)
+        appEngine.readingDiary = appEngine.filteredDiaryList[indexPath.row]
+        performSegue(withIdentifier: "HomeToReadSegue", sender: nil)
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

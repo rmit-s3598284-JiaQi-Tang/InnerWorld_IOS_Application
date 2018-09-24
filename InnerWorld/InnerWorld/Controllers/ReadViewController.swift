@@ -10,7 +10,6 @@ import UIKit
 
 class ReadViewController: UIViewController {
     var appEngine = AppEngine.shared()
-    var diary = Diary()
 
     //settings of the items on Reading Screen
 
@@ -23,6 +22,7 @@ class ReadViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let diary = appEngine.readingDiary
         // Do any additional setup after loading the view.
         tittleOfReadScreen.text = diary.title
         locationOfReadScreen.text = diary.location
@@ -33,17 +33,10 @@ class ReadViewController: UIViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-            return
-        }
-        present(myTabBarViewController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func editButtonTapped(_ sender: Any) {
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController
-        viewController?.diary = diary
-        present(viewController!, animated: true, completion: nil)
+        performSegue(withIdentifier: "ReadToEditSegue", sender: nil)
     }
     
 }

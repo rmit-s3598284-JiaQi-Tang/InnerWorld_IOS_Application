@@ -16,6 +16,8 @@ class AppEngine {
     var diaryLocations: [String]
     var currentLocation: String = "Melbourne"
     var currentWeather: String = "rainning"
+    var creatingDiary: Diary
+    var readingDiary: Diary
     
     // Shared Properties
     private static var sharedInstance: AppEngine = {
@@ -33,6 +35,8 @@ class AppEngine {
         user = User(nickName: "Another Dude", birthDay: "3-Dec-1993", password: "", hint: "There's no password")
         filteredDiaryList = diaryList
         diaryLocations = ["Melbourne"]
+        creatingDiary = Diary(id: -1, title: "", date: "", mood: "", weather: "", location: "", photo: "", content: "")
+        readingDiary = Diary(id: -1, title: "", date: "", mood: "", weather: "", location: "", photo: "", content: "")
     }
     
     // Accessors
@@ -47,6 +51,7 @@ class AppEngine {
             diaryList.insert(diary, at: 0)
         }
         filteredDiaryList = diaryList
+        creatingDiary = Diary(id: -1, title: "", date: "", mood: "", weather: "", location: "", photo: "", content: "")
     }
 
     func removeDiary(tittleOfToBeDeletedDiary: String) {

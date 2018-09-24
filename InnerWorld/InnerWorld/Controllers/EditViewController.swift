@@ -29,7 +29,7 @@ class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        diary = appEngine.readingDiary
         // Do any additional setup after loading the view.
         tittleOfEditScreen.text = diary.title
         locationOfEditScreen.text = diary.location
@@ -43,6 +43,10 @@ class EditViewController: UIViewController {
         weatherStackView.isHidden = true
     }
 
+    @IBAction func backButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func tickButtonTapped(_ sender: Any) {
         diary.title = tittleOfEditScreen.text!
         diary.location = locationOfEditScreen.text!
@@ -54,6 +58,7 @@ class EditViewController: UIViewController {
             diary.mood = newMood
         }
         appEngine.saveDiary(diary: diary)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func sunnyButtonTapped(_ sender: Any) {
         weatherOfEditScreen.setImage(UIImage(named: "sunny.png"), for: .normal)
