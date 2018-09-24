@@ -10,10 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var appEngine = AppEngine.shared()
-
+    var darkSkyWeatherDataManager = DarkSkyWeatherDataManager.shared
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var currentLocation: UILabel!
-    @IBOutlet weak var currentWeather: UIImageView!
+    @IBOutlet weak var currentLocationLabel: UILabel!
+    @IBOutlet weak var currentWeatherImage: UIImageView!
+    @IBOutlet weak var currentDateLabel: UILabel!
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.refreshDiaryData()
@@ -28,8 +29,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         searchBar.delegate = self
         self.diaryTableView.reloadData()
-        currentLocation.text = appEngine.currentLocation
-        currentWeather.image = UIImage(named: appEngine.currentWeather + ".png")
+
+// get current weather condition from Rest API
+        darkSkyWeatherDataManager.weatherDataAt(latitude: 37.8267, longitude: -122.4233) { currentWeather, error in
+            DispatchQueue.main.async {
+                if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time, let location = currentWeather?.timezone {
+                    self.currentWeatherImage.image = UIImage(named: weatherImage)
+                    self.currentDateLabel.text = "\("\(date)".prefix(10))"
+                    self.currentLocationLabel.text = location
+                }
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
