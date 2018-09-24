@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var appEngine = AppEngine.shared()
     var darkSkyWeatherDataManager = DarkSkyWeatherDataManager.shared
@@ -31,13 +31,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.diaryTableView.reloadData()
 
 // get current weather condition from Rest API
-        darkSkyWeatherDataManager.weatherDataAt(latitude: 37.8267, longitude: -122.4233) { currentWeather, error in
+        darkSkyWeatherDataManager.weatherDataAt(latitude: -37.767494, longitude: 144.945227) { currentWeather, error in
             DispatchQueue.main.async {
-                if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time, let location = currentWeather?.timezone {
+                if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time {
                     self.currentWeatherImage.image = UIImage(named: weatherImage)
                     self.currentDateLabel.text = "\("\(date)".prefix(10))"
-                    self.currentLocationLabel.text = location
                 }
+                let geoCoder = CLGeocoder()
+                let location = CLLocation(latitude: -37.767494, longitude: 144.945227) // <- New York
+                geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
+                    placemarks?.forEach { (placemark) in
+                        if let city = placemark.locality {
+                            self.currentLocationLabel.text = city
+                        }
+                    }
+                })
             }
         }
     }
