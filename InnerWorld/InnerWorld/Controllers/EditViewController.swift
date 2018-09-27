@@ -37,7 +37,7 @@ class EditViewController: UIViewController {
         weatherOfEditScreen.accessibilityIdentifier = diary.weather
         moodOfEditScreen.setImage(UIImage(named: (diary.mood! + ".png")), for: .normal)
         moodOfEditScreen.accessibilityIdentifier = diary.mood
-        photoOfEditScreen.image = UIImage(named: (diary.photo! + ".jpg"))
+//        photoOfEditScreen.image = UIImage(named: (diary.photo! + ".jpg"))
         contentOfEditScreen.text = diary.content
         moodStackView.isHidden = true
         weatherStackView.isHidden = true

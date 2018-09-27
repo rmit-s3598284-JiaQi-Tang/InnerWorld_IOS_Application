@@ -28,7 +28,7 @@ class ReadViewController: UIViewController {
         locationOfReadScreen.text = diary.location
         weatherOfReadScreen.image = UIImage(named: (diary.weather! + ".png"))
         moodOfReadScreen.image = UIImage(named: (diary.mood! + ".png"))
-        photoOfReadScreen.image = UIImage(named: (diary.photo! + ".jpg"))
+        photoOfReadScreen.image = diary.getUiImage()
         contentOfReadScreen.text = diary.content
     }
 

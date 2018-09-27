@@ -763,12 +763,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-ze-HNL">
-                                <rect key="frame" x="253.5" y="590" width="60" height="60"/>
+                                <rect key="frame" x="254" y="590" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="210-GL-bGt"/>
                                     <constraint firstAttribute="width" constant="60" id="GAp-GX-Fvi"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="rIL-cI-CB4" eventType="touchUpInside" id="rgz-aO-zJx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-eA-tyc">
                                 <rect key="frame" x="66" y="590" width="60" height="60"/>
@@ -777,6 +780,9 @@
                                     <constraint firstAttribute="height" constant="60" id="GKQ-Zv-Vnv"/>
                                 </constraints>
                                 <state key="normal" image="album"/>
+                                <connections>
+                                    <action selector="accessLibrary:" destination="rIL-cI-CB4" eventType="touchUpInside" id="96N-jd-Ky6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tittle" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xO-M6-Isl">
                                 <rect key="frame" x="16" y="115" width="343" height="30"/>
@@ -789,42 +795,51 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y8h-Ou-9XL">
-                                <rect key="frame" x="16" y="163" width="343" height="394"/>
+                                <rect key="frame" x="16" y="166" width="343" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="N9J-54-z3i"/>
-                                    <constraint firstAttribute="height" constant="394" id="k8B-TU-Tfe"/>
+                                    <constraint firstAttribute="height" constant="200" id="k8B-TU-Tfe"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-Sj-XVw">
+                                <rect key="frame" x="16" y="393" width="343" height="173"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.9756196141242981" green="0.795211457770023" blue="0.49824249853726804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bMp-im-cf0" firstAttribute="centerX" secondItem="PRi-vg-Tpv" secondAttribute="centerX" constant="-139.5" id="9Bk-Jo-eTs"/>
-                            <constraint firstItem="Y8h-Ou-9XL" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="26.5" id="CHp-PF-A4w"/>
+                            <constraint firstItem="Y8h-Ou-9XL" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="-67.5" id="CHp-PF-A4w"/>
                             <constraint firstItem="ZhG-ze-HNL" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="286.5" id="Kf5-bj-15m"/>
+                            <constraint firstItem="Ofa-Sj-XVw" firstAttribute="centerX" secondItem="PRi-vg-Tpv" secondAttribute="centerX" id="LFA-0F-OGJ"/>
                             <constraint firstItem="Y8h-Ou-9XL" firstAttribute="centerX" secondItem="PRi-vg-Tpv" secondAttribute="centerX" id="Nro-jP-o7e"/>
+                            <constraint firstItem="Ofa-Sj-XVw" firstAttribute="leading" secondItem="Y8h-Ou-9XL" secondAttribute="leading" id="ViX-hZ-amI"/>
                             <constraint firstItem="bMp-im-cf0" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="-281.5" id="YSI-MT-fVf"/>
                             <constraint firstItem="9zx-eA-tyc" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="286.5" id="YvC-Cl-NL6"/>
                             <constraint firstItem="9zx-eA-tyc" firstAttribute="centerX" secondItem="PRi-vg-Tpv" secondAttribute="centerX" constant="-91.5" id="bNI-fd-mJz"/>
                             <constraint firstItem="9xO-M6-Isl" firstAttribute="centerX" secondItem="PRi-vg-Tpv" secondAttribute="centerX" id="cqg-nP-8Ef"/>
+                            <constraint firstItem="Ofa-Sj-XVw" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="146" id="g1K-uc-xSe"/>
                             <constraint firstItem="ZhG-ze-HNL" firstAttribute="centerX" secondItem="PRi-vg-Tpv" secondAttribute="centerX" constant="96" id="mkn-Zt-M2X"/>
                             <constraint firstItem="vKU-70-VWc" firstAttribute="centerX" secondItem="PRi-vg-Tpv" secondAttribute="centerX" constant="139.5" id="mod-KI-ZR3"/>
                             <constraint firstItem="vKU-70-VWc" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="-281.5" id="n3K-dp-zQl"/>
                             <constraint firstItem="9xO-M6-Isl" firstAttribute="centerY" secondItem="PRi-vg-Tpv" secondAttribute="centerY" constant="-203.5" id="uvu-ZS-R7F"/>
+                            <constraint firstItem="ZhG-ze-HNL" firstAttribute="top" secondItem="Ofa-Sj-XVw" secondAttribute="bottom" constant="24" id="xc5-RM-hDV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fzD-TK-Gbn"/>
                     </view>
                     <connections>
                         <outlet property="contentUITextView" destination="Y8h-Ou-9XL" id="TMV-hz-3Lo"/>
+                        <outlet property="imageView" destination="Ofa-Sj-XVw" id="Sxl-Gk-AaW"/>
+                        <outlet property="takePhotoButton" destination="ZhG-ze-HNL" id="fkl-h5-ich"/>
                         <outlet property="tittleTextField" destination="9xO-M6-Isl" id="4id-JJ-yVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMT-Zg-u9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2820" y="-4"/>
+            <point key="canvasLocation" x="2820" y="-4.0479760119940034"/>
         </scene>
         <!--Read View Controller-->
         <scene sceneID="f1g-ZC-H8h">
@@ -908,7 +923,7 @@
                                     <constraint firstAttribute="height" constant="30" id="cXf-xR-IWL"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prototype-diaryPicture" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-OE-o1s">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prototype-diaryPicture2" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-OE-o1s">
                                 <rect key="frame" x="48" y="173" width="321" height="215"/>
                                 <color key="backgroundColor" red="0.56470588235294117" green="0.7803921568627451" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1543,7 +1558,7 @@
         <image name="letsDoit" width="100" height="100"/>
         <image name="light rain" width="100" height="100"/>
         <image name="location" width="96" height="96"/>
-        <image name="prototype-diaryPicture" width="1174" height="784"/>
+        <image name="prototype-diaryPicture2" width="1440" height="1080"/>
         <image name="rain" width="100" height="100"/>
         <image name="rainning" width="100" height="100"/>
         <image name="sad" width="166" height="166"/>

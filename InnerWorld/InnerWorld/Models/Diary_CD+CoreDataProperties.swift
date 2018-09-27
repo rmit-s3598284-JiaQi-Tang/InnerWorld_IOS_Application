@@ -17,13 +17,13 @@ extension Diary_CD {
         return NSFetchRequest<Diary_CD>(entityName: "Diary_CD")
     }
 
-    @NSManaged public var id: Int16
-    @NSManaged public var title: String?
-    @NSManaged public var date: NSDate?
-    @NSManaged public var mood: String?
-    @NSManaged public var weather: String?
-    @NSManaged public var location: String?
-    @NSManaged public var photo: String?
     @NSManaged public var content: String?
+    @NSManaged public var date: NSDate?
+    @NSManaged public var id: Int16
+    @NSManaged public var location: String?
+    @NSManaged public var mood: String?
+    @NSManaged public var photo: String?
+    @NSManaged public var title: String?
+    @NSManaged public var weather: String?
 
 }

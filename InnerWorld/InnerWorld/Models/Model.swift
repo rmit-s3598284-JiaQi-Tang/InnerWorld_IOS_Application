@@ -83,24 +83,21 @@ class Model {
         existing.weather = diary.weather
         existing.location = diary.location
 //            existing.date = diary.date
-        existing.photo = diary.photo
+        existing.photo = diary.imagePath
         updateDb()
     }
     
     func addDiaryToCoreData() {
         let entity = NSEntityDescription.entity(forEntityName: "Diary_CD", in: managedContext)
         let newDiary = NSManagedObject(entity: entity!, insertInto: managedContext) as! Diary_CD
-        print("HERE")
-        print(creatingDiary.title)
-        print(creatingDiary.content)
-        print(creatingDiary.mood)
+        saveImageDiary(diary: creatingDiary)
         newDiary.setValue(creatingDiary.title, forKey: "title")
         newDiary.setValue(creatingDiary.content, forKey: "content")
         newDiary.setValue(creatingDiary.mood, forKey: "mood")
         newDiary.setValue(creatingDiary.weather, forKey: "weather")
         newDiary.setValue(creatingDiary.location, forKey: "location")
         //            newDiary.setValue(diary.date, forKey: "date")
-        newDiary.setValue(creatingDiary.photo, forKey: "photo")
+        newDiary.setValue(creatingDiary.imagePath, forKey: "photo")
         diaries.append(newDiary)
         updateDb()
         creatingDiary = Diary()
@@ -119,6 +116,27 @@ class Model {
     
     func getDiaryIndex(diary: Diary_CD) -> Int{
         return diaries.index(of: diary)!
+    }
+    
+    func saveImageDiary (diary: Diary) -> Bool{
+        //Use UIImage, save and change the path
+        let image = diary.image as! UIImage
+        let imageName = "\(diary.title)-\(Int(arc4random_uniform(1000))).png"
+        guard let data = UIImageJPEGRepresentation(image, 1) ?? UIImagePNGRepresentation(image) else {
+            return false
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            return false
+        }
+        do {
+            try
+                data.write(to: directory.appendingPathComponent(imageName)!)
+                diary.imagePath = imageName
+            return true
+        } catch {
+            print(error.localizedDescription)
+            return false
+        }
     }
     
     func filterHomePageDiaryList(){
