@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -186,7 +186,7 @@
                                 </constraints>
                                 <state key="normal" image="filter"/>
                                 <connections>
-                                    <segue destination="AvV-3h-Td9" kind="show" id="fVa-o4-erq"/>
+                                    <segue destination="AvV-3h-Td9" kind="show" id="LD1-qn-aqX"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jPa-LZ-zc0">
@@ -360,6 +360,7 @@
                         <outlet property="currentWeatherImage" destination="zRg-bt-myd" id="F7g-bZ-eMU"/>
                         <outlet property="diaryTableView" destination="3mq-r9-NBf" id="8HG-eS-Mkh"/>
                         <outlet property="searchBar" destination="jPa-LZ-zc0" id="7m9-HY-f7L"/>
+                        <segue destination="TUY-FY-OQa" kind="show" identifier="HomeToReadSegue" id="nfZ-bT-mVn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -633,6 +634,7 @@
                         <outlet property="cityTextField" destination="l4f-6P-BuP" id="VMP-yu-WUV"/>
                         <outlet property="datePicker" destination="8TT-fB-rU3" id="A2T-cF-iOs"/>
                         <outlet property="weatherImageView" destination="Oee-5E-Qfx" id="5n0-o2-x9y"/>
+                        <segue destination="jMV-Jd-ktu" kind="show" identifier="DateToMoodSegue" id="xAL-Xd-Nbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -731,6 +733,7 @@
                     <connections>
                         <outlet property="moodImage" destination="o6h-Yy-po0" id="S7I-yp-Bek"/>
                         <outlet property="moodUISlider" destination="yvp-GJ-mRw" id="trr-OL-kag"/>
+                        <segue destination="rIL-cI-CB4" kind="show" identifier="MoodToContentSegue" id="9Gk-kS-0L5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvd-MA-QJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -757,7 +760,6 @@
                                 <state key="normal" image="tick"/>
                                 <connections>
                                     <action selector="tickButtonTapped:" destination="rIL-cI-CB4" eventType="touchUpInside" id="n6j-QT-0up"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="sendNewDiarySegue" id="mlt-oG-e0t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-ze-HNL">
@@ -945,6 +947,7 @@
                         <outlet property="photoOfReadScreen" destination="PHD-OE-o1s" id="Vvh-h7-UFs"/>
                         <outlet property="tittleOfReadScreen" destination="pPn-8f-faM" id="MJ4-R9-ed8"/>
                         <outlet property="weatherOfReadScreen" destination="vGj-YU-b7e" id="GVN-HR-zvV"/>
+                        <segue destination="D6v-Ri-VcA" kind="show" identifier="ReadToEditSegue" id="tZj-Zh-m6w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fpo-75-Dag" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -968,7 +971,6 @@
                                 <state key="normal" image="tick"/>
                                 <connections>
                                     <action selector="tickButtonTapped:" destination="D6v-Ri-VcA" eventType="touchUpInside" id="I7q-8u-yQU"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="EzD-wF-pWh"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LsL-4e-Fnw">
@@ -1208,6 +1210,17 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="tdb-vt-k3H"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6u-NE-pk4">
+                                <rect key="frame" x="26" y="20" width="43" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="eeb-bM-iRl"/>
+                                    <constraint firstAttribute="height" constant="43" id="kYe-j4-l0A"/>
+                                </constraints>
+                                <state key="normal" image="arrowBack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="D6v-Ri-VcA" eventType="touchUpInside" id="YmD-GA-TGy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8323566713191497" green="0.8351686246343748" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1541,7 +1554,4 @@
         <image name="tick" width="64" height="64"/>
         <image name="windy" width="100" height="100"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="EzD-wF-pWh"/>
-    </inferredMetricsTieBreakers>
 </document>
