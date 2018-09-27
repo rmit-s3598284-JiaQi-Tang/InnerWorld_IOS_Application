@@ -59,7 +59,7 @@ class Create_Mood_ViewController: UIViewController {
                 if moodUISlider.value >= 75 {
                     return "smile"
                 }
-                return "cry"
+                else { return "cry" }
             }
         }
 //        appEngine.creatingDiary.mood = currentMood

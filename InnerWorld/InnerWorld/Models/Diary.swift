@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Diary: Codable {
+class Diary: Codable {
 
-    typealias T = Diary
+//    typealias T = Diary
 
     var id: Int
     var title: String
@@ -33,14 +33,11 @@ struct Diary: Codable {
 
     }
 
-    init() {
-        self.id = -1;
-        self.title = ""
-        self.date = ""
-        self.mood = ""
-        self.weather = ""
-        self.location = ""
-        self.photo = ""
-        self.content = ""
+    convenience init() {
+        self.init(id: -1, title: "", date: "", mood: "", weather: "", location: "", photo: "", content: "")
+    }
+    
+    convenience init(diary :Diary_CD) {
+        self.init(id: -1, title: diary.title!, date: "", mood: diary.mood!, weather: diary.weather!, location: diary.location!, photo: diary.photo!, content: diary.content!)
     }
 }

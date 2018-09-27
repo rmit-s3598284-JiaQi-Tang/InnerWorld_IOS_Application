@@ -9,8 +9,8 @@
 import UIKit
 
 class EditViewController: UIViewController {
-    var appEngine = AppEngine.shared()
-    var diary = Diary()
+    var model = Model.shared()
+    var diary = Diary_CD()
 
     @IBOutlet weak var tittleOfEditScreen: UITextField!
     @IBOutlet weak var locationOfEditScreen: UITextField!
@@ -29,15 +29,15 @@ class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        diary = appEngine.readingDiary
+        diary = model.readingDiary
         // Do any additional setup after loading the view.
         tittleOfEditScreen.text = diary.title
         locationOfEditScreen.text = diary.location
-        weatherOfEditScreen.setImage(UIImage(named: (diary.weather + ".png")), for: .normal)
+        weatherOfEditScreen.setImage(UIImage(named: (diary.weather! + ".png")), for: .normal)
         weatherOfEditScreen.accessibilityIdentifier = diary.weather
-        moodOfEditScreen.setImage(UIImage(named: (diary.mood + ".png")), for: .normal)
+        moodOfEditScreen.setImage(UIImage(named: (diary.mood! + ".png")), for: .normal)
         moodOfEditScreen.accessibilityIdentifier = diary.mood
-        photoOfEditScreen.image = UIImage(named: (diary.photo + ".jpg"))
+        photoOfEditScreen.image = UIImage(named: (diary.photo! + ".jpg"))
         contentOfEditScreen.text = diary.content
         moodStackView.isHidden = true
         weatherStackView.isHidden = true
@@ -57,7 +57,8 @@ class EditViewController: UIViewController {
         if let newMood = moodOfEditScreen.accessibilityIdentifier {
             diary.mood = newMood
         }
-        appEngine.saveDiary(diary: diary)
+        let newDiary = Diary(diary: diary)
+        model.saveDiaryToCoreData(diary: newDiary, existing: model.readingDiary)
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func sunnyButtonTapped(_ sender: Any) {
