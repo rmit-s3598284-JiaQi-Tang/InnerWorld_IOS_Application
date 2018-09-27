@@ -9,7 +9,8 @@
 import UIKit
 import MapKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-    var appEngine = AppEngine.shared()
+//    var appEngine = AppEngine.shared()
+    var model = Model.shared()
     var darkSkyWeatherDataManager = DarkSkyWeatherDataManager.shared
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var currentLocationLabel: UILabel!
@@ -21,7 +22,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func refreshDiaryData(){
-        appEngine.filterHomePageDiaryList(search: searchBar.text!, location: "", mood: "")
+        model.search = searchBar.text!
+        model.location = ""
+        model.mood = ""
+        model.filterHomePageDiaryList()
         self.diaryTableView.reloadData()
     }
 
@@ -30,7 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchBar.delegate = self
         self.diaryTableView.reloadData()
 
-// get current weather condition from Rest API
+        // get current weather condition from Rest API
         darkSkyWeatherDataManager.weatherDataAt(latitude: -37.767494, longitude: 144.945227) { currentWeather, error in
             DispatchQueue.main.async {
                 if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time {
@@ -51,26 +55,39 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        self.model.filterHomePageDiaryList()
         self.diaryTableView.reloadData()
     }
 
     @IBOutlet weak var diaryTableView: UITableView!
 
     @IBAction func clearFilterButtonTapped(_ sender: Any) {
-        appEngine.filterHomePageDiaryList(search: "", location: "", mood: "")
+        model.search = ""
+        model.location = ""
+        model.mood = ""
+        model.filterHomePageDiaryList()
         self.diaryTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(appEngine.filteredDiaryList.count)
+        return(model.filteredDiaries.count)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeViewControllerTableViewCell
-        cell.locationLabel.text = appEngine.filteredDiaryList[indexPath.row].location
-        cell.weatherIcon.image = UIImage(named: (appEngine.filteredDiaryList[indexPath.row].weather + ".png"))
-        cell.tittleLabel.text = appEngine.filteredDiaryList[indexPath.row].title
-        cell.dateLabel.text = appEngine.filteredDiaryList[indexPath.row].date
+        
+        cell.locationLabel.text = model.filteredDiaries[indexPath.row].location
+        cell.weatherIcon.image = UIImage(named: (model.filteredDiaries[indexPath.row].weather! + ".png"))
+        cell.tittleLabel.text = model.filteredDiaries[indexPath.row].title
+//        let formatter = DateFormatter()
+//        cell.dateLabel.text = formatter.string(from: appEngine.filteredDiaries[indexPath.row].date! as Date)
+        
+//        cell.locationLabel.text = appEngine.diaries[indexPath.row].location
+//        cell.weatherIcon.image = UIImage(named: (appEngine.diaries[indexPath.row].weather! + ".png"))
+//        cell.tittleLabel.text = appEngine.diaries[indexPath.row].title
+//
+//        let formatter = DateFormatter()
+//        cell.dateLabel.text = formatter.string(from: appEngine.diaries[indexPath.row].date! as Date)
         return(cell)
     }
 
@@ -79,10 +96,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let viewController = storyboard?.instantiateViewController(withIdentifier: "ReadViewController") as? ReadViewController
-//        viewController?.diary = appEngine.filteredDiaryList[indexPath.row]
-//        present(viewController!, animated: true, completion: nil)
-        appEngine.readingDiary = appEngine.filteredDiaryList[indexPath.row]
+        model.readingDiary = model.filteredDiaries[indexPath.row]
         performSegue(withIdentifier: "HomeToReadSegue", sender: nil)
     }
 
@@ -93,8 +107,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            self.appEngine.removeDiary(tittleOfToBeDeletedDiary: self.appEngine.diaryList[indexPath.row].title)
-            self.appEngine.filteredDiaryList.remove(at: indexPath.row)
+            self.model.deleteDiary(self.model.getDiaryIndex(diary: self.model.filteredDiaries[indexPath.row]))
+            self.model.filteredDiaries.remove(at: indexPath.row)
             self.diaryTableView.deleteRows(at: [indexPath], with: .automatic)
             
             completion(true)

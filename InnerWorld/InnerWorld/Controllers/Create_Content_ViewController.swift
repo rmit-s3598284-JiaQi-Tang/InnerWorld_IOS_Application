@@ -10,7 +10,8 @@ import UIKit
 
 class Create_Content_ViewController: UIViewController {
 
-    var appEngine = AppEngine.shared()
+//    var appEngine = AppEngine.shared()
+    var model = Model.shared()
     var edittingDiray = Diary()
 
     override func viewDidLoad() {
@@ -25,19 +26,14 @@ class Create_Content_ViewController: UIViewController {
     @IBOutlet weak var contentUITextView: UITextView!
 
     @IBAction func tickButtonTapped(_ sender: Any) {
-//        edittingDiray.title = tittleTextField.text!
-//        edittingDiray.content = contentUITextView.text
-//        appEngine.addDiary(diary: edittingDiray)
-        appEngine.creatingDiary.title = tittleTextField.text!
-        appEngine.creatingDiary.content = contentUITextView.text
-        appEngine.addDiary(diary: appEngine.creatingDiary)
+        model.creatingDiary.title = tittleTextField.text!
+        model.creatingDiary.content = contentUITextView.text
+        model.addDiaryToCoreData()
         
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-//        let viewController = storyboard?.instantiateViewController(withIdentifier: "Create_Mood_View_Controller") as? Create_Mood_ViewController
-//        present(viewController!, animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
     }
 }

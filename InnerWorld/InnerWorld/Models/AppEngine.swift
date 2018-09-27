@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class AppEngine {
 
@@ -18,6 +20,11 @@ class AppEngine {
     var currentWeather: String = "rainning"
     var creatingDiary: Diary
     var readingDiary: Diary
+    
+    var diaries = [Diary_CD]()
+    var filteredDiaries = [Diary_CD]()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let managedContext: NSManagedObjectContext
     
     // Shared Properties
     private static var sharedInstance: AppEngine = {
@@ -37,11 +44,72 @@ class AppEngine {
         diaryLocations = ["Melbourne"]
         creatingDiary = Diary(id: -1, title: "", date: "", mood: "", weather: "", location: "", photo: "", content: "")
         readingDiary = Diary(id: -1, title: "", date: "", mood: "", weather: "", location: "", photo: "", content: "")
+        
+        managedContext = appDelegate.persistentContainer.viewContext
+        loadDiariesFromCoreData()
+        filteredDiaries = diaries
     }
     
     // Accessors
     class func shared() -> AppEngine {
         return sharedInstance
+    }
+    
+    func updateDb() {
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Error updating: \(error)")
+        }
+    }
+    
+    func deleteDiary(_ indexPath: IndexPath) {
+        let diary = diaries[indexPath.item]
+        diaries.remove(at: indexPath.item)
+        managedContext.delete(diary)
+        updateDb()
+    }
+    
+    func loadDiariesFromCoreData() {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Diary_CD")
+            let result = try managedContext.fetch(fetchRequest)
+            diaries = result as! [Diary_CD]
+        }
+        catch let error as NSError
+        {
+            print("Could not fetch: \(error)")
+        }
+    }
+    
+    func saveDiaryToCoreData(diary :Diary_CD, existing: Diary_CD!) {
+        let entity = NSEntityDescription.entity(forEntityName: "Diary_CD", in: managedContext)
+        
+        if let _ = existing {
+            existing.title = diary.title
+            existing.content = diary.content
+            existing.mood = diary.mood
+            existing.weather = diary.weather
+            existing.location = diary.location
+            existing.date = diary.date
+            existing.photo = diary.photo
+        }
+        else {
+            let newDiary = NSManagedObject(entity: entity!, insertInto: managedContext) as! Diary_CD
+            newDiary.setValue(diary.title, forKey: "title")
+            newDiary.setValue(diary.content, forKey: "content")
+            newDiary.setValue(diary.mood, forKey: "mood")
+            newDiary.setValue(diary.weather, forKey: "weather")
+            newDiary.setValue(diary.location, forKey: "location")
+            newDiary.setValue(diary.date, forKey: "date")
+            newDiary.setValue(diary.photo, forKey: "photo")
+            diaries.append(newDiary)
+        }
+        updateDb()
+    }
+    
+    func getDiary(_ indexPath: IndexPath) -> Diary_CD{
+        return diaries[indexPath.row]
     }
 
     func addDiary(diary: Diary) {
@@ -79,17 +147,30 @@ class AppEngine {
     }
     
     func filterHomePageDiaryList(search: String, location: String, mood: String){
+//        if (search.isEmpty && location.isEmpty && mood.isEmpty) {
+//            filteredDiaryList = diaryList
+//        }
+//        else if (search.isEmpty) {
+//            filteredDiaryList = diaryList.filter{ $0.location.localizedCaseInsensitiveContains(location) && $0.mood.localizedCaseInsensitiveContains(mood) }
+//        }
+//        else {
+//            if (location.isEmpty && mood.isEmpty) {
+//                filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search)}
+//            } else {
+//                filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search) && $0.location.localizedCaseInsensitiveContains(location) && $0.mood.localizedCaseInsensitiveContains(mood) }
+//            }
+//        }
         if (search.isEmpty && location.isEmpty && mood.isEmpty) {
-            filteredDiaryList = diaryList
+            filteredDiaries = diaries
         }
         else if (search.isEmpty) {
-            filteredDiaryList = diaryList.filter{ $0.location.localizedCaseInsensitiveContains(location) && $0.mood.localizedCaseInsensitiveContains(mood) }
+            filteredDiaries = diaries.filter{ $0.location!.localizedCaseInsensitiveContains(location) && $0.mood!.localizedCaseInsensitiveContains(mood) }
         }
         else {
             if (location.isEmpty && mood.isEmpty) {
-                filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search)}
+                filteredDiaries = diaries.filter{ $0.title!.localizedCaseInsensitiveContains(search)}
             } else {
-                filteredDiaryList = diaryList.filter{ $0.title.localizedCaseInsensitiveContains(search) && $0.location.localizedCaseInsensitiveContains(location) && $0.mood.localizedCaseInsensitiveContains(mood) }
+                filteredDiaries = diaries.filter{ $0.title!.localizedCaseInsensitiveContains(search) && $0.location!.localizedCaseInsensitiveContains(location) && $0.mood!.localizedCaseInsensitiveContains(mood) }
             }
         }
     }

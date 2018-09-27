@@ -10,7 +10,8 @@ import UIKit
 
 class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    var appEngine = AppEngine.shared()
+//    var appEngine = AppEngine.shared()
+    var model = Model.shared()
     let happyData = UIImagePNGRepresentation(#imageLiteral(resourceName: "happy"))
     let sadData = UIImagePNGRepresentation(#imageLiteral(resourceName: "sad"))
     let smileData = UIImagePNGRepresentation(#imageLiteral(resourceName: "smile"))
@@ -45,12 +46,12 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return appEngine.diaryLocations.count
+        return model.diaryLocations.count
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return appEngine.diaryLocations[row]
+        return model.diaryLocations[row]
     }
     
     @IBAction func leftButton(_ sender: Any) {
@@ -124,8 +125,11 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         default:
             break;
         }
-        let location = appEngine.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
-        appEngine.filterHomePageDiaryList(search: "", location: location, mood: mood)
+        let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
+        model.search = ""
+        model.location = location
+        model.mood = mood
+        model.filterHomePageDiaryList()
         dismiss(animated: true, completion: nil)
     }
     @IBAction func backButtonTapped(_ sender: Any) {
