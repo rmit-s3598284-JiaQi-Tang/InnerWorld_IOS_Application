@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.currentDateLabel.text = "\("\(date)".prefix(10))"
                 }
                 let geoCoder = CLGeocoder()
-                let location = CLLocation(latitude: -37.767494, longitude: 144.945227) // <- New York
+                let location = CLLocation(latitude: -37.767494, longitude: 144.945227)
                 geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
                     placemarks?.forEach { (placemark) in
                         if let city = placemark.locality {

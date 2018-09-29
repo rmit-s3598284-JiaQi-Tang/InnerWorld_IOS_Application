@@ -12,17 +12,13 @@ class EditViewController: UIViewController {
     var model = Model.shared()
     var diary = Diary_CD()
 
+    @IBOutlet weak var photoOfEditScreen: UIButton!
+    @IBOutlet weak var locationOfEditScreen: UILabel!
     @IBOutlet weak var tittleOfEditScreen: UITextField!
-    @IBOutlet weak var locationOfEditScreen: UITextField!
     @IBOutlet weak var weatherOfEditScreen: UIButton!
     @IBOutlet weak var moodOfEditScreen: UIButton!
-    @IBOutlet weak var photoOfEditScreen: UIImageView!
     @IBOutlet weak var contentOfEditScreen: UITextView!
-    @IBOutlet weak var weatherStackView: UIStackView!
     @IBOutlet weak var moodStackView: UIStackView!
-    @IBAction func weatherButtonTapped(_ sender: Any) {
-        weatherStackView.isHidden = !weatherStackView.isHidden
-    }
     @IBAction func moodButtonTapped(_ sender: Any) {
         moodStackView.isHidden = !moodStackView.isHidden
     }
@@ -33,16 +29,30 @@ class EditViewController: UIViewController {
         // Do any additional setup after loading the view.
         tittleOfEditScreen.text = diary.title
         locationOfEditScreen.text = diary.location
+
         weatherOfEditScreen.setImage(UIImage(named: (diary.weather! + ".png")), for: .normal)
         weatherOfEditScreen.accessibilityIdentifier = diary.weather
+
         moodOfEditScreen.setImage(UIImage(named: (diary.mood! + ".png")), for: .normal)
         moodOfEditScreen.accessibilityIdentifier = diary.mood
-//        photoOfEditScreen.image = UIImage(named: (diary.photo! + ".jpg"))
+
+
+// need to be modified
+        photoOfEditScreen.setImage(diary.getUiImage(), for: .normal)
+//        photoOfEditScreen.accessibilityIdentifier = diary.photo
+
+
+
+
         contentOfEditScreen.text = diary.content
         moodStackView.isHidden = true
-        weatherStackView.isHidden = true
+
     }
 
+    @IBAction func pictureTapped(_ sender: Any) {
+
+    }
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -57,50 +67,14 @@ class EditViewController: UIViewController {
         if let newMood = moodOfEditScreen.accessibilityIdentifier {
             diary.mood = newMood
         }
+//        if let newPicture = photoOfEditScreen.accessibilityIdentifier {
+//            diary.photo = newPicture
+//        }
         let newDiary = Diary(diary: diary)
         model.saveDiaryToCoreData(diary: newDiary, existing: model.readingDiary)
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    @IBAction func sunnyButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "sunny.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "sunny"
-        weatherStackView.isHidden = true
-    }
-    @IBAction func cloudButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "cloud.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "cloud"
-        weatherStackView.isHidden = true
-    }
-    @IBAction func windyButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "windy.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "windy"
-        weatherStackView.isHidden = true
-    }
-    @IBAction func lightRainButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "light rain.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "light rain"
-        weatherStackView.isHidden = true
-    }
-    @IBAction func rainingButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "rainning.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "rainning"
-        weatherStackView.isHidden = true
-    }
-    @IBAction func heavyRainButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "heavy rain.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "heavy rain"
-        weatherStackView.isHidden = true
-    }
-    @IBAction func stormButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "storm.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "storm"
-        weatherStackView.isHidden = true
-    }
-    @IBAction func snowyButtonTapped(_ sender: Any) {
-        weatherOfEditScreen.setImage(UIImage(named: "snowy.png"), for: .normal)
-        weatherOfEditScreen.accessibilityIdentifier = "snowy"
-        weatherStackView.isHidden = true
-    }
+
     @IBAction func smileButtonTapped(_ sender: Any) {
         moodOfEditScreen.setImage(UIImage(named: "smile.png"), for: .normal)
         moodOfEditScreen.accessibilityIdentifier = "smile"

@@ -34,6 +34,7 @@
 		CDD768982153B6BC0037DEE2 /* DarkSkyWeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD768972153B6BC0037DEE2 /* DarkSkyWeatherDataManager.swift */; };
 		CDD7689A2153B7740037DEE2 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD768992153B7740037DEE2 /* Configuration.swift */; };
 		CDD7689C2153B79E0037DEE2 /* DarkSkyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD7689B2153B79E0037DEE2 /* DarkSkyWeatherData.swift */; };
+		CDF8308021600A8900B43D47 /* DarkSkyDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8307F21600A8900B43D47 /* DarkSkyDataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		CDD768972153B6BC0037DEE2 /* DarkSkyWeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherDataManager.swift; sourceTree = "<group>"; };
 		CDD768992153B7740037DEE2 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CDD7689B2153B79E0037DEE2 /* DarkSkyWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherData.swift; sourceTree = "<group>"; };
+		CDF8307F21600A8900B43D47 /* DarkSkyDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyDataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				CDD768992153B7740037DEE2 /* Configuration.swift */,
 				CDD7689B2153B79E0037DEE2 /* DarkSkyWeatherData.swift */,
 				C14EBDA7215C7E54007CCA25 /* Model.swift */,
+				CDF8307F21600A8900B43D47 /* DarkSkyDataHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				CDD7689A2153B7740037DEE2 /* Configuration.swift in Sources */,
 				C1FC7C30213FCB42006C9A7D /* SettingsViewController.swift in Sources */,
 				C1FC7C31213FCB42006C9A7D /* PasswordViewController.swift in Sources */,
+				CDF8308021600A8900B43D47 /* DarkSkyDataHandler.swift in Sources */,
 				C1FC7C39213FCB42006C9A7D /* HomeViewController.swift in Sources */,
 				CDD7689C2153B79E0037DEE2 /* DarkSkyWeatherData.swift in Sources */,
 				C1FC7C35213FCB42006C9A7D /* MyTabBarViewController.swift in Sources */,
