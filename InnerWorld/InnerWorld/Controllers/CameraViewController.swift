@@ -1,9 +1,9 @@
 //
-//  Create_Content_ViewController.swift
+//  CameraViewController.swift
 //  InnerWorld
 //
-//  Created by Jacky Tang on 26/8/18.
-//  Copyright © 2018 Jacky Tang. All rights reserved.
+//  Created by Linh Nguyen on 27/9/18.
+//  Copyright © 2018 Linh Nguyen. All rights reserved.
 //
 
 import UIKit
@@ -11,17 +11,13 @@ import AVKit
 import AVFoundation
 import MobileCoreServices
 
-class Create_Content_ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-//    var appEngine = AppEngine.shared()
-    var model = Model.shared()
-    var edittingDiray = Diary()
-    
     var avPlayerViewController: AVPlayerViewController!
     var image: UIImage?
     var movieURL: URL?
     var lastChosenMediaType: String?
-
+    
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -35,38 +31,24 @@ class Create_Content_ViewController: UIViewController, UIImagePickerControllerDe
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         updateDisplay()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-    @IBOutlet weak var tittleTextField: UITextField!
-    @IBOutlet weak var contentUITextView: UITextView!
-
-    @IBAction func tickButtonTapped(_ sender: Any) {
-        model.creatingDiary.title = tittleTextField.text!
-        model.creatingDiary.content = contentUITextView.text
-        model.addDiaryToCoreData()
-        
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func takePhoto(_ sender: Any) {
+
+    @IBAction func takePicture(_ sender: Any) {
         pickMediaFromSource (UIImagePickerControllerSourceType.camera)
     }
-    
     
     @IBAction func accessLibrary(_ sender: Any) {
         pickMediaFromSource (UIImagePickerControllerSourceType.photoLibrary)
     }
-    
+
     func pickMediaFromSource (_ sourceType: UIImagePickerControllerSourceType)
     {
         // What media types are available on the device
@@ -101,7 +83,6 @@ class Create_Content_ViewController: UIViewController, UIImagePickerControllerDe
             if mediaType == (kUTTypeImage as NSString) as String
             {
                 image = info[UIImagePickerControllerEditedImage] as? UIImage
-                model.creatingDiary.image = image
             }
             else if mediaType == (kUTTypeMovie as NSString) as String
             {

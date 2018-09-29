@@ -10,7 +10,8 @@ import UIKit
 
 class Create_Mood_ViewController: UIViewController {
 
-    var appEngine = AppEngine.shared()
+//    var appEngine = AppEngine.shared()
+    var model = Model.shared()
     var edittingDiray = Diary()
 
     @IBOutlet weak var moodImage: UIImageView!
@@ -43,20 +44,10 @@ class Create_Mood_ViewController: UIViewController {
 
 
     @IBAction func backButtonTapped(_ sender: Any) {
-//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-//            return
-//        }
-//        present(myTabBarViewController, animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
     }
 
     @IBAction func forwardButtonTapped(_ sender: Any) {
-//        let viewController = storyboard?.instantiateViewController(withIdentifier: "Create_Content_View_Controller") as? Create_Content_ViewController
-//        viewController?.edittingDiray = self.edittingDiray
-//        viewController?.edittingDiray.mood = currentMood
-//        present(viewController!, animated: true, completion: nil)
-        
         var currentMood: String {
             get {
                 if moodUISlider.value >= 25 && moodUISlider.value < 50 {
@@ -68,10 +59,11 @@ class Create_Mood_ViewController: UIViewController {
                 if moodUISlider.value >= 75 {
                     return "smile"
                 }
-                return "cry"
+                else { return "cry" }
             }
         }
-        appEngine.creatingDiary.mood = currentMood
+//        appEngine.creatingDiary.mood = currentMood
+        model.creatingDiary.mood = currentMood
         performSegue(withIdentifier: "MoodToContentSegue", sender: nil)
     }
 }

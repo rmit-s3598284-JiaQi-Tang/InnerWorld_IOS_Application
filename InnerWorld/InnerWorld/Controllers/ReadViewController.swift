@@ -9,7 +9,7 @@
 import UIKit
 
 class ReadViewController: UIViewController {
-    var appEngine = AppEngine.shared()
+    var model = Model.shared()
 
     //settings of the items on Reading Screen
 
@@ -22,13 +22,13 @@ class ReadViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let diary = appEngine.readingDiary
+        let diary = model.readingDiary
         // Do any additional setup after loading the view.
         tittleOfReadScreen.text = diary.title
         locationOfReadScreen.text = diary.location
-        weatherOfReadScreen.image = UIImage(named: (diary.weather + ".png"))
-        moodOfReadScreen.image = UIImage(named: (diary.mood + ".png"))
-        photoOfReadScreen.image = UIImage(named: (diary.photo + ".jpg"))
+        weatherOfReadScreen.image = UIImage(named: (diary.weather! + ".png"))
+        moodOfReadScreen.image = UIImage(named: (diary.mood! + ".png"))
+        photoOfReadScreen.image = diary.getUiImage()
         contentOfReadScreen.text = diary.content
     }
 

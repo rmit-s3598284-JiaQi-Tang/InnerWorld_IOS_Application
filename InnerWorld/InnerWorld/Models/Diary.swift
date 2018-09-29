@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
-struct Diary: Codable {
+class Diary {
 
-    typealias T = Diary
+//    typealias T = Diary
 
     var id: Int
     var title: String
@@ -18,29 +19,27 @@ struct Diary: Codable {
     var mood: String
     var weather: String
     var location: String
-    var photo: String
+    var imagePath: String
     var content: String
+    
+    var image: UIImage?
 
-    init(id: Int, title: String, date: String, mood: String, weather: String, location: String, photo: String, content: String) {
+    init(id: Int, title: String, date: String, mood: String, weather: String, location: String, imagePath: String, content: String) {
         self.id = id;
         self.title = title
         self.date = date
         self.mood = mood
         self.weather = weather
         self.location = location
-        self.photo = photo
         self.content = content
-
+        self.imagePath = imagePath
     }
 
-    init() {
-        self.id = -1;
-        self.title = ""
-        self.date = ""
-        self.mood = ""
-        self.weather = ""
-        self.location = ""
-        self.photo = ""
-        self.content = ""
+    convenience init() {
+        self.init(id: -1, title: "", date: "", mood: "", weather: "", location: "", imagePath: "", content: "")
+    }
+    
+    convenience init(diary :Diary_CD) {
+        self.init(id: -1, title: diary.title!, date: "", mood: diary.mood!, weather: diary.weather!, location: diary.location!, imagePath: diary.photo!, content: diary.content!)
     }
 }
