@@ -18,12 +18,26 @@ class DarkSkyDataHandler {
         let handledHumidity = "\(humidity * 100)% RH"
         return handledHumidity
     }
-    static func handleDate(date: Date) -> String {
-        let handledDate = "\("\(date)".prefix(10))"
-        return handledDate
+    static func handleDate(date: Double) -> String {
+
+        let newTime = NSDate(timeIntervalSince1970: date)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM-yyyy"
+
+
+        let dateString = dateFormatter.string(from: newTime as Date)
+        return dateString
+
     }
-    static func handleHour(date: Date) -> String {
-        let handledHour = "\("\(date)".suffix(20).prefix(11))"
-        return handledHour
+
+    func timeFormatConverter(date: Double, format: String) -> String {
+
+        let newDate = NSDate(timeIntervalSince1970: date)
+
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = format
+        let dateString = dayTimePeriodFormatter.string(from: newDate as Date)
+        return dateString
     }
 }

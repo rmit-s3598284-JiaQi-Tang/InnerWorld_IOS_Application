@@ -12,7 +12,7 @@ struct DarkSkyWeatherData: Codable {
     let longitude: Double
     let currently: CurrentWeather
     struct CurrentWeather: Codable {
-        let time: Date
+        let time: Double
         let icon: String
         let temperature: Double
         let humidity: Double

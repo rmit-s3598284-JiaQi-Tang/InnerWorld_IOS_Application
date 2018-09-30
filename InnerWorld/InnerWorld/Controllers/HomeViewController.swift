@@ -8,10 +8,15 @@
 
 import UIKit
 import MapKit
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+import CoreLocation
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate {
 //    var appEngine = AppEngine.shared()
     var model = Model.shared()
     var darkSkyWeatherDataManager = DarkSkyWeatherDataManager.shared
+    var latitude = -37.767494
+    var longitude = 144.945227
+    let locationManager = CLLocationManager()
+
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var currentLocationLabel: UILabel!
     @IBOutlet weak var currentWeatherImage: UIImageView!
@@ -34,24 +39,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchBar.delegate = self
         self.diaryTableView.reloadData()
 
-        // get current weather condition from Rest API
-        darkSkyWeatherDataManager.weatherDataAt(latitude: -37.767494, longitude: 144.945227) { currentWeather, error in
-            DispatchQueue.main.async {
-                if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time {
-                    self.currentWeatherImage.image = UIImage(named: weatherImage)
-                    self.currentDateLabel.text = "\("\(date)".prefix(10))"
-                }
-                let geoCoder = CLGeocoder()
-                let location = CLLocation(latitude: -37.767494, longitude: 144.945227)
-                geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
-                    placemarks?.forEach { (placemark) in
-                        if let city = placemark.locality {
-                            self.currentLocationLabel.text = city
-                        }
-                    }
-                })
-            }
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
         }
+        self.getWeather()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +63,34 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         model.mood = ""
         model.filterHomePageDiaryList()
         self.diaryTableView.reloadData()
+    }
+
+    func getLocation(_ manager: CLLocationManager, didUpdatedLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            latitude = location.coordinate.latitude
+            longitude = location.coordinate.longitude
+            print(location.coordinate)
+        }
+    }
+    func getWeather() {
+        // get current weather condition from Rest API
+        darkSkyWeatherDataManager.weatherDataAt(latitude: self.latitude, longitude: self.longitude) { currentWeather, error in
+            DispatchQueue.main.async {
+                if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time {
+                    self.currentWeatherImage.image = UIImage(named: weatherImage)
+                    self.currentDateLabel.text = DarkSkyDataHandler.handleDate(date: date)
+                }
+                let geoCoder = CLGeocoder()
+                let location = CLLocation(latitude: self.latitude, longitude: self.longitude)
+                geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
+                    placemarks?.forEach { (placemark) in
+                        if let city = placemark.locality {
+                            self.currentLocationLabel.text = city
+                        }
+                    }
+                })
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
