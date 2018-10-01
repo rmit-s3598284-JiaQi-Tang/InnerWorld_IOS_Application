@@ -20,6 +20,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var movieURL: URL?
     var lastChosenMediaType: String?
 
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var locationOfEditScreen: UILabel!
     @IBOutlet weak var tittleOfEditScreen: UITextField!
@@ -40,6 +41,9 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         diary = model.readingDiary
         // Do any additional setup after loading the view.
         tittleOfEditScreen.text = diary.title
+//please make date to type of String
+//        dateLabel.text = diary.date
+
         locationOfEditScreen.text = diary.location
 
         weatherOfEditScreen.setImage(UIImage(named: (diary.weather! + ".png")), for: .normal)
@@ -66,6 +70,9 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func tickButtonTapped(_ sender: Any) {
         diary.title = tittleOfEditScreen.text!
+//please make date to type of String
+//        diary.date = dateLabel.text!
+
         diary.location = locationOfEditScreen.text!
         diary.content = contentOfEditScreen.text!
         if let newWeather = weatherOfEditScreen.accessibilityIdentifier {

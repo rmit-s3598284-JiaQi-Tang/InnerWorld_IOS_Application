@@ -13,6 +13,7 @@ class ReadViewController: UIViewController {
 
     //settings of the items on Reading Screen
 
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tittleOfReadScreen: UILabel!
     @IBOutlet weak var locationOfReadScreen: UILabel!
     @IBOutlet weak var weatherOfReadScreen: UIImageView!
@@ -24,6 +25,10 @@ class ReadViewController: UIViewController {
         super.viewDidLoad()
         let diary = model.readingDiary
         // Do any additional setup after loading the view.
+
+//please make date to type of String
+//        dateLabel.text = diary.date
+
         tittleOfReadScreen.text = diary.title
         locationOfReadScreen.text = diary.location
         weatherOfReadScreen.image = UIImage(named: (diary.weather! + ".png"))

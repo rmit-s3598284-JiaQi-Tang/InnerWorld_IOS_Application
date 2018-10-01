@@ -51,7 +51,7 @@ class Create_Content_ViewController: UIViewController, UIImagePickerControllerDe
         model.creatingDiary.content = contentUITextView.text
         model.addDiaryToCoreData()
         
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+//        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

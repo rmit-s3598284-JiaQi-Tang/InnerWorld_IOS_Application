@@ -82,7 +82,7 @@ class Model {
         existing.setValue(diary.mood, forKey: "mood")
         existing.setValue(diary.weather, forKey: "weather")
         existing.setValue(diary.location, forKey: "location")
-        saveImageDiary(diary: diary)
+//        saveImageDiary(diary: diary)
         existing.setValue(diary.imagePath, forKey: "photo")
         updateDb()
     }
@@ -90,7 +90,7 @@ class Model {
     func addDiaryToCoreData() {
         let entity = NSEntityDescription.entity(forEntityName: "Diary_CD", in: managedContext)
         let newDiary = NSManagedObject(entity: entity!, insertInto: managedContext) as! Diary_CD
-        saveImageDiary(diary: creatingDiary)
+//        saveImageDiary(diary: creatingDiary)
         newDiary.setValue(creatingDiary.title, forKey: "title")
         newDiary.setValue(creatingDiary.content, forKey: "content")
         newDiary.setValue(creatingDiary.mood, forKey: "mood")
@@ -123,21 +123,24 @@ class Model {
         if (diary.image == nil) {
             return false;
         }
-        let image = diary.image as! UIImage
-        let imageName = "\(diary.title)-\(Int(arc4random_uniform(1000))).png"
-        guard let data = UIImageJPEGRepresentation(image, 1) ?? UIImagePNGRepresentation(image) else {
-            return false
-        }
-        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
-            return false
-        }
-        do {
-            try
-                data.write(to: directory.appendingPathComponent(imageName)!)
+        if let image = diary.image {
+            let imageName = "\(diary.title)-\(Int(arc4random_uniform(1000))).png"
+            guard let data = UIImageJPEGRepresentation(image, 1) ?? UIImagePNGRepresentation(image) else {
+                return false
+            }
+            guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+                return false
+            }
+            do {
+                try
+                    data.write(to: directory.appendingPathComponent(imageName)!)
                 diary.imagePath = imageName
-            return true
-        } catch {
-            print(error.localizedDescription)
+                return true
+            } catch {
+                print(error.localizedDescription)
+                return false
+            }
+        } else {
             return false
         }
     }

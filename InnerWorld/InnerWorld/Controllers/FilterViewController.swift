@@ -17,6 +17,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     let smileData = UIImagePNGRepresentation(#imageLiteral(resourceName: "smile"))
     let cryData = UIImagePNGRepresentation(#imageLiteral(resourceName: "cry"))
 
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var backFaceImage: UIImageView!
     @IBOutlet weak var leftFaceImage: UIImageView!
     @IBOutlet weak var rightFaceImage: UIImageView!
@@ -112,6 +113,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
 
     @IBAction func filterButtonTapped(_ sender: Any) {
+        //get mood
         var mood = "happy"
         switch midFaceImage.image! {
         case #imageLiteral(resourceName: "happy"):
@@ -125,7 +127,17 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         default:
             break;
         }
+        //get location
+
         let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
+
+        //get date
+        //now date is a string, the formate is handled also, please update the model, core data and filter
+        let date = DarkSkyDataHandler.handleDate(date: datePicker.date.timeIntervalSince1970)
+
+        //update
+
+        print(date)
         model.search = ""
         model.location = location
         model.mood = mood
