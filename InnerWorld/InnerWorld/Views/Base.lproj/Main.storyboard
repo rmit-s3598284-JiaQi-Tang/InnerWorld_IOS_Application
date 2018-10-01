@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1097,17 +1098,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJB-FP-Cdj">
-                                <rect key="frame" x="16.5" y="192.5" width="343" height="209"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="209" id="7nK-UT-8aF"/>
-                                    <constraint firstAttribute="width" constant="343" id="NzX-pc-NlF"/>
-                                </constraints>
-                                <state key="normal" image="sleet"/>
-                                <connections>
-                                    <action selector="pictureTapped:" destination="D6v-Ri-VcA" eventType="touchUpInside" id="tXV-P2-988"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGL-sr-xSP">
                                 <rect key="frame" x="219" y="161" width="120" height="30"/>
                                 <subviews>
@@ -1161,11 +1151,32 @@
                                     <constraint firstAttribute="width" constant="120" id="PPU-3j-5Yr"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g91-m1-eSW">
+                                <rect key="frame" x="26" y="200" width="124" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kAK-Vj-LLG">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="50"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgM-Vb-Vbn" colorLabel="IBBuiltInLabel-Yellow">
+                                <rect key="frame" x="26" y="200" width="327" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="XzM-5L-QQg"/>
+                                    <constraint firstAttribute="width" secondItem="sgM-Vb-Vbn" secondAttribute="height" multiplier="109:66" id="rB4-kh-udW"/>
+                                    <constraint firstAttribute="height" constant="198" id="sTR-a6-3m6"/>
+                                </constraints>
+                                <state key="normal" title="Change picture"/>
+                                <connections>
+                                    <action selector="pictureTapped:" destination="D6v-Ri-VcA" eventType="touchUpInside" id="wQM-0u-be2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98933476209640503" green="0.55156082504216053" blue="0.42359101012334299" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="Fj0-UB-tVn" firstAttribute="trailing" secondItem="sgM-Vb-Vbn" secondAttribute="trailing" constant="22" id="7qv-xn-6m4"/>
                             <constraint firstItem="z1k-UR-fAJ" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" constant="-35" id="Bvu-hV-1r6"/>
-                            <constraint firstItem="KJB-FP-Cdj" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" id="CyQ-gd-ieX"/>
                             <constraint firstItem="ahZ-5A-ZCw" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" constant="-145.5" id="Ev5-YX-Kaw"/>
                             <constraint firstItem="e1m-0u-Myb" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-189.5" id="FEv-HL-gjo"/>
                             <constraint firstItem="ahZ-5A-ZCw" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-188" id="Ih9-1e-xrn"/>
@@ -1173,26 +1184,28 @@
                             <constraint firstItem="dGL-sr-xSP" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" constant="91.5" id="MPB-1Y-WRi"/>
                             <constraint firstItem="769-UM-z6S" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="191" id="ONy-R7-INF"/>
                             <constraint firstItem="1Ah-zK-8um" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" constant="137" id="QJk-RF-tci"/>
+                            <constraint firstItem="769-UM-z6S" firstAttribute="top" secondItem="sgM-Vb-Vbn" secondAttribute="bottom" constant="22" id="Rdi-VJ-cR9"/>
                             <constraint firstItem="1Ah-zK-8um" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-189.5" id="WW1-ul-jwT"/>
                             <constraint firstItem="ZNh-3A-h6s" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-288" id="Ww4-G3-ENe"/>
                             <constraint firstItem="769-UM-z6S" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" id="YyQ-NA-sFG"/>
                             <constraint firstItem="LsL-4e-Fnw" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" id="a7A-zr-EbF"/>
                             <constraint firstItem="LsL-4e-Fnw" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-240" id="bba-Vo-N3W"/>
                             <constraint firstItem="e1m-0u-Myb" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" constant="74.5" id="iNW-WM-ftE"/>
+                            <constraint firstItem="sgM-Vb-Vbn" firstAttribute="leading" secondItem="Fj0-UB-tVn" secondAttribute="leading" constant="26" id="jgD-yu-nUJ"/>
                             <constraint firstItem="z1k-UR-fAJ" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-188" id="kGv-H6-prX"/>
                             <constraint firstItem="N6u-NE-pk4" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-292" id="mB3-2G-vAN"/>
                             <constraint firstItem="dGL-sr-xSP" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-157.5" id="nhf-OI-XJH"/>
                             <constraint firstItem="ZNh-3A-h6s" firstAttribute="centerX" secondItem="dYy-oZ-0YU" secondAttribute="centerX" constant="154" id="ovn-6s-N5x"/>
-                            <constraint firstItem="KJB-FP-Cdj" firstAttribute="centerY" secondItem="dYy-oZ-0YU" secondAttribute="centerY" constant="-37" id="tcv-GA-FXD"/>
+                            <constraint firstItem="sgM-Vb-Vbn" firstAttribute="top" secondItem="dGL-sr-xSP" secondAttribute="bottom" constant="9" id="tQf-Yo-zNC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fj0-UB-tVn"/>
                     </view>
                     <connections>
                         <outlet property="contentOfEditScreen" destination="769-UM-z6S" id="C3e-Jr-tKo"/>
+                        <outlet property="imageButton" destination="sgM-Vb-Vbn" id="WLF-Ve-UBD"/>
                         <outlet property="locationOfEditScreen" destination="z1k-UR-fAJ" id="3qs-MX-IsH"/>
                         <outlet property="moodOfEditScreen" destination="1Ah-zK-8um" id="1D8-hZ-zEL"/>
                         <outlet property="moodStackView" destination="dGL-sr-xSP" id="7cg-Ab-QAI"/>
-                        <outlet property="photoOfEditScreen" destination="KJB-FP-Cdj" id="88s-89-1Bx"/>
                         <outlet property="tittleOfEditScreen" destination="LsL-4e-Fnw" id="n5B-q5-ix8"/>
                         <outlet property="weatherOfEditScreen" destination="e1m-0u-Myb" id="AOC-YS-JMV"/>
                     </connections>
@@ -1486,7 +1499,6 @@
         <image name="prototype-diaryPicture2" width="1440" height="1080"/>
         <image name="rain" width="100" height="100"/>
         <image name="sad" width="166" height="166"/>
-        <image name="sleet" width="100" height="100"/>
         <image name="smile" width="166" height="166"/>
         <image name="tick" width="64" height="64"/>
     </resources>

@@ -77,13 +77,13 @@ class Model {
     }
     
     func saveDiaryToCoreData(diary :Diary, existing: Diary_CD) {
-        existing.title = diary.title
-        existing.content = diary.content
-        existing.mood = diary.mood
-        existing.weather = diary.weather
-        existing.location = diary.location
-//            existing.date = diary.date
-        existing.photo = diary.imagePath
+        existing.setValue(diary.title, forKey: "title")
+        existing.setValue(diary.content, forKey: "content")
+        existing.setValue(diary.mood, forKey: "mood")
+        existing.setValue(diary.weather, forKey: "weather")
+        existing.setValue(diary.location, forKey: "location")
+        saveImageDiary(diary: diary)
+        existing.setValue(diary.imagePath, forKey: "photo")
         updateDb()
     }
     
@@ -120,6 +120,9 @@ class Model {
     
     func saveImageDiary (diary: Diary) -> Bool{
         //Use UIImage, save and change the path
+        if (diary.image == nil) {
+            return false;
+        }
         let image = diary.image as! UIImage
         let imageName = "\(diary.title)-\(Int(arc4random_uniform(1000))).png"
         guard let data = UIImageJPEGRepresentation(image, 1) ?? UIImagePNGRepresentation(image) else {
