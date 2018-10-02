@@ -52,12 +52,14 @@ class Create_Date_ViewController: UIViewController, CLLocationManagerDelegate {
         let currentLocation = changeLocation.lastObject as! CLLocation
         let geoCoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) in
-            if((placemarks?.count)! > 0) {
-                let placeMark = placemarks?.first
-
-                self.getWeather(latitude: (placeMark?.location?.coordinate.latitude)!, longitude: (placeMark?.location?.coordinate.longitude)!)
-
-            } else if (error == nil && placemarks?.count == 0) {
+            guard let placemarks = placemarks else {
+                return
+            }
+            if(placemarks.count > 0) {
+                if let placeMark = placemarks.first {
+                    self.getWeather(placeMark: placeMark)
+                }
+            } else if (error == nil && placemarks.count == 0) {
                 print("none location callback");
             }
             else if ((error) != nil) {
@@ -66,27 +68,31 @@ class Create_Date_ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
 
-    func getWeather(latitude: Double, longitude: Double) {
+    func getWeather (placeMark: CLPlacemark) {
         // get current weather condition from Rest API
-        darkSkyWeatherDataManager.weatherDataAt(latitude: latitude, longitude: longitude) { currentWeather, error in
-            DispatchQueue.main.async {
-                if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time, let temperature = currentWeather?.currently.temperature, let humidity = currentWeather?.currently.humidity {
+        if let location = placeMark.location {
 
-                    self.weatherImageView.image = UIImage(named: weatherImage)
-                    self.weatherImage = weatherImage
-                    self.dateLabel.text = DarkSkyDataHandler.handleDate(date: date)
-                    self.temperatureLabel.text = DarkSkyDataHandler.handleTemperature(temperature: temperature)
-                    self.humidityLabel.text = DarkSkyDataHandler.handleHumidity(humidity: humidity)
-                }
-                let geoCoder = CLGeocoder()
-                let location = CLLocation(latitude: latitude, longitude: longitude)
-                geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
-                    placemarks?.forEach { (placemark) in
-                        if let city = placemark.locality {
-                            self.locationLabel.text = city
-                        }
+            darkSkyWeatherDataManager.weatherDataAt(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) { currentWeather, error in
+                DispatchQueue.main.async {
+
+                    //load & handle view data
+
+                    if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time, let temperature = currentWeather?.currently.temperature, let humidity = currentWeather?.currently.humidity {
+
+                        self.weatherImageView.image = UIImage(named: weatherImage)
+                        self.weatherImage = weatherImage
+                        self.dateLabel.text = DarkSkyDataHandler.handleDate(date: date)
+                        self.temperatureLabel.text = DarkSkyDataHandler.handleTemperature(temperature: temperature)
+                        self.humidityLabel.text = DarkSkyDataHandler.handleHumidity(humidity: humidity)
                     }
-                })
+
+                    if let locationName = placeMark.locality, let state = placeMark.administrativeArea {
+
+                        self.locationLabel.text = "\(locationName) \(state)"
+
+                    }
+
+                }
             }
         }
     }

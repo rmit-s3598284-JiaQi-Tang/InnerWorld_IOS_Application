@@ -179,10 +179,10 @@
 				C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */,
 				C1FC7C3C213FCB4F006C9A7D /* Diary.swift */,
 				C1FC7C3D213FCB4F006C9A7D /* User.swift */,
-				CDD768972153B6BC0037DEE2 /* DarkSkyWeatherDataManager.swift */,
-				CDD768992153B7740037DEE2 /* Configuration.swift */,
-				CDD7689B2153B79E0037DEE2 /* DarkSkyWeatherData.swift */,
 				C14EBDA7215C7E54007CCA25 /* Model.swift */,
+				CDD768992153B7740037DEE2 /* Configuration.swift */,
+				CDD768972153B6BC0037DEE2 /* DarkSkyWeatherDataManager.swift */,
+				CDD7689B2153B79E0037DEE2 /* DarkSkyWeatherData.swift */,
 				CDF8307F21600A8900B43D47 /* DarkSkyDataHandler.swift */,
 			);
 			path = Models;
