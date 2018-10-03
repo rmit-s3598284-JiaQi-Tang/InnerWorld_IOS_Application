@@ -1,44 +1,56 @@
 //
-//  DarkSkyWeatherDataManager.swift
+//  DarkSkyApi.swift
 //  InnerWorld
 //
-//  Created by Jacky Tang on 20/9/18.
+//  Created by Linh Nguyen on 3/10/18.
 //  Copyright © 2018 Linh Nguyen. All rights reserved.
 //
 
 import Foundation
-enum DarkSkyWeatherDataManagerError: Error {
+enum DarkSkyApiError: Error {
     case failedRequest
     case invalidResponse
     case unknownError
 }
-final class DarkSkyWeatherDataManager {
-    //init
-    private let baseURL: URL
-
-    private init(baseURL: URL) {
-        self.baseURL = baseURL
-    }
-
-    static let shared = DarkSkyWeatherDataManager(baseURL: API.authenticatedURL)
+class DarkSkyApi {
+    private final let apiUrl = URL(string: "https://api.darksky.net/forecast")!
+    private final let apiKey =
+    "9885577ea36211205d5ff94ad6d2224d"
+    private var baseURL: URL
     
-    //callback
-//    typealias CompletionHandler = (DarkSkyWeatherData?, DarkSkyWeatherDataManagerError?) -> Void
-
-    func weatherDataAt(latitude: Double, longitude: Double) {
+    weak var delegate: DarkSkyApiDelegate?
+    
+    // Shared Properties
+    private static var sharedInstance: DarkSkyApi = {
+        let api = DarkSkyApi()
+        return api
+    }()
+    
+    // Accessors
+    class func shared() -> DarkSkyApi {
+        return sharedInstance
+    }
+    
+    // Initialization
+    private init() {
+        baseURL = apiUrl.appendingPathComponent(apiKey)
+    }
+    
+    func load(latitude: Double, longitude: Double) {
         let url = baseURL.appendingPathComponent("\(latitude),\(longitude)")
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
-
+        
         let dataTask = URLSession.shared.dataTask(with: request) {[weak self] (data, response, error) in
-            self?.didFinishGettingWeatherData(data: data, response: response, error: error)
+            self?.didFinishLoading(data: data, response: response, error: error)
         }
         dataTask.resume()
     }
-
-    private func didFinishGettingWeatherData(data: Data?, response: URLResponse?, error: Error?) {
-        var dataManagerError = DarkSkyWeatherDataManagerError.unknownError
+    
+    
+    private func didFinishLoading(data: Data?, response: URLResponse?, error: Error?) {
+        var dataManagerError = DarkSkyApiError.unknownError
         let decoder = JSONDecoder()
         do {
             if let _ = error {
@@ -52,10 +64,9 @@ final class DarkSkyWeatherDataManager {
             let weatherDailyData = try decoder.decode(ApiWeather.self, from: data)
             let model = Model.shared()
             model.finishLoadingApi(data: weatherDailyData)
-            
-//            completionHandler(weatherDailyData, nil)
+            delegate?.apiCallback()
         } catch {
-//            completionHandler(nil, dataManagerError)
         }
     }
 }
+

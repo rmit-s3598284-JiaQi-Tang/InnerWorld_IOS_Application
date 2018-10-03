@@ -41,3 +41,4 @@ class DarkSkyDataHandler {
         return dateString
     }
 }
+
