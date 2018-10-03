@@ -29,12 +29,12 @@ class ReadViewController: UIViewController {
 //please make date to type of String
 //        dateLabel.text = diary.date
 
-        tittleOfReadScreen.text = diary.title
-        locationOfReadScreen.text = diary.location
-        weatherOfReadScreen.image = UIImage(named: (diary.weather! + ".png"))
-        moodOfReadScreen.image = UIImage(named: (diary.mood! + ".png"))
-        photoOfReadScreen.image = diary.getUiImage()
-        contentOfReadScreen.text = diary.content
+        tittleOfReadScreen.text = diary!.title
+        locationOfReadScreen.text = diary!.location
+        weatherOfReadScreen.image = UIImage(named: (diary!.weather! + ".png"))
+        moodOfReadScreen.image = UIImage(named: (diary!.mood! + ".png"))
+        photoOfReadScreen.image = diary!.getUiImage()
+        contentOfReadScreen.text = diary!.content
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {

@@ -13,7 +13,7 @@ import MobileCoreServices
 
 class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var model = Model.shared()
-    var diary = Diary_CD()
+    var diary: Diary_CD!
     
     var avPlayerViewController: AVPlayerViewController!
     var image: UIImage?

@@ -16,7 +16,7 @@ class Model {
     var currentLocation: String = "Melbourne"
     var currentWeather: String = "rainning"
     var creatingDiary: Diary
-    var readingDiary = Diary_CD()
+    var readingDiary: Diary_CD!
     
     var diaries = [Diary_CD]()
     var filteredDiaries = [Diary_CD]()
@@ -82,7 +82,7 @@ class Model {
         existing.setValue(diary.mood, forKey: "mood")
         existing.setValue(diary.weather, forKey: "weather")
         existing.setValue(diary.location, forKey: "location")
-//        saveImageDiary(diary: diary)
+        let _ = saveImageDiary(diary: diary)
         existing.setValue(diary.imagePath, forKey: "photo")
         updateDb()
     }
@@ -90,7 +90,7 @@ class Model {
     func addDiaryToCoreData() {
         let entity = NSEntityDescription.entity(forEntityName: "Diary_CD", in: managedContext)
         let newDiary = NSManagedObject(entity: entity!, insertInto: managedContext) as! Diary_CD
-//        saveImageDiary(diary: creatingDiary)
+        let _ = saveImageDiary(diary: creatingDiary)
         newDiary.setValue(creatingDiary.title, forKey: "title")
         newDiary.setValue(creatingDiary.content, forKey: "content")
         newDiary.setValue(creatingDiary.mood, forKey: "mood")
