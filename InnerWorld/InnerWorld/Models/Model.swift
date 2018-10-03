@@ -13,15 +13,22 @@ import CoreData
 class Model {
     var user: User
     var diaryLocations = ["Melbourne"]
-    var currentLocation: String = "Melbourne"
-    var currentWeather: String = "rainning"
+//    var currentLocation: String = "Melbourne"
+//    var currentWeather: String = "rainning"
     var creatingDiary: Diary
     var readingDiary: Diary_CD!
+    var city: String = "Melbourne"
+    var state: String = "VIC"
     
     var diaries = [Diary_CD]()
     var filteredDiaries = [Diary_CD]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let managedContext: NSManagedObjectContext
+    
+    var darkSkyApiData = ApiWeather()
+    var darkSkyApi = DarkSkyApi.shared()
+    var lat: Double
+    var lng: Double
     
     var search = ""
     var location = ""
@@ -42,11 +49,24 @@ class Model {
     private init() {
         user = User(nickName: "Another Dude", birthDay: "3-Dec-1993", password: "", hint: "There's no password")
         creatingDiary = Diary()
+        lat = 0;
+        lng = 0;
         
         managedContext = appDelegate.persistentContainer.viewContext
         loadDiariesFromCoreData()
         filteredDiaries = diaries
         filteredDiaries = filteredDiaries.reversed()
+    }
+    
+    func setLatLng (_lat: Double, _lng: Double) {
+        lat = _lat
+        lng = _lng
+        
+        darkSkyApi.load(latitude: lat, longitude: lng)
+    }
+    
+    func finishLoadingApi (data: ApiWeather) {
+        darkSkyApiData = data
     }
     
     func updateDb() {

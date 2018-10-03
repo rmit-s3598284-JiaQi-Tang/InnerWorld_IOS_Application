@@ -133,11 +133,11 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
         //get date
         //now date is a string, the formate is handled also, please update the model, core data and filter
-        let date = DarkSkyDataHandler.handleDate(date: datePicker.date.timeIntervalSince1970)
-
-        //update
-
-        print(date)
+//        let date = DarkSkyDataHandler.handleDate(date: datePicker.date.timeIntervalSince1970)
+//
+//        //update
+//
+//        print(date)
         model.search = ""
         model.location = location
         model.mood = mood

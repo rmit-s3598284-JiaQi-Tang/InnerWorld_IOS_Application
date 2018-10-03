@@ -9,10 +9,10 @@
 import UIKit
 import MapKit
 import CoreLocation
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate, DarkSkyApiDelegate {
 //    var appEngine = AppEngine.shared()
     var model = Model.shared()
-    var darkSkyWeatherDataManager = DarkSkyWeatherDataManager.shared
+    var darkSkyApi = DarkSkyApi.shared()
     let locationManager = CLLocationManager()
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -31,14 +31,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         model.filterHomePageDiaryList()
         self.diaryTableView.reloadData()
     }
+    
+    func apiCallback() {
+        DispatchQueue.main.async {
+            // Update UI
+            let currentWeather = self.model.darkSkyApiData
+            self.currentWeatherImage.image = UIImage(named: currentWeather.currently.icon)
+            self.currentDateLabel.text = DarkSkyDataHandler.handleDate(date: currentWeather.currently.time)
+            self.currentLocationLabel.text = "\(self.model.city) \(self.model.state)"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         self.diaryTableView.reloadData()
+        
+        darkSkyApi.delegate = self
 
         locationManager.requestWhenInUseAuthorization()
-        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -70,27 +81,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func getWeather (placeMark: CLPlacemark) {
-        // get current weather condition from Rest API
         if let location = placeMark.location {
-
-            darkSkyWeatherDataManager.weatherDataAt(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) { currentWeather, error in
-                DispatchQueue.main.async {
-
-                    //load & handle view data
-
-                    if let weatherImage = currentWeather?.currently.icon, let date = currentWeather?.currently.time {
-                        self.currentWeatherImage.image = UIImage(named: weatherImage)
-                        self.currentDateLabel.text = DarkSkyDataHandler.handleDate(date: date)
-                    }
-
-                    if let locationName = placeMark.locality, let state = placeMark.administrativeArea {
-
-                        self.currentLocationLabel.text = "\(locationName) \(state)"
-
-                    }
-
-                }
-            }
+            model.city = placeMark.locality!
+            model.state = placeMark.administrativeArea!
+            model.setLatLng(_lat: location.coordinate.latitude, _lng: location.coordinate.longitude)
         }
     }
 
