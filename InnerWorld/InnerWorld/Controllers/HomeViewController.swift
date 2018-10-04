@@ -113,6 +113,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.locationLabel.text = model.filteredDiaries[indexPath.row].location
         cell.weatherIcon.image = UIImage(named: (model.filteredDiaries[indexPath.row].weather! + ".png"))
         cell.tittleLabel.text = model.filteredDiaries[indexPath.row].title
+        cell.layer.cornerRadius = 15
+        cell.layer.shadowColor = UIColor.red.cgColor
+        cell.layer.shadowRadius = 20
+        cell.layer.shadowOpacity = 20
+        cell.layer.shadowOffset = CGSize(width: 20, height: 20)
 //        let formatter = DateFormatter()
 //        cell.dateLabel.text = formatter.string(from: appEngine.filteredDiaries[indexPath.row].date! as Date)
         
@@ -126,7 +131,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(165)
+        return CGFloat(175)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

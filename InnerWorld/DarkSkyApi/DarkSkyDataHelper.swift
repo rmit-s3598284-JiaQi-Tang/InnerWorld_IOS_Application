@@ -30,6 +30,18 @@ class DarkSkyDataHandler {
         return dateString
 
     }
+    static func handleBirthDay(date: Double) -> String {
+
+        let newTime = NSDate(timeIntervalSince1970: date)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM"
+
+
+        let dateString = dateFormatter.string(from: newTime as Date)
+        return dateString
+
+    }
 
     func timeFormatConverter(date: Double, format: String) -> String {
 

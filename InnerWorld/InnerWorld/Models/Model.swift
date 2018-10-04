@@ -47,7 +47,7 @@ class Model {
     
     // Initialization
     private init() {
-        user = User(nickName: "Another Dude", birthDay: "3-Dec-1993", password: "", hint: "There's no password")
+        user = User(nickName: "Jacky", birthDay: "3-Dec", password: "", hint: "There's no password")
         creatingDiary = Diary()
         lat = 0;
         lng = 0;
