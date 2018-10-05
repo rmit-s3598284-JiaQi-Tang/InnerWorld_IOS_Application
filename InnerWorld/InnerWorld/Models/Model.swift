@@ -11,10 +11,8 @@ import UIKit
 import CoreData
 
 class Model {
-    var user: User
-    var diaryLocations = ["Melbourne"]
-//    var currentLocation: String = "Melbourne"
-//    var currentWeather: String = "rainning"
+    var user: User!
+    var diaryLocations = [String]()
     var creatingDiary: Diary
     var readingDiary: Diary_CD!
     var city: String = "Melbourne"
@@ -30,9 +28,11 @@ class Model {
     var lat: Double
     var lng: Double
     
-    var search = ""
-    var location = ""
-    var mood = ""
+    var searchTitle = ""
+    var searchLocation = ""
+    var searchMood = ""
+    var searchDate = ""
+//    var searchDate = Date()
     
     // Shared Properties
     private static var sharedInstance: Model = {
@@ -47,7 +47,6 @@ class Model {
     
     // Initialization
     private init() {
-        user = User(nickName: "Jacky", birthDay: "3-Dec", password: "", hint: "There's no password")
         creatingDiary = Diary()
         lat = 0;
         lng = 0;
@@ -56,6 +55,10 @@ class Model {
         loadDiariesFromCoreData()
         filteredDiaries = diaries
         filteredDiaries = filteredDiaries.reversed()
+        
+        checkFirstTimeUser()
+        fetchUser()
+        loadDiariesLocation()
     }
     
     func setLatLng (_lat: Double, _lng: Double) {
@@ -116,7 +119,7 @@ class Model {
         newDiary.setValue(creatingDiary.mood, forKey: "mood")
         newDiary.setValue(creatingDiary.weather, forKey: "weather")
         newDiary.setValue(creatingDiary.location, forKey: "location")
-        //            newDiary.setValue(diary.date, forKey: "date")
+        newDiary.setValue(NSDate(), forKey: "date")
         newDiary.setValue(creatingDiary.imagePath, forKey: "photo")
         diaries.append(newDiary)
         updateDb()
@@ -125,13 +128,6 @@ class Model {
     
     func getDiary(_ indexPath: IndexPath) -> Diary_CD{
         return diaries[indexPath.row]
-    }
-    
-    func saveUser(user: User){
-        self.user.nickName = user.nickName
-        self.user.birthDay = user.birthDay
-        self.user.password = user.password
-        self.user.hint = user.hint
     }
     
     func getDiaryIndex(diary: Diary_CD) -> Int{
@@ -166,19 +162,79 @@ class Model {
     }
     
     func filterHomePageDiaryList(){
-        if (search.isEmpty && location.isEmpty && mood.isEmpty) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MMM-yyyy"
+        if (searchTitle.isEmpty && searchLocation.isEmpty && searchMood.isEmpty) {
             filteredDiaries = diaries
         }
-        else if (search.isEmpty) {
-            filteredDiaries = diaries.filter{ $0.location!.localizedCaseInsensitiveContains(location) && $0.mood!.localizedCaseInsensitiveContains(mood) }
+        else if (searchTitle.isEmpty) {
+            filteredDiaries = diaries
+            filteredDiaries = filteredDiaries.filter{ $0.date != nil }
+            filteredDiaries = filteredDiaries.filter{ formatter.string(from: $0.date as! Date).localizedCaseInsensitiveContains(searchDate)}
+            filteredDiaries = filteredDiaries.filter{ $0.location!.localizedCaseInsensitiveContains(searchLocation) && $0.mood!.localizedCaseInsensitiveContains(searchMood) }
         }
         else {
-            if (location.isEmpty && mood.isEmpty) {
-                filteredDiaries = diaries.filter{ $0.title!.localizedCaseInsensitiveContains(search)}
+            if (searchLocation.isEmpty && searchMood.isEmpty) {
+                filteredDiaries = diaries.filter{ $0.title!.localizedCaseInsensitiveContains(searchTitle)}
             } else {
-                filteredDiaries = diaries.filter{ $0.title!.localizedCaseInsensitiveContains(search) && $0.location!.localizedCaseInsensitiveContains(location) && $0.mood!.localizedCaseInsensitiveContains(mood) }
+                filteredDiaries = diaries
+                filteredDiaries = filteredDiaries.filter{ $0.date != nil }
+                filteredDiaries = filteredDiaries.filter{ formatter.string(from: $0.date as! Date).localizedCaseInsensitiveContains(searchDate)}
+                filteredDiaries = filteredDiaries.filter{ $0.title!.localizedCaseInsensitiveContains(searchTitle) && $0.location!.localizedCaseInsensitiveContains(searchLocation) && $0.mood!.localizedCaseInsensitiveContains(searchMood) }
             }
         }
         filteredDiaries = filteredDiaries.reversed()
+    }
+    
+    func checkFirstTimeUser () {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+            let result = try managedContext.fetch(fetchRequest)
+            if (result.count < 1) {
+                createUser()
+            }
+        }
+        catch let error as NSError
+        {
+            print("Could not fetch: \(error)")
+        }
+    }
+    
+    func createUser() {
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)
+        let newUser = NSManagedObject(entity: entity!, insertInto: managedContext) as! User
+        newUser.setValue("My Nickname", forKey: "nickName")
+        newUser.setValue("0000", forKey: "password")
+        newUser.setValue("", forKey: "birthday")
+        newUser.setValue("", forKey: "hint")
+        user = newUser
+        updateDb()
+    }
+    
+    func fetchUser () {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+            let result = try managedContext.fetch(fetchRequest)
+            user = result[0] as! User
+        }
+        catch let error as NSError
+        {
+            print("Could not fetch: \(error)")
+        }
+    }
+    
+    func saveUser(nickname: String, birthday: String, password: String, hint: String) {
+        user.setValue(nickname, forKey: "nickName")
+        user.setValue("", forKey: "birthday")
+        user.setValue(password, forKey: "password")
+        user.setValue(hint, forKey: "hint")
+        updateDb()
+    }
+    
+    func loadDiariesLocation () {
+        let locations = diaries.map { $0.location } as! [String]
+        let unique = Array<String>(Set<String>(locations))
+        //conciseUniqueValues = [5, 6, 9, 7, 4]
+        diaryLocations = unique
     }
 }

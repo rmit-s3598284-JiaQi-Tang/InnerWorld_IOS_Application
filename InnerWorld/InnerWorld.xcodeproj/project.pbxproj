@@ -11,6 +11,8 @@
 		C14EBDA5215C7053007CCA25 /* Diary_CD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14EBDA3215C7053007CCA25 /* Diary_CD+CoreDataClass.swift */; };
 		C14EBDA6215C7053007CCA25 /* Diary_CD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14EBDA4215C7053007CCA25 /* Diary_CD+CoreDataProperties.swift */; };
 		C14EBDA8215C7E54007CCA25 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14EBDA7215C7E54007CCA25 /* Model.swift */; };
+		C17608CC21677F9100DD746E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17608CA21677F9100DD746E /* User+CoreDataClass.swift */; };
+		C17608CD21677F9100DD746E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17608CB21677F9100DD746E /* User+CoreDataProperties.swift */; };
 		C18F17942164C6AD003FE2CC /* DarkSkyApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F17932164C6AD003FE2CC /* DarkSkyApiManager.swift */; };
 		C18F17962164D33B003FE2CC /* DarkSkyApiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F17952164D33B003FE2CC /* DarkSkyApiDelegate.swift */; };
 		C1FC7C11213FCA54006C9A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C10213FCA54006C9A7D /* AppDelegate.swift */; };
@@ -59,6 +61,8 @@
 		C14EBDA3215C7053007CCA25 /* Diary_CD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary_CD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C14EBDA4215C7053007CCA25 /* Diary_CD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary_CD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C14EBDA7215C7E54007CCA25 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C17608CA21677F9100DD746E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C17608CB21677F9100DD746E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C18F17932164C6AD003FE2CC /* DarkSkyApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyApiManager.swift; sourceTree = "<group>"; };
 		C18F17952164D33B003FE2CC /* DarkSkyApiDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyApiDelegate.swift; sourceTree = "<group>"; };
 		C1FC7C0D213FCA54006C9A7D /* InnerWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnerWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +159,7 @@
 		C1FC7C0F213FCA54006C9A7D /* InnerWorld */ = {
 			isa = PBXGroup;
 			children = (
+				C1FC7C3D213FCB4F006C9A7D /* User.swift */,
 				C1FC7C47213FCB63006C9A7D /* Art */,
 				C1FC7C24213FCB2B006C9A7D /* Views */,
 				C1FC7C23213FCB26006C9A7D /* Models */,
@@ -186,11 +191,12 @@
 		C1FC7C23213FCB26006C9A7D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C17608CA21677F9100DD746E /* User+CoreDataClass.swift */,
+				C17608CB21677F9100DD746E /* User+CoreDataProperties.swift */,
 				C14EBDA3215C7053007CCA25 /* Diary_CD+CoreDataClass.swift */,
 				C14EBDA4215C7053007CCA25 /* Diary_CD+CoreDataProperties.swift */,
 				C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */,
 				C1FC7C3C213FCB4F006C9A7D /* Diary.swift */,
-				C1FC7C3D213FCB4F006C9A7D /* User.swift */,
 				C14EBDA7215C7E54007CCA25 /* Model.swift */,
 			);
 			path = Models;
@@ -382,12 +388,14 @@
 				C1FC7C3A213FCB42006C9A7D /* Create_Date_ViewController.swift in Sources */,
 				C1FC7C3E213FCB4F006C9A7D /* AppEngine.swift in Sources */,
 				C1FC7C37213FCB42006C9A7D /* FilterViewController.swift in Sources */,
+				C17608CD21677F9100DD746E /* User+CoreDataProperties.swift in Sources */,
 				C1FC7C3F213FCB4F006C9A7D /* Diary.swift in Sources */,
 				C1FC7C40213FCB4F006C9A7D /* User.swift in Sources */,
 				C14EBDA6215C7053007CCA25 /* Diary_CD+CoreDataProperties.swift in Sources */,
 				C1FC7C30213FCB42006C9A7D /* SettingsViewController.swift in Sources */,
 				C1FC7C31213FCB42006C9A7D /* PasswordViewController.swift in Sources */,
 				CDF8308021600A8900B43D47 /* DarkSkyDataHelper.swift in Sources */,
+				C17608CC21677F9100DD746E /* User+CoreDataClass.swift in Sources */,
 				C1FC7C39213FCB42006C9A7D /* HomeViewController.swift in Sources */,
 				CDD7689C2153B79E0037DEE2 /* DarkSkyModel.swift in Sources */,
 				C1FC7C35213FCB42006C9A7D /* MyTabBarViewController.swift in Sources */,

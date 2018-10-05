@@ -38,7 +38,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // The number of columns of data
@@ -127,20 +126,18 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         default:
             break;
         }
+        
         //get location
-
         let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
-
-        //get date
-        //now date is a string, the formate is handled also, please update the model, core data and filter
-//        let date = DarkSkyDataHandler.handleDate(date: datePicker.date.timeIntervalSince1970)
-//
-//        //update
-//
-//        print(date)
-        model.search = ""
-        model.location = location
-        model.mood = mood
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MMM-yyyy"
+        let date = formatter.string(from: datePicker.date)
+      
+        model.searchTitle = ""
+        model.searchLocation = location
+        model.searchMood = mood
+        model.searchDate = date
         model.filterHomePageDiaryList()
         dismiss(animated: true, completion: nil)
     }

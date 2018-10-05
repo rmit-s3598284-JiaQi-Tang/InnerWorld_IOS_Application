@@ -39,7 +39,7 @@ class Create_Date_ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         let currentWeather = model.darkSkyApiData
-        if (!model.user.nickName.isEmpty) {
+        if (!model.user.nickName!.isEmpty) {
             let randomNumber = Int(arc4random() % 7) + 1
             switch randomNumber {
             case 1:
@@ -61,8 +61,8 @@ class Create_Date_ViewController: UIViewController {
             }
 
             print(DarkSkyDataHandler.handleDate(date: currentWeather.currently.time))
-            print(model.user.birthDay)
-            if (DarkSkyDataHandler.handleBirthDay(date: currentWeather.currently.time) == model.user.birthDay) {
+            print(model.user.birthday)
+            if (DarkSkyDataHandler.handleBirthDay(date: currentWeather.currently.time) == model.user.birthday) {
                 nameLabel.text = ", \(model.user.nickName)! Happy birthday"
             }
         } else {

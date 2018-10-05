@@ -9,11 +9,10 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
-    //initial the app with solid data
-    var appEngine = AppEngine.shared()
-
+    var model = Model.shared()
+    
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
     @IBAction func button1(_ sender: Any) {
         passwordTextField.insertText("1")
     }
@@ -44,16 +43,15 @@ class PasswordViewController: UIViewController {
     @IBAction func button0(_ sender: Any) {
         passwordTextField.insertText("0")
     }
-
+    
     @IBOutlet weak var hintLabel: UILabel!
-
+    
     @IBAction func hintButton(_ sender: Any) {
-        hintLabel.text = appEngine.user.hint
         hintLabel.isHidden = !hintLabel.isHidden
     }
-
+    
     @IBAction func confirmPasswordButton(_ sender: Any) {
-        if passwordTextField.text != appEngine.user.password {
+        if passwordTextField.text != model.user.password! {
             let alert = UIAlertController(title: "wrong password", message: " ", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})
             alert.addAction(okAction)
@@ -61,22 +59,17 @@ class PasswordViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             passwordTextField.text = ""
         } else {
-            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
-                return
-            }
-            present(myTabBarViewController, animated: true, completion: nil)
+            performSegue(withIdentifier: "PasswordToMainSegue", sender: nil)
         }
-
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
-        if (self.appEngine.user.password.isEmpty) {
+        if (model.user.password!.isEmpty) {
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
             guard let myTabBarViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MyTabBarViewController") as? MyTabBarViewController else{
                 return

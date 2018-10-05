@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 import CoreLocation
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate, DarkSkyApiDelegate {
-//    var appEngine = AppEngine.shared()
     var model = Model.shared()
     var darkSkyApi = DarkSkyApi.shared()
     let locationManager = CLLocationManager()
@@ -23,11 +22,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.refreshDiaryData()
     }
-
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.refreshDiaryData()
+    }
+    
     func refreshDiaryData(){
-        model.search = searchBar.text!
-        model.location = ""
-        model.mood = ""
+        model.searchTitle = searchBar.text!
+        model.searchLocation = ""
+        model.searchDate = ""
         model.filterHomePageDiaryList()
         self.diaryTableView.reloadData()
     }
@@ -96,9 +99,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var diaryTableView: UITableView!
 
     @IBAction func clearFilterButtonTapped(_ sender: Any) {
-        model.search = ""
-        model.location = ""
-        model.mood = ""
+        model.searchTitle = ""
+        model.searchLocation = ""
+        model.searchMood = ""
+        model.searchDate = ""
         model.filterHomePageDiaryList()
         self.diaryTableView.reloadData()
     }
@@ -118,15 +122,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.layer.shadowRadius = 20
         cell.layer.shadowOpacity = 20
         cell.layer.shadowOffset = CGSize(width: 20, height: 20)
-//        let formatter = DateFormatter()
-//        cell.dateLabel.text = formatter.string(from: appEngine.filteredDiaries[indexPath.row].date! as Date)
         
-//        cell.locationLabel.text = appEngine.diaries[indexPath.row].location
-//        cell.weatherIcon.image = UIImage(named: (appEngine.diaries[indexPath.row].weather! + ".png"))
-//        cell.tittleLabel.text = appEngine.diaries[indexPath.row].title
-//
-//        let formatter = DateFormatter()
-//        cell.dateLabel.text = formatter.string(from: appEngine.diaries[indexPath.row].date! as Date)
+        if (model.filteredDiaries[indexPath.row].date != nil) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MMM-yyyy"
+            cell.dateLabel.text = formatter.string(from: model.filteredDiaries[indexPath.row].date as! Date)
+        }
+        else {
+            cell.dateLabel.text = ""
+        }
         return(cell)
     }
 
