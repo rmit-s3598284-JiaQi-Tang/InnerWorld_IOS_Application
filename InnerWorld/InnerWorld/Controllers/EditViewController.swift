@@ -42,13 +42,15 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Do any additional setup after loading the view.
         tittleOfEditScreen.text = diary.title
 
-        if (diary!.date != nil) {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd-MMM-yyyy"
-            dateLabel.text = formatter.string(from: diary!.date as! Date)
-        }
-        else {
-            dateLabel.text = ""
+        if let date = diary.date {
+//            if (date != nil) {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd-MMM-yyyy"
+                dateLabel.text = formatter.string(from: date as Date)
+//            }
+//            else {
+//                dateLabel.text = ""
+//            }
         }
 
         locationOfEditScreen.text = diary.location

@@ -38,35 +38,30 @@ class Create_Date_ViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        let currentWeather = model.darkSkyApiData
-        if (!model.user.nickName!.isEmpty) {
-            let randomNumber = Int(arc4random() % 7) + 1
-            switch randomNumber {
-            case 1:
-                nameLabel.text = "Hey, \(model.user.nickName)! You are awsome!"
-            case 2:
-                nameLabel.text = "see u again, \(model.user.nickName)! How was your day?"
-            case 3:
-                nameLabel.text = "Hi, \(model.user.nickName)! Today is a good day"
-            case 4:
-                nameLabel.text = "\(model.user.nickName), Do you like today's weather?"
-            case 5:
-                nameLabel.text = "G'day, \(model.user.nickName)!"
-            case 6:
-                nameLabel.text = "\(model.user.nickName), How you doing?"
-            case 7:
-                nameLabel.text = "Yo, \(model.user.nickName)! Nice to see you!"
-            default:
-                nameLabel.text = "Hey, \(model.user.nickName)!"
+        if let name = model.user.nickName {
+            if (!name.isEmpty) {
+                let randomNumber = Int(arc4random() % 7) + 1
+                switch randomNumber {
+                case 1:
+                    nameLabel.text = "Hey, \(name) You are awsome!"
+                case 2:
+                    nameLabel.text = "see u again, \(name) How was your day?"
+                case 3:
+                    nameLabel.text = "Hi, \(name) Today is a good day"
+                case 4:
+                    nameLabel.text = "\(name), Do you like today's weather?"
+                case 5:
+                    nameLabel.text = "G'day, \(name)"
+                case 6:
+                    nameLabel.text = "\(name), How you doing?"
+                case 7:
+                    nameLabel.text = "Yo, \(name) Nice to see you!"
+                default:
+                    nameLabel.text = "Hey, \(name)"
+                }
+            } else {
+                nameLabel.text = "G'day mate!"
             }
-
-            print(DarkSkyDataHandler.handleDate(date: currentWeather.currently.time))
-            print(model.user.birthday)
-            if (DarkSkyDataHandler.handleBirthDay(date: currentWeather.currently.time) == model.user.birthday) {
-                nameLabel.text = ", \(model.user.nickName)! Happy birthday"
-            }
-        } else {
-            nameLabel.text = "G'day mate!"
         }
     }
     @IBAction func writeButtonTapped(_ sender: Any) {

@@ -15,7 +15,7 @@ class HomeViewControllerTableViewCell: UITableViewCell {
     @IBOutlet weak var tittleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-
+    @IBOutlet weak var moodIcon: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

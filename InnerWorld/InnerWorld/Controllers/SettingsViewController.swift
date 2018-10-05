@@ -14,7 +14,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var textFieldUserName: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var textFieldHint: UITextField!
-    @IBOutlet weak var datePickerBirthday: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldUserName.text = model.user.nickName
@@ -23,9 +22,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func btnSaveClicked(_ sender: Any) {
-        let birthday = DarkSkyDataHandler.handleBirthDay(date: datePickerBirthday.date.timeIntervalSince1970)
-        print(birthday)
-        model.saveUser(nickname: textFieldUserName.text!, birthday: "", password: textFieldPassword.text!, hint: textFieldHint.text!)
+        model.saveUser(nickname: textFieldUserName.text!, password: textFieldPassword.text!, hint: textFieldHint.text!)
         
         let alert = UIAlertController(title: "New settings has been saved", message: "", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {Void in})

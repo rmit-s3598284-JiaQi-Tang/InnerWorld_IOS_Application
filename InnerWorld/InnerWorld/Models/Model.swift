@@ -170,7 +170,7 @@ class Model {
         else if (searchTitle.isEmpty) {
             filteredDiaries = diaries
             filteredDiaries = filteredDiaries.filter{ $0.date != nil }
-            filteredDiaries = filteredDiaries.filter{ formatter.string(from: $0.date as! Date).localizedCaseInsensitiveContains(searchDate)}
+            filteredDiaries = filteredDiaries.filter{ formatter.string(from: $0.date! as Date).localizedCaseInsensitiveContains(searchDate)}
             filteredDiaries = filteredDiaries.filter{ $0.location!.localizedCaseInsensitiveContains(searchLocation) && $0.mood!.localizedCaseInsensitiveContains(searchMood) }
         }
         else {
@@ -179,7 +179,7 @@ class Model {
             } else {
                 filteredDiaries = diaries
                 filteredDiaries = filteredDiaries.filter{ $0.date != nil }
-                filteredDiaries = filteredDiaries.filter{ formatter.string(from: $0.date as! Date).localizedCaseInsensitiveContains(searchDate)}
+                filteredDiaries = filteredDiaries.filter{ formatter.string(from: $0.date! as Date).localizedCaseInsensitiveContains(searchDate)}
                 filteredDiaries = filteredDiaries.filter{ $0.title!.localizedCaseInsensitiveContains(searchTitle) && $0.location!.localizedCaseInsensitiveContains(searchLocation) && $0.mood!.localizedCaseInsensitiveContains(searchMood) }
             }
         }
@@ -223,9 +223,8 @@ class Model {
         }
     }
     
-    func saveUser(nickname: String, birthday: String, password: String, hint: String) {
+    func saveUser(nickname: String, password: String, hint: String) {
         user.setValue(nickname, forKey: "nickName")
-        user.setValue("", forKey: "birthday")
         user.setValue(password, forKey: "password")
         user.setValue(hint, forKey: "hint")
         updateDb()

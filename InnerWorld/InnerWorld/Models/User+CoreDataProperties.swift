@@ -19,7 +19,6 @@ extension User {
 
     @NSManaged public var hint: String?
     @NSManaged public var nickName: String?
-    @NSManaged public var birthday: String?
     @NSManaged public var password: String?
 
 }
