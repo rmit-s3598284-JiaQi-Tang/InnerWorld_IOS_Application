@@ -111,7 +111,28 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
 
-    @IBAction func filterButtonTapped(_ sender: Any) {
+    @IBAction func locationTick(_ sender: Any) {
+        //get location
+        let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
+
+        model.searchTitle = ""
+        model.searchLocation = location
+        model.filterHomePageDiaryList()
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func dateTick(_ sender: Any) {
+        //get date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MMM-yyyy"
+        let date = formatter.string(from: datePicker.date)
+
+        model.searchDate = date
+        model.filterHomePageDiaryList()
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func moodTick(_ sender: Any) {
         //get mood
         var mood = "happy"
         switch midFaceImage.image! {
@@ -126,21 +147,11 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         default:
             break;
         }
-        
-        //get location
-        let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MMM-yyyy"
-        let date = formatter.string(from: datePicker.date)
-      
-        model.searchTitle = ""
-        model.searchLocation = location
         model.searchMood = mood
-        model.searchDate = date
         model.filterHomePageDiaryList()
         dismiss(animated: true, completion: nil)
     }
+
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
