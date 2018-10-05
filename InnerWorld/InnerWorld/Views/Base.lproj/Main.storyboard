@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLm-bQ-Zrc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmericanTypewriter.ttc">
+            <string>AmericanTypewriter</string>
+            <string>AmericanTypewriter-Bold</string>
+            <string>AmericanTypewriter-Light</string>
+        </array>
+        <array key="BradleyHand-Bold.ttf">
+            <string>BradleyHandITCTT-Bold</string>
+        </array>
+        <array key="SnellRoundhand.ttc">
+            <string>SnellRoundhand-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Filter View Controller-->
         <scene sceneID="LzH-u4-Q2K">
@@ -1523,6 +1536,7 @@
                     <connections>
                         <outlet property="hintLabel" destination="Iye-vc-mBi" id="2Qp-Tl-ZbE"/>
                         <outlet property="passwordTextField" destination="3LY-qX-Ik9" id="FMt-fH-FI7"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="PasswordToMainSegue" id="X5d-g2-osD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNY-62-6vS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1583,6 +1597,6 @@
         <image name="tick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xAL-Xd-Nbd"/>
+        <segue reference="X5d-g2-osD"/>
     </inferredMetricsTieBreakers>
 </document>
