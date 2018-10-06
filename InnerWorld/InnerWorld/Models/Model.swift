@@ -81,6 +81,9 @@ class Model {
     }
     
     func deleteDiary(_ index: Int) {
+        if (index < 0 || index >= diaries.count) {
+            return;
+        }
         let diary = diaries[index]
         diaries.remove(at: index)
         managedContext.delete(diary)
@@ -204,7 +207,7 @@ class Model {
         let entity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)
         let newUser = NSManagedObject(entity: entity!, insertInto: managedContext) as! User
         newUser.setValue("My Nickname", forKey: "nickName")
-        newUser.setValue("0000", forKey: "password")
+        newUser.setValue("", forKey: "password")
         newUser.setValue("", forKey: "birthday")
         newUser.setValue("", forKey: "hint")
         user = newUser
@@ -233,7 +236,6 @@ class Model {
     func loadDiariesLocation () {
         let locations = diaries.map { $0.location } as! [String]
         let unique = Array<String>(Set<String>(locations))
-        //conciseUniqueValues = [5, 6, 9, 7, 4]
         diaryLocations = unique
     }
 }

@@ -34,6 +34,8 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         self.locationPicker.delegate = self
         self.locationPicker.dataSource = self
+        
+        model.loadDiariesLocation()
     }
 
     override func didReceiveMemoryWarning() {

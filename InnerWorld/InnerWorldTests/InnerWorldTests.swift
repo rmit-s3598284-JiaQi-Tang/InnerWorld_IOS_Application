@@ -9,7 +9,7 @@
 import XCTest
 @testable import InnerWorld
 class InnerWorldTests: XCTestCase {
-    let appEngine = AppEngine.shared()
+    let model = Model.shared()
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,41 +21,48 @@ class InnerWorldTests: XCTestCase {
     }
 
     func testRemoveExistingDiary() {
-        let initialNumberOfDiaries = appEngine.diaryList.count
-        appEngine.removeDiary(tittleOfToBeDeletedDiary : appEngine.diaryList[0].title)
-        XCTAssertEqual(appEngine.diaryList.count, initialNumberOfDiaries - 1, "fail to remove an existing diary")
+        let initialNumberOfDiaries = model.diaries.count
+        if (initialNumberOfDiaries > 0) {
+            model.deleteDiary(0)
+            XCTAssertEqual(model.diaries.count, initialNumberOfDiaries - 1, "Fail to remove an existing diary")
+        }
+        else {
+            XCTAssert(true, "There's no diary to delete")
+        }
     }
 
     func testRemoveNonExistingDiary() {
-        let initialNumberOfDiaries = appEngine.diaryList.count
-        appEngine.removeDiary(tittleOfToBeDeletedDiary : "ASHANJS")
-        XCTAssertEqual(appEngine.diaryList.count, initialNumberOfDiaries, "Fail to detect non existing diary")
+        let initialNumberOfDiaries = model.diaries.count
+        model.deleteDiary(-1)
+        XCTAssertEqual(model.diaries.count, initialNumberOfDiaries, "Fail to detect non existing diary")
     }
 
     func testAddDiary() {
-        let initialNumberOfDiaries = appEngine.diaryList.count
-        let diary = Diary(id: 100, title: "A happy day in St Kilda", date: "08-Aug-2018", mood: "awesome", weather: "sunny", location: "St Kilda, Melbourne", photo: "prototype-diaryPicture", content: "Today, I went to St kilda beach with my Indian brother Manana. We took a lot of awesome pictures there! what a happy day!")
-        appEngine.addDiary(diary: diary)
-        XCTAssertEqual(appEngine.diaryList.count, initialNumberOfDiaries + 1, "Fail to add a diary")
+        let initialNumberOfDiaries = model.diaries.count
+        model.creatingDiary.title = "Created by UnitTest"
+        model.creatingDiary.content = "Lorem ipsum"
+        model.creatingDiary.mood = "happy"
+        model.creatingDiary.weather = "partly-cloudy-day"
+        model.creatingDiary.weather = "Melbourne VIC"
+        model.creatingDiary.imagePath = ""
+        model.addDiaryToCoreData()
+        XCTAssertEqual(model.diaries.count, initialNumberOfDiaries + 1, "Fail to add a diary")
     }
 
     func testSaveDiary() {
-        var diary = appEngine.diaryList[0]
-        diary.title = "Another Title"
-        appEngine.saveDiary(diary: diary)
-        XCTAssertEqual("Another Title", appEngine.diaryList[0].title, "Fail to edit a diary")
+        if (model.diaries.count > 0) {
+            let newDiary = Diary(id: 100, title: "Changed by UnitTest", date: "", mood: "", weather: "", location: "", imagePath: "", content: "")
+            model.saveDiaryToCoreData(diary: newDiary, existing: model.diaries[0])
+            XCTAssertEqual("Changed by UnitTest", model.diaries[0].title, "Fail to edit a diary")
+        }
+        else {
+            XCTAssert(true, "There's no diary to save.")
+        }
     }
 
     func testSaveUser() {
-        var user = appEngine.user
-        user.password = "1234"
-        appEngine.saveUser(user: user)
-        XCTAssertEqual("1234", appEngine.user.password, "Fail to edit user")
-    }
-
-    func testFilterBySearchBar() {
-        appEngine.filterHomePageDiaryList(search: "Town", location: "", mood: "")
-        XCTAssertEqual(1, appEngine.filteredDiaryList.count, "Fail to filter diaries")
+        model.saveUser(nickname: "New nickname", password: "", hint: "Changed by UnitTest. New password: 0000")
+        XCTAssertEqual("", model.user!.password, "Fail to edit user")
     }
     
 }

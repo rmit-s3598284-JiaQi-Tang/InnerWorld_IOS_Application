@@ -10,7 +10,6 @@ import UIKit
 
 class Create_Mood_ViewController: UIViewController {
 
-//    var appEngine = AppEngine.shared()
     var model = Model.shared()
     var edittingDiray = Diary()
 
@@ -24,13 +23,13 @@ class Create_Mood_ViewController: UIViewController {
                 if sender.value >= 25 && sender.value < 50 {
                     return "sad.png"
                 }
-                if sender.value >= 50 && sender.value < 75 {
+                else if sender.value >= 50 && sender.value < 75 {
                     return "happy.png"
                 }
-                if sender.value >= 75 {
+                else if sender.value >= 75 {
                     return "smile.png"
                 }
-                return "cry.png"
+                else { return "cry.png" }
             }
         }
         if let image = UIImage(named:currentMood) {
@@ -50,19 +49,24 @@ class Create_Mood_ViewController: UIViewController {
     @IBAction func forwardButtonTapped(_ sender: Any) {
         var currentMood: String {
             get {
+                let val = moodUISlider.value
+                print(val)
+                //Slider haven't changed
+                if (val == 0.5) {
+                    return "happy"
+                }
                 if moodUISlider.value >= 25 && moodUISlider.value < 50 {
                     return "sad"
                 }
-                if moodUISlider.value >= 50 && moodUISlider.value < 75 {
+                else if moodUISlider.value >= 50 && moodUISlider.value < 75 {
                     return "happy"
                 }
-                if moodUISlider.value >= 75 {
+                else if moodUISlider.value >= 75 {
                     return "smile"
                 }
                 else { return "cry" }
             }
         }
-//        appEngine.creatingDiary.mood = currentMood
         model.creatingDiary.mood = currentMood
         performSegue(withIdentifier: "MoodToContentSegue", sender: nil)
     }
