@@ -28,14 +28,9 @@ class ReadViewController: UIViewController {
         guard let date = diary?.date else {
             return dateLabel.text = ""
         }
-//        if (diary!.date != nil) {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd-MMM-yyyy"
-            dateLabel.text = formatter.string(from: date as Date)
-//        }
-//        else {
-//            dateLabel.text = ""
-//        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MMM-yyyy"
+        dateLabel.text = formatter.string(from: date as Date)
 
         tittleOfReadScreen.text = diary!.title
         locationOfReadScreen.text = diary!.location

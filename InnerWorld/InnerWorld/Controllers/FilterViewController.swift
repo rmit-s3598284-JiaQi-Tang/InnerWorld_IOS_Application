@@ -9,8 +9,6 @@
 import UIKit
 
 class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-//    var appEngine = AppEngine.shared()
     var model = Model.shared()
     let happyData = UIImagePNGRepresentation(#imageLiteral(resourceName: "happy"))
     let sadData = UIImagePNGRepresentation(#imageLiteral(resourceName: "sad"))
@@ -113,28 +111,21 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
 
-    @IBAction func locationTick(_ sender: Any) {
+
+    @IBAction func tickButtonTapped(_ sender: Any) {
         //get location
         let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
 
         model.searchTitle = ""
         model.searchLocation = location
-        model.filterHomePageDiaryList()
-        dismiss(animated: true, completion: nil)
-    }
 
-    @IBAction func dateTick(_ sender: Any) {
         //get date
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MMM-yyyy"
         let date = formatter.string(from: datePicker.date)
 
         model.searchDate = date
-        model.filterHomePageDiaryList()
-        dismiss(animated: true, completion: nil)
-    }
 
-    @IBAction func moodTick(_ sender: Any) {
         //get mood
         var mood = "happy"
         switch midFaceImage.image! {

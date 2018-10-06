@@ -121,40 +121,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr0-XQ-akt">
-                                <rect key="frame" x="324" y="80" width="45" height="45"/>
+                                <rect key="frame" x="314" y="20" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Avi-ll-D1j"/>
                                     <constraint firstAttribute="width" constant="45" id="sQq-Ks-42w"/>
                                 </constraints>
                                 <state key="normal" image="tick"/>
                                 <connections>
-                                    <action selector="locationTick:" destination="AvV-3h-Td9" eventType="touchUpInside" id="s0v-Ri-vzH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdb-Lt-5ig">
-                                <rect key="frame" x="324" y="233" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="1g2-qE-qbY"/>
-                                    <constraint firstAttribute="height" constant="45" id="BAo-Ke-v6s"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="C2f-M3-G52"/>
-                                    <constraint firstAttribute="width" constant="45" id="poX-cf-3yd"/>
-                                </constraints>
-                                <state key="normal" image="tick"/>
-                                <connections>
-                                    <action selector="dateTick:" destination="AvV-3h-Td9" eventType="touchUpInside" id="LHO-dL-qFc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gB-Rt-PRN">
-                                <rect key="frame" x="324" y="391" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="ENx-Dg-5Nn"/>
-                                    <constraint firstAttribute="height" constant="45" id="KDz-Su-W9H"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="YaV-eF-x9n"/>
-                                    <constraint firstAttribute="width" constant="45" id="d2b-pW-wZV"/>
-                                </constraints>
-                                <state key="normal" image="tick"/>
-                                <connections>
-                                    <action selector="moodTick:" destination="AvV-3h-Td9" eventType="touchUpInside" id="WMv-9F-Bks"/>
+                                    <action selector="tickButtonTapped:" destination="AvV-3h-Td9" eventType="touchUpInside" id="rXE-TJ-IH5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,12 +143,10 @@
                             <constraint firstItem="Vew-LU-4uW" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="-138.5" id="8sy-sL-1NB"/>
                             <constraint firstItem="HgF-Oz-a9w" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-78.25" id="ANk-FL-enm"/>
                             <constraint firstItem="Vew-LU-4uW" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-231" id="BWY-MH-73e"/>
-                            <constraint firstItem="Jr0-XQ-akt" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-231" id="Cf4-x1-ejc"/>
+                            <constraint firstItem="Jr0-XQ-akt" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-291" id="Cf4-x1-ejc"/>
                             <constraint firstItem="Oem-d4-rWa" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="80" id="DC9-pp-KZe"/>
                             <constraint firstItem="cCD-qX-aPu" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="145.5" id="Har-Xd-PvO"/>
-                            <constraint firstItem="6gB-Rt-PRN" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="159" id="L5q-SK-ggl"/>
-                            <constraint firstItem="Jr0-XQ-akt" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="159" id="LQq-fW-G15"/>
-                            <constraint firstItem="Jdb-Lt-5ig" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="159" id="LtD-mL-PPc"/>
+                            <constraint firstItem="Jr0-XQ-akt" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="149" id="LQq-fW-G15"/>
                             <constraint firstItem="XwK-75-Cz0" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="228.5" id="Uay-ae-gF5"/>
                             <constraint firstItem="Lm2-1t-oSh" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-154.5" id="VdF-kH-akG"/>
                             <constraint firstItem="As0-6o-jhw" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-291" id="X1K-aj-7AU"/>
@@ -185,11 +157,9 @@
                             <constraint firstItem="HgF-Oz-a9w" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="-150.5" id="hHI-o0-n2c"/>
                             <constraint firstItem="xmW-e7-5i5" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="-106" id="ipJ-2I-ccZ"/>
                             <constraint firstItem="cCD-qX-aPu" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="286" id="lpu-e4-BVO"/>
-                            <constraint firstItem="Jdb-Lt-5ig" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="-78" id="m6O-Gx-ng1"/>
                             <constraint firstItem="izD-6e-Mbx" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="286" id="psh-uK-BFa"/>
                             <constraint firstItem="CRl-BW-zo5" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="130.5" id="sPD-2V-F8C"/>
                             <constraint firstItem="As0-6o-jhw" firstAttribute="centerX" secondItem="azM-yi-14f" secondAttribute="centerX" constant="-149" id="w1k-Qb-w1X"/>
-                            <constraint firstItem="6gB-Rt-PRN" firstAttribute="centerY" secondItem="azM-yi-14f" secondAttribute="centerY" constant="80" id="xcB-ou-B5E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mUW-Xi-ctg"/>
                     </view>
@@ -905,10 +875,10 @@
                                     <action selector="accessLibrary:" destination="rIL-cI-CB4" eventType="touchUpInside" id="96N-jd-Ky6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xO-M6-Isl">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tittle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xO-M6-Isl">
                                 <rect key="frame" x="40" y="92" width="294" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="294" id="U8A-xn-jh1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="294" id="U8A-xn-jh1"/>
                                     <constraint firstAttribute="height" constant="30" id="jGP-ce-e2M"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -1591,6 +1561,6 @@
         <image name="tick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X5d-g2-osD"/>
+        <segue reference="iB4-X8-vnH"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -27,9 +27,7 @@
 		C1FC7C38213FCB42006C9A7D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2D213FCB42006C9A7D /* EditViewController.swift */; };
 		C1FC7C39213FCB42006C9A7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2E213FCB42006C9A7D /* HomeViewController.swift */; };
 		C1FC7C3A213FCB42006C9A7D /* Create_Date_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C2F213FCB42006C9A7D /* Create_Date_ViewController.swift */; };
-		C1FC7C3E213FCB4F006C9A7D /* AppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */; };
 		C1FC7C3F213FCB4F006C9A7D /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C3C213FCB4F006C9A7D /* Diary.swift */; };
-		C1FC7C40213FCB4F006C9A7D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC7C3D213FCB4F006C9A7D /* User.swift */; };
 		C1FC7C45213FCB5B006C9A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C41213FCB5B006C9A7D /* Main.storyboard */; };
 		C1FC7C46213FCB5B006C9A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C43213FCB5B006C9A7D /* LaunchScreen.storyboard */; };
 		C1FC7C49213FCB6B006C9A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FC7C48213FCB6B006C9A7D /* Assets.xcassets */; };
@@ -79,9 +77,7 @@
 		C1FC7C2D213FCB42006C9A7D /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		C1FC7C2E213FCB42006C9A7D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C1FC7C2F213FCB42006C9A7D /* Create_Date_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Create_Date_ViewController.swift; sourceTree = "<group>"; };
-		C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEngine.swift; sourceTree = "<group>"; };
 		C1FC7C3C213FCB4F006C9A7D /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
-		C1FC7C3D213FCB4F006C9A7D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C1FC7C42213FCB5B006C9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1FC7C44213FCB5B006C9A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1FC7C48213FCB6B006C9A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = InnerWorld/Views/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -159,7 +155,6 @@
 		C1FC7C0F213FCA54006C9A7D /* InnerWorld */ = {
 			isa = PBXGroup;
 			children = (
-				C1FC7C3D213FCB4F006C9A7D /* User.swift */,
 				C1FC7C47213FCB63006C9A7D /* Art */,
 				C1FC7C24213FCB2B006C9A7D /* Views */,
 				C1FC7C23213FCB26006C9A7D /* Models */,
@@ -195,7 +190,6 @@
 				C17608CB21677F9100DD746E /* User+CoreDataProperties.swift */,
 				C14EBDA3215C7053007CCA25 /* Diary_CD+CoreDataClass.swift */,
 				C14EBDA4215C7053007CCA25 /* Diary_CD+CoreDataProperties.swift */,
-				C1FC7C3B213FCB4F006C9A7D /* AppEngine.swift */,
 				C1FC7C3C213FCB4F006C9A7D /* Diary.swift */,
 				C14EBDA7215C7E54007CCA25 /* Model.swift */,
 			);
@@ -386,11 +380,9 @@
 				C1FC7C11213FCA54006C9A7D /* AppDelegate.swift in Sources */,
 				C1FC7C36213FCB42006C9A7D /* Create_Content_ViewController.swift in Sources */,
 				C1FC7C3A213FCB42006C9A7D /* Create_Date_ViewController.swift in Sources */,
-				C1FC7C3E213FCB4F006C9A7D /* AppEngine.swift in Sources */,
 				C1FC7C37213FCB42006C9A7D /* FilterViewController.swift in Sources */,
 				C17608CD21677F9100DD746E /* User+CoreDataProperties.swift in Sources */,
 				C1FC7C3F213FCB4F006C9A7D /* Diary.swift in Sources */,
-				C1FC7C40213FCB4F006C9A7D /* User.swift in Sources */,
 				C14EBDA6215C7053007CCA25 /* Diary_CD+CoreDataProperties.swift in Sources */,
 				C1FC7C30213FCB42006C9A7D /* SettingsViewController.swift in Sources */,
 				C1FC7C31213FCB42006C9A7D /* PasswordViewController.swift in Sources */,

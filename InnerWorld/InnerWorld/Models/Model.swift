@@ -32,7 +32,6 @@ class Model {
     var searchLocation = ""
     var searchMood = ""
     var searchDate = ""
-//    var searchDate = Date()
     
     // Shared Properties
     private static var sharedInstance: Model = {

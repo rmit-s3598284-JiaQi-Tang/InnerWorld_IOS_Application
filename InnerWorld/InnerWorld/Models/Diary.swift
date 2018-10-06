@@ -11,8 +11,6 @@ import UIKit
 
 class Diary {
 
-//    typealias T = Diary
-
     var id: Int
     var title: String
     var date: String

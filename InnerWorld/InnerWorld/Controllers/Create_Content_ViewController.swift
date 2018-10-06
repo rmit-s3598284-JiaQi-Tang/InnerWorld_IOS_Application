@@ -13,7 +13,6 @@ import MobileCoreServices
 
 class Create_Content_ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-//    var appEngine = AppEngine.shared()
     var model = Model.shared()
     var edittingDiray = Diary()
     
@@ -50,8 +49,6 @@ class Create_Content_ViewController: UIViewController, UIImagePickerControllerDe
         model.creatingDiary.title = tittleTextField.text!
         model.creatingDiary.content = contentUITextView.text
         model.addDiaryToCoreData()
-        
-//        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

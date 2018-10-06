@@ -38,11 +38,16 @@ class InnerWorldUITests: XCTestCase {
         
 
     }
-    func testHomeScreen() {
+    func testCreateDiary() {
         //test whether the stack view items are showing, and also their accessibility
+
         let app = XCUIApplication()
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["St Kilda, Melbourne"]/*[[".cells.staticTexts[\"St Kilda, Melbourne\"]",".staticTexts[\"St Kilda, Melbourne\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.buttons["arrowBack"].tap()
+        app.tabBars.children(matching: .button).element(boundBy: 1).tap()
+        app.buttons["letsDoit"].tap()
+        app.buttons["arrowTowads"].tap()
+        app.textFields["Tittle"].tap()
+        app.buttons["tick"].tap()
+
 
     }
     func testCreateMoodScreen() {
@@ -53,14 +58,29 @@ class InnerWorldUITests: XCTestCase {
         app.sliders["50%"].swipeRight()
 
     }
-    func testSettingScreen() {
+    func testLogout() {
         //test the items show or not and whether accessible
+
         let app = XCUIApplication()
         app.tabBars.children(matching: .button).element(boundBy: 2).tap()
-        app.datePickers.pickerWheels["Today"].swipeUp()
-        app.buttons["Save"].tap()
-        app.alerts["New settings has been saved"].buttons["OK"].tap()
         app.buttons["log out"].tap()
+
+    }
+
+    func testGreetings() {
+        let tabBarsQuery = XCUIApplication().tabBars
+        let button = tabBarsQuery.children(matching: .button).element(boundBy: 1)
+        button.tap()
+        
+        let button2 = tabBarsQuery.children(matching: .button).element(boundBy: 0)
+        button2.tap()
+        button.tap()
+        button2.tap()
+        button.tap()
+        button2.tap()
+        button.tap()
+        button2.tap()
+        button.tap()
 
     }
 }

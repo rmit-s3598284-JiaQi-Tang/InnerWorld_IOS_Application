@@ -43,14 +43,9 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         tittleOfEditScreen.text = diary.title
 
         if let date = diary.date {
-//            if (date != nil) {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "dd-MMM-yyyy"
                 dateLabel.text = formatter.string(from: date as Date)
-//            }
-//            else {
-//                dateLabel.text = ""
-//            }
         }
 
         locationOfEditScreen.text = diary.location
@@ -79,9 +74,6 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func tickButtonTapped(_ sender: Any) {
         diary.title = tittleOfEditScreen.text!
-//please make date to type of String
-//        diary.date = dateLabel.text!
-
         diary.location = locationOfEditScreen.text!
         diary.content = contentOfEditScreen.text!
         if let newWeather = weatherOfEditScreen.accessibilityIdentifier {
