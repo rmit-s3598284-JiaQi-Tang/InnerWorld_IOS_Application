@@ -205,7 +205,7 @@ class Model {
     func createUser() {
         let entity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)
         let newUser = NSManagedObject(entity: entity!, insertInto: managedContext) as! User
-        newUser.setValue("My Nickname", forKey: "nickName")
+        newUser.setValue("mate", forKey: "nickName")
         newUser.setValue("", forKey: "password")
         newUser.setValue("", forKey: "birthday")
         newUser.setValue("", forKey: "hint")

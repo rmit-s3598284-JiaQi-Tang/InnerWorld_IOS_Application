@@ -51,7 +51,7 @@ class InnerWorldTests: XCTestCase {
 
     func testSaveDiary() {
         if (model.diaries.count > 0) {
-            let newDiary = Diary(id: 100, title: "Changed by UnitTest", date: "", mood: "", weather: "", location: "", imagePath: "", content: "")
+            let newDiary = Diary(id: 100, title: "Changed by UnitTest", date: "", mood: "happy", weather: "partly-cloudy-day", location: "Melbourne VIC", imagePath: "", content: "some random content")
             model.saveDiaryToCoreData(diary: newDiary, existing: model.diaries[0])
             XCTAssertEqual("Changed by UnitTest", model.diaries[0].title, "Fail to edit a diary")
         }
@@ -61,7 +61,7 @@ class InnerWorldTests: XCTestCase {
     }
 
     func testSaveUser() {
-        model.saveUser(nickname: "New nickname", password: "", hint: "Changed by UnitTest. New password: 0000")
+        model.saveUser(nickname: "mate", password: "", hint: "no password")
         XCTAssertEqual("", model.user!.password, "Fail to edit user")
     }
     

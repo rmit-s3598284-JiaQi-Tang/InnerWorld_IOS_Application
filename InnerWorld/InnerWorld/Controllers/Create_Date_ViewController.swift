@@ -43,11 +43,11 @@ class Create_Date_ViewController: UIViewController {
                 let randomNumber = Int(arc4random() % 7) + 1
                 switch randomNumber {
                 case 1:
-                    nameLabel.text = "Hey, \(name) You are awsome!"
+                    nameLabel.text = "Hey, \(name), You are awsome!"
                 case 2:
-                    nameLabel.text = "see u again, \(name) How was your day?"
+                    nameLabel.text = "see u again, \(name), How was your day?"
                 case 3:
-                    nameLabel.text = "Hi, \(name) Today is a good day"
+                    nameLabel.text = "Hi, \(name), Today is a good day"
                 case 4:
                     nameLabel.text = "\(name), Do you like today's weather?"
                 case 5:
@@ -55,7 +55,7 @@ class Create_Date_ViewController: UIViewController {
                 case 6:
                     nameLabel.text = "\(name), How you doing?"
                 case 7:
-                    nameLabel.text = "Yo, \(name) Nice to see you!"
+                    nameLabel.text = "Yo, \(name), Nice to see you!"
                 default:
                     nameLabel.text = "Hey, \(name)"
                 }
