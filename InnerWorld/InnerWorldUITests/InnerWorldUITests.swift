@@ -35,7 +35,6 @@ class InnerWorldUITests: XCTestCase {
         app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .button).element(boundBy: 0).tap()
         app.buttons["tick"].tap()
         app.buttons["Clear Filter"].tap()
-        
 
     }
     func testCreateDiary() {
@@ -81,6 +80,5 @@ class InnerWorldUITests: XCTestCase {
         button.tap()
         button2.tap()
         button.tap()
-
     }
 }

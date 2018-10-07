@@ -114,11 +114,11 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     @IBAction func tickButtonTapped(_ sender: Any) {
         //get location
-        let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
-
         model.searchTitle = ""
-        model.searchLocation = location
-
+        if model.diaryLocations.count > 0 {
+            let location = model.diaryLocations[locationPicker.selectedRow(inComponent: 0)]
+            model.searchLocation = location
+        }
         //get date
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MMM-yyyy"

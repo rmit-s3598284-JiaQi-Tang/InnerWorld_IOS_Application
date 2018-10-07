@@ -667,6 +667,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a new diary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtm-GM-5Xe">
                                 <rect key="frame" x="118.5" y="514" width="230" height="72"/>
+                                <accessibility key="accessibilityConfiguration" identifier="aNewDiaryLabel"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="uvp-iN-fJ8"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="xCD-ex-RgI"/>
@@ -680,6 +681,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey,  Jacky ! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQW-p5-JY9">
                                         <rect key="frame" x="128.5" y="8" width="118.5" height="84"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="greetingLabelIdentifier"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="297" id="7l0-GJ-exM"/>
                                             <constraint firstAttribute="height" constant="84" id="R6C-JN-hCD"/>
@@ -1561,6 +1563,7 @@
         <image name="tick" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xAL-Xd-Nbd"/>
         <segue reference="iB4-X8-vnH"/>
     </inferredMetricsTieBreakers>
 </document>
